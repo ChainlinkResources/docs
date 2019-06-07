@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;csharp&quot;,&quot;javascript&quot;,&quot;go&quot;,&quot;groovy&quot;,&quot;php&quot;,&quot;python&quot;,&quot;ruby&quot;,&quot;swift&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;c#&quot;,&quot;javascript&quot;,&quot;go&quot;,&quot;groovy&quot;,&quot;php&quot;,&quot;python&quot;,&quot;ruby&quot;,&quot;swift&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,7 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="csharp">csharp</a>
+              <a href="#" data-language-name="c#">c#</a>
               <a href="#" data-language-name="javascript">javascript</a>
               <a href="#" data-language-name="go">go</a>
               <a href="#" data-language-name="groovy">groovy</a>
@@ -257,13 +257,13 @@
                     <a href="#get-application-details" class="toc-h2 toc-link" data-title="Get Application details">Get Application details</a>
                   </li>
                   <li>
-                    <a href="#update-application-details" class="toc-h2 toc-link" data-title="Update Application details">Update Application details</a>
-                  </li>
-                  <li>
-                    <a href="#get-application-tokens" class="toc-h2 toc-link" data-title="Get Application tokens">Get Application tokens</a>
+                    <a href="#update-an-application" class="toc-h2 toc-link" data-title="Update an Application">Update an Application</a>
                   </li>
                   <li>
                     <a href="#delete-an-application" class="toc-h2 toc-link" data-title="Delete an Application">Delete an Application</a>
+                  </li>
+                  <li>
+                    <a href="#list-application-tokens" class="toc-h2 toc-link" data-title="List Application Tokens">List Application Tokens</a>
                   </li>
               </ul>
           </li>
@@ -288,13 +288,16 @@
                     <a href="#list-users" class="toc-h2 toc-link" data-title="List Users">List Users</a>
                   </li>
                   <li>
-                    <a href="#post-users" class="toc-h2 toc-link" data-title="Post Users">Post Users</a>
+                    <a href="#create-a-user" class="toc-h2 toc-link" data-title="Create a User">Create a User</a>
                   </li>
                   <li>
-                    <a href="#update-users" class="toc-h2 toc-link" data-title="Update Users">Update Users</a>
+                    <a href="#update-a-user" class="toc-h2 toc-link" data-title="Update a User">Update a User</a>
                   </li>
                   <li>
-                    <a href="#delete-users" class="toc-h2 toc-link" data-title="Delete Users">Delete Users</a>
+                    <a href="#delete-a-user" class="toc-h2 toc-link" data-title="Delete a User">Delete a User</a>
+                  </li>
+                  <li>
+                    <a href="#list-user-kyc-applications" class="toc-h2 toc-link" data-title="List User KYC Applications">List User KYC Applications</a>
                   </li>
               </ul>
           </li>
@@ -329,6 +332,9 @@
                     <a href="#download-kyc-application-document" class="toc-h2 toc-link" data-title="Download KYC Application Document">Download KYC Application Document</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#orchestration" class="toc-h1 toc-link" data-title="Orchestration">Orchestration</a>
           </li>
           <li>
             <a href="#networks" class="toc-h1 toc-link" data-title="Networks">Networks</a>
@@ -387,7 +393,7 @@
                     <a href="#list-nodes-for-a-network" class="toc-h2 toc-link" data-title="List Nodes for a Network">List Nodes for a Network</a>
                   </li>
                   <li>
-                    <a href="#create-a-new-network-node" class="toc-h2 toc-link" data-title="Create a new Network Node">Create a new Network Node</a>
+                    <a href="#deploy-a-network-node" class="toc-h2 toc-link" data-title="Deploy a Network Node">Deploy a Network Node</a>
                   </li>
                   <li>
                     <a href="#retrieve-a-network-node" class="toc-h2 toc-link" data-title="Retrieve a Network Node">Retrieve a Network Node</a>
@@ -413,7 +419,7 @@
                     <a href="#configure-a-new-connector" class="toc-h2 toc-link" data-title="Configure a new Connector">Configure a new Connector</a>
                   </li>
                   <li>
-                    <a href="#get-details-for-a-specific-connector" class="toc-h2 toc-link" data-title="Get details for a Specific Connector">Get details for a Specific Connector</a>
+                    <a href="#retrieve-a-connector" class="toc-h2 toc-link" data-title="Retrieve a Connector">Retrieve a Connector</a>
                   </li>
                   <li>
                     <a href="#delete-a-specific-connector" class="toc-h2 toc-link" data-title="Delete a Specific Connector">Delete a Specific Connector</a>
@@ -444,7 +450,7 @@
                     <a href="#list-contracts" class="toc-h2 toc-link" data-title="List Contracts">List Contracts</a>
                   </li>
                   <li>
-                    <a href="#deploy-a-new-contract" class="toc-h2 toc-link" data-title="Deploy a new Contract">Deploy a new Contract</a>
+                    <a href="#deploy-a-contract" class="toc-h2 toc-link" data-title="Deploy a Contract">Deploy a Contract</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-contract" class="toc-h2 toc-link" data-title="Get a Specific Contract">Get a Specific Contract</a>
@@ -464,7 +470,7 @@
                     <a href="#create-a-token" class="toc-h2 toc-link" data-title="Create a Token">Create a Token</a>
                   </li>
                   <li>
-                    <a href="#get-details-for-a-specific-token" class="toc-h2 toc-link" data-title="Get details for a Specific Token">Get details for a Specific Token</a>
+                    <a href="#retrieve-a-token" class="toc-h2 toc-link" data-title="Retrieve a Token">Retrieve a Token</a>
                   </li>
               </ul>
           </li>
@@ -532,11 +538,9 @@
 <li><a href="https://github.com/provideservices/provide-swift">Swift</a></li>
 </ul>
 <h1 id='authorization'>Authorization</h1>
-<p>Provide uses API tokens to authorize the vast majority of platform requests. An API token is encoded using JWT, signed, and contains a representation of the authorized entity in the JWT subject (<code>sub</code>). Unless otherwise noted, all requests must include a <code>Authorization</code> header such as:</p>
+<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is encoded using JWT, signed, and contains a representation of the authorized entity (i.e., a <code>User</code> or <code>Application</code> which owns the <code>Token</code>) in the JWT subject (<code>sub</code>). Unless otherwise noted, all requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
 
-<p><code>Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64</code></p>
-
-<p>The <code>bearer</code> authorization header is scoped to an authorized platform <code>User</code> or an <code>Application</code> as described above. This header may contain a sub to further limit scope to a specific token, smart contract, wallet or other entity.</p>
+<p>The bearer <code>Authorization</code> header is scoped to an authorized platform <code>User</code> or an <code>Application</code> as described above.</p>
 <h1 id='pagination'>Pagination</h1>
 <p>Collection endpoints which return large datasets support the following pagination query parameters:</p>
 
@@ -604,15 +608,19 @@
 </tr>
 <tr>
 <td><code>500 Internal Server Error</code></td>
-<td>Platform encountered an internal error during processing</td>
+<td>The request resulted in an internal error during processing</td>
 </tr>
 <tr>
-<td><code>503 Not Implemented</code></td>
-<td>Platform does not implement the requested method</td>
+<td><code>501 Not Implemented</code></td>
+<td>The requested resource is not implemented by the platform</td>
+</tr>
+<tr>
+<td><code>503 Service Unavailable</code></td>
+<td>The request cannot be fulfiled due to temporary unavailability of a backend service</td>
 </tr>
 </tbody></table>
 <h1 id='rate-limits'>Rate Limits</h1>
-<p>The Provide API reserves the right to implement rate limits on certain API calls in the future.</p>
+<p>We reserve the right to enforce rate limits on certain API calls in the future.</p>
 <h1 id='applications'>Applications</h1><h2 id='list-applications'>List Applications</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/applications
@@ -622,86 +630,64 @@ HTTP/2 200
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf6ae66a-7cba-48ce-bbd5-9dcd674267be"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T01:28:52.704799Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d9d62e8-0acf-47cd-b74f-52c1f96f8397"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enterprise Advantage"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6fd50c17-0d3f-463f-811e-0015e0373f1a"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T01:30:05.575747Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b8afffd7-cb0a-49b4-bb61-fac83ce9673e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-07T09:04:16.500210244Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa51a87f-f142-4341-8e94-b4b0214a009f"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d9d62e8-0acf-47cd-b74f-52c1f96f8397"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process Turbo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provide Payments"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint enumerates platform Applications visible to the authorized caller.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/applications</code></p>
+<p>List platform <code>Application</code>s visible to the authorized <code>User</code>.</p>
 <h2 id='create-an-application'>Create an Application</h2><pre class="highlight shell tab-shell"><code>curl -i -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/applications <span class="se">\</span>
-    -d <span class="s1">'{"name": "SavvyApp"}'</span>
+    -d <span class="s1">'{"name": "Provide Payments", "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f"}'</span>
 HTTP/2 201
 </code></pre>
 <blockquote>
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77cb2094-9a99-4de6-ac86-bbd2353b49c8"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T02:03:19.617250119Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000-0000-0000-0000-000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d9d62e8-0acf-47cd-b74f-52c1f96f8397"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SavvyExec"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b8afffd7-cb0a-49b4-bb61-fac83ce9673e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-07T09:04:16.500210244Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa51a87f-f142-4341-8e94-b4b0214a009f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d9d62e8-0acf-47cd-b74f-52c1f96f8397"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provide Payments"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new Application on behalf of the authorized platform User.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/applications</code></p>
 <h2 id='get-application-details'>Get Application details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
-    https://ident.provide.services/api/v1/applications/cf6ae66a-7cba-48ce-bbd5-9dcd674267be
+    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e
 HTTP/2 200
 </code></pre>
 <blockquote>
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cf6ae66a-7cba-48ce-bbd5-9dcd674267be"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T01:28:52.704799Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d9d62e8-0acf-47cd-b74f-52c1f96f8397"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enterprise Advantage"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b8afffd7-cb0a-49b4-bb61-fac83ce9673e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-07T09:04:16.500210244Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa51a87f-f142-4341-8e94-b4b0214a009f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40bc70bf-1140-4978-99bc-b8b800672842"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provide Payments"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the details of the specified Application.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/vi/applications/:id</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -714,17 +700,15 @@ HTTP/2 200
 <td>id of the <code>Application</code></td>
 </tr>
 </tbody></table>
-<h2 id='update-application-details'>Update Application details</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
+<h2 id='update-an-application'>Update an Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
     -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
-    https://ident.provide.services/api/v1/applications/6fd50c17-0d3f-463f-811e-0015e0373f1a <span class="se">\</span>
-    -d <span class="s1">'{"name": "Turbo Process"}'</span>
+    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e <span class="se">\</span>
+    -d <span class="s1">'{"name": "ProvidePay"}'</span>
 HTTP/2 204
 </code></pre>
-<p>This endpoint updates details of the specified Application.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT /api/vi/applications/:id</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>Update an <code>Application</code>.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -736,7 +720,36 @@ HTTP/2 204
 <td>id of the <code>Application</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-application-tokens'>Get Application tokens</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='delete-an-application'>Delete an Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
+    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
+    https://ident.provide.services/api/v1/applications/ba562b25-ff4e-4f9d-a332-31550ead9f41
+HTTP/2 501
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not implemented"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Delete an <code>Application</code>.</p>
+
+<p><i>(Not yet implemented)</i></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>id of the <code>Application</code></td>
+</tr>
+</tbody></table>
+<h2 id='list-application-tokens'>List Application Tokens</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/applications/cf6ae66a-7cba-48ce-bbd5-9dcd674267be/tokens
 HTTP/2 200
@@ -755,41 +768,8 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint fetches the Tokens of the specified Application.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET /api/vi/applications/:id/tokens</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>id of the <code>Application</code></td>
-</tr>
-</tbody></table>
-<h2 id='delete-an-application'>Delete an Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
-    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
-    https://ident.provide.services/api/v1/applications/77cb2094-9a99-4de6-ac86-bbd2353b49c8
-HTTP/2 501
-</code></pre>
-<blockquote>
-<p>Response JSON:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not implemented"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint removes the specified Application.</p>
-
-<p><i>(Not yet implemented)</i></p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>DELETE /api/vi/applications/:id</code></p>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<p>List <code>Token</code>s associated with the specified <code>Application</code>.</p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -829,8 +809,6 @@ HTTP/2 200
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates previously authorized Tokens for the authorized User or Application.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/tokens</code></p>
 <h2 id='authorize-an-api-token'>Authorize an API Token</h2><pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
     -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
@@ -852,17 +830,13 @@ HTTP/2 201
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint authorizes a Token on behalf of the authorized User or Application.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/tokens</code></p>
+<p>This endpoint authorizes a <code>Token</code> on behalf of a <code>User</code> or <code>Application</code>.</p>
 <h2 id='delete-tokens'>Delete Tokens</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/tokens/84557020-0180-4e87-ae01-ffa05a587df4
 HTTP/2 204
 </code></pre>
 <p>This endpoint destroys a previously authorized <code>Token</code> on behalf of the authorized <code>User</code> or <code>Application</code>.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE /api/v1/tokens/:id</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -888,25 +862,21 @@ HTTP/2 200
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7fc90f5a-45e3-42ed-84b9-c13aed6481f1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T02:29:30.580961Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EntArchitect"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"big-arch@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$TzD5muUNH0BFrfwwzsuthOlipQ45e5q3ba8l8wIB9ESPD4d5z/e5G"</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"big-arch@example.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"876e4fc6-b379-432c-8f76-7e42a955d527"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T02:21:14.531578Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SavvyExec"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vip@example.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$5ebxXX.iWe7OMOHr5CGeye6.G/uj3sb4gRzXxyCEYI2B6KCFYRrz."</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vip@example.com"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint enumerates previously created Users for the authorized Application.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/users</code></p>
-<h2 id='post-users'>Post Users</h2><pre class="highlight shell tab-shell"><code>curl -i -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+<p>List <code>User</code>s for the authorized <code>Application</code>.</p>
+<h2 id='create-a-user'>Create a User</h2><pre class="highlight shell tab-shell"><code>curl -i -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/users <span class="se">\</span>
-    -d <span class="s1">'{"name": "SavvyExec", "email": "vip@example.com", password": "Str0ngPa55w0rd"}'</span>
+    -d <span class="s1">'{"name": "Vitalik Buterin", "email": "vitalik@example.com", password": "3sWWKn7jQhbj#XW5CXTappB!E6WzwZuc"}'</span>
 HTTP/2 201
 </code></pre>
 <blockquote>
@@ -916,25 +886,41 @@ HTTP/2 201
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"876e4fc6-b379-432c-8f76-7e42a955d527"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-09T02:21:14.531577683Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SavvyExec"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vip@example.com"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vitalik Buterin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vitalik@example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new platform User or a User on behalf of an authorized Application.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/users</code></p>
-<h2 id='update-users'>Update Users</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
+<p>Create a new platform <code>User</code> or a <code>User</code> on behalf of an authorized <code>Application</code>.</p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>full name of the <code>User</code></td>
+</tr>
+<tr>
+<td>email</td>
+<td>valid email for the <code>User</code>; must be a valid email address which can receive email</td>
+</tr>
+<tr>
+<td>application_id</td>
+<td>id of the <code>Application</code> with which the <code>User</code> will be associated</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-user'>Update a User</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
     -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/users/876e4fc6-b379-432c-8f76-7e42a955d527 <span class="se">\</span>
-    -d <span class="s1">'{"name": "Professional Executive"}'</span>
+    -d <span class="s1">'{"password": "the new password"}'</span>
 HTTP/2 204
 </code></pre>
-<p>This endpoint updates an existing User record.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PUT /api/vi/users/:id</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>This endpoint updates an existing <code>User</code>.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -943,10 +929,10 @@ HTTP/2 204
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>id of the Application</td>
+<td>id of the <code>User</code></td>
 </tr>
 </tbody></table>
-<h2 id='delete-users'>Delete Users</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
+<h2 id='delete-a-user'>Delete a User</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/users/876e4fc6-b379-432c-8f76-7e42a955d527
 HTTP/2 501
@@ -963,9 +949,7 @@ HTTP/2 501
 <p>This endpoint removes a User record.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>DELETE /api/vi/users/:id</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -974,7 +958,105 @@ HTTP/2 501
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>id of the Application</td>
+<td>id of the <code>User</code></td>
+</tr>
+</tbody></table>
+<h2 id='list-user-kyc-applications'>List User KYC Applications</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
+    https://ident.provide.services/api/v1/users/876e4fc6-b379-432c-8f76-7e42a955d527/kyc_applications
+HTTP/2 200
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5286091c-a6ea-4546-9212-9c50925289f3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-04T14:53:34.497081-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"876e4fc6-b379-432c-8f76-7e42a955d527"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d03c423f58747da9ced20bfee199975"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"man"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vitalik Buterin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d03c423f58747da9ced20bfee199975"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ednaScoreCard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"er"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reportedRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule fired from sandbox"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sandbox Rule"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPT"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ruleId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1002</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"testResults"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"right"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"fired"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1559889000000</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"etr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:20"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:31"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:2"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:28"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"sc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"mtid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d26c9dbb0174f38b57d76091b979928"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rcd"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d26c9dbb0174f38b57d76091b979928"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>List <code>KYCApplication</code>s associated with the specified <code>User</code>.</p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>id of the <code>User</code></td>
 </tr>
 </tbody></table>
 <h1 id='user-authentication'>User Authentication</h1>
@@ -1436,7 +1518,7 @@ HTTP/2 200
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Download a document attached to a KYC application.</p>
-<h1 id='networks'>Networks</h1><h2 id='list-networks'>List Networks</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h1 id='orchestration'>Orchestration</h1><h1 id='networks'>Networks</h1><h2 id='list-networks'>List Networks</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/networks
 HTTP/2 200
@@ -1745,8 +1827,6 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates available blockchain Networks and related configuration details.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/networks</code></p>
 <h2 id='create-a-network'>Create a Network</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/networks <span class="se">\</span>
@@ -2153,8 +2233,6 @@ HTTP/2 201
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new <code>Network</code>. Depending on the configured protocol, certain configuration items must be present.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/networks</code></p>
 <h2 id='retrieve-network-details'>Retrieve Network Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50
@@ -2376,8 +2454,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves details for the given Network.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2397,8 +2473,6 @@ HTTP/2 200
 HTTP/2 204
 </code></pre>
 <p>This endpoint updates a given Network.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PUT /api/v1/networks/:id</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2458,8 +2532,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint checks the status of the given Network..</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/status</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2487,8 +2559,6 @@ HTTP/2 501
 <p>This endpoint enumerates the addresses of the given Network.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/addresses</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2516,8 +2586,6 @@ HTTP/2 501
 <p>This endpoint enumerates the blocks of the given Network.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/blocks</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2552,8 +2620,6 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates the contracts of the given Network.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/contracts</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2611,8 +2677,6 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates the transactions of the given Network.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/transactions</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2680,8 +2744,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the details of the Network’s specified Transaction.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/transactions/:transactionId</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2766,8 +2828,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the details of the Network&#39;s specified Contract.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/contracts/:contractId</code></p>
 <h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2799,8 +2859,6 @@ HTTP/2 501
 <p>This endpoint enumerates the specified Network’s Connectors.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/connectors</code></p>
 <h3 id='url-parameters-10'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2828,8 +2886,6 @@ HTTP/2 501
 <p>This endpoint enumerates the specified Network’s Bridges.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-13'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/bridges</code></p>
 <h3 id='url-parameters-11'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2856,8 +2912,6 @@ HTTP/2 501
 <p>This endpoint enumerates the specified Network’s Oracles.</p>
 
 <p><i> (Not yet implemented) </i></p>
-<h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/oracles</code></p>
 <h3 id='url-parameters-12'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2876,8 +2930,6 @@ HTTP/2 501
 HTTP/2 200
 </code></pre>
 <p>This endpoint enumerates the specified Network’s Tokens.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/tokens</code></p>
 <h3 id='url-parameters-13'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2938,8 +2990,6 @@ HTTP/2 200
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates the specified Network’s Nodes.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/nodes</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2952,7 +3002,7 @@ HTTP/2 200
 <td>id of the network</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-new-network-node'>Create a new Network Node</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='deploy-a-network-node'>Deploy a Network Node</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer youR-ToKEn'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/nodes <span class="se">\</span>
     -d <span class="s1">'{
@@ -3018,9 +3068,7 @@ HTTP/2 200
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new Node on the given Network.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/networks/:id/nodes</code></p>
+<p>Configure a <code>NetworkNode</code> to join a specific peer-to-peer <code>Network</code>. Upon successful validation and creation of the <code>NetworkNode</code> the platform attempts to deploy it asynchronously. Depending on the <code>Network</code> (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed <code>NetworkNode</code> occurs. See [Orchestration]</p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3161,8 +3209,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the details of the Network’s specified Node.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/nodes/:nodeId</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3211,8 +3257,6 @@ HTTP/2 200
 ]
 </code></pre>
 <p>This endpoint retrieves the logs for the specified Node.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /api/v1/networks/:id/nodes/:nodeId/logs</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3235,8 +3279,6 @@ HTTP/2 200
 HTTP/2 204
 </code></pre>
 <p>This endpoint removes the Network’s specified Node.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE /api/v1/networks/:id/nodes/:nodeId</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3276,8 +3318,6 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates configured Connectors.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/connectors</code></p>
 <h2 id='configure-a-new-connector'>Configure a new Connector</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/applications/25b6339c-f11f-4a00-94d7-0a6e9b64586d/connectors <span class="se">\</span>
@@ -3310,9 +3350,7 @@ HTTP/2 201
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint configures a new Connector.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/connectors</code></p>
-<h2 id='get-details-for-a-specific-connector'>Get details for a Specific Connector</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='retrieve-a-connector'>Retrieve a Connector</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/connectors/9e5e269a-f074-49e2-8383-ab94a33ae30a
 HTTP/2 501
@@ -3327,8 +3365,6 @@ HTTP/2 501
 <p>This endpoint retrieves the details for the specified Connector.</p>
 
 <p><i> (Not yet implemented) </i></p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/connectors/:id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3347,8 +3383,6 @@ HTTP/2 501
 HTTP/2 204
 </code></pre>
 <p>This endpoint removes the specified Connector.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>DELETE /api/v1/connectors/:id</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3372,18 +3406,12 @@ HTTP/2 200
 </blockquote>
 
 <p>This endpoint enumerates managed oracle contracts.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/oracles</code></p>
 <h2 id='create-and-deploy-an-oracle'>Create and deploy an Oracle</h2>
 <p>This endpoint creates a managed Oracle smart contract and deploys it to a Network. Upon successful deployment, the data feed will be consumed and written onto the ledger associated with the Network.</p>
 
 <p><i> (Not yet implemented)</i></p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/oracles</code></p>
 <h2 id='get-a-specific-oracle'>Get a Specific Oracle</h2>
 <p>This endpoint retrieves details for a specific oracle.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/oracles/:id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3431,9 +3459,7 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates managed smart contracts.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/contracts</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3447,7 +3473,7 @@ HTTP/2 200
 <td>Filters token contracts from the response</td>
 </tr>
 </tbody></table>
-<h2 id='deploy-a-new-contract'>Deploy a new Contract</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='deploy-a-contract'>Deploy a Contract</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/contracts <span class="se">\</span>
     -d <span class="s1">'{"network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
@@ -3529,8 +3555,6 @@ HTTP/2 201
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deploys a new contract.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/contracts</code></p>
 <h2 id='get-a-specific-contract'>Get a Specific Contract</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/contracts/55271393-34c7-4d53-8aa8-4a4b06554c1a
@@ -3604,9 +3628,7 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves details for the specified Contract.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/contracts/:id</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3633,8 +3655,6 @@ HTTP/2 202
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint executes specific functionality encapsulated within a given Contract.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST /api/v1/contracts/:id/execute</code></p>
 <h3 id='request-body-details'>Request Body details</h3>
 <ul>
 <li><code>wallet_id</code> is the signing identity to use for the request</li>
@@ -3642,7 +3662,7 @@ HTTP/2 202
 <li><code>params</code> is an array of values to pass as arguments to the method</li>
 <li><code>value</code> is the amount of token transfer</li>
 </ul>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3668,15 +3688,11 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates managed Token contracts.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/tokens</code></p>
 <h2 id='create-a-token'>Create a Token</h2>
 <p>This endpoint creates a new Token.</p>
 
 <p><i>(Not yet implemented)</i></p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/tokens</code></p>
-<h2 id='get-details-for-a-specific-token'>Get details for a Specific Token</h2>
+<h2 id='retrieve-a-token'>Retrieve a Token</h2>
 <p><code>curl -i \
      -H &#39;content-type: application/json&#39; \
      -H &#39;authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE&#39; \
@@ -3720,8 +3736,6 @@ HTTP/2 200
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint enumerates transactions.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/transactions</code></p>
 <h2 id='post-a-transaction-using-a-wallet'>Post a Transaction using a Wallet</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
@@ -3832,8 +3846,6 @@ HTTP/2 422
 <p>This endpoint prepares and signs a protocol Transaction using a Wallet on behalf of a specific application User and broadcasts the transaction to the public blockchain Network.</p>
 
 <p>Under certain conditions, calling this API will result in a transaction being created which requires lifecycle management (i.e., in the case when a managed Sidechain has been configured to scale micropayment channels and/or coalesce an application’s transactions for on-chain settlement).</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/transactions</code></p>
 <h2 id='retrieve-a-transaction'>Retrieve a Transaction</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
@@ -3890,8 +3902,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves details for a specific Transaction.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/transactions/:id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3927,8 +3937,6 @@ HTTP/2 200
 <p>This endpoint enumerates wallets used for storing cryptocurrency or tokens on behalf of Provide users managing cryptographic material (i.e., for signing transactions).</p>
 
 <aside class="warning">Balances are returned as null here for performance reasons; see  <code>GET /api/v1/wallets/:id</code> to get balance details in the native currency for the network.</aside>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/wallets</code></p>
 <h2 id='create-a-wallet'>Create a Wallet</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
@@ -3951,8 +3959,6 @@ HTTP/2 201
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a managed Wallet (signing identity) capable of storing cryptocurrencies native to a specified Network.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST /api/v1/wallets</code></p>
 <h2 id='wallet-details'>Wallet Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
@@ -3974,8 +3980,6 @@ HTTP/2 200
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves Network-specific details for a specific Wallet.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET /api/v1/wallets/:id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3992,8 +3996,6 @@ HTTP/2 200
 <p>This endpoint retrieves details of a specific <code>Wallet</code> balance by token contract.</p>
 
 <p><i>(Not yet implemented)</i></p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /api/v1/wallets/:id/balances/:tokenId</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -4015,7 +4017,7 @@ HTTP/2 200
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="csharp">csharp</a>
+                <a href="#" data-language-name="c#">c#</a>
                 <a href="#" data-language-name="javascript">javascript</a>
                 <a href="#" data-language-name="go">go</a>
                 <a href="#" data-language-name="groovy">groovy</a>
