@@ -1368,6 +1368,12 @@ x-total-results-count: 5
 
 List available peer-to-peer networks and related configuration details.
 
+### Query Parameters
+
+Parameter | Description | Default
+--------- | ----------- | -----------
+public | flag for displaying public networks | `false`
+cloneable | flag for filtering by cloneability of network config | n/a
 
 ## Create a Network
 
