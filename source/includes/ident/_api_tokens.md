@@ -37,8 +37,6 @@ HTTP/2 200
 This endpoint enumerates previously authorized Tokens for the authorized User or Application.
 
 
-
-
 ## Authorize an API Token
 
 
@@ -50,7 +48,6 @@ curl -i -XPOST \
     -d '{"name": "PurposeToken"}'
 HTTP/2 201
 ```
-
 
 > Response JSON:
 

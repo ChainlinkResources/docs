@@ -6,7 +6,6 @@
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://goldmine.provide.services/api/v1/networks
-
 HTTP/2 200
 date: Fri, 07 Jun 2019 21:49:17 GMT
 content-type: application/json; charset=UTF-8
@@ -92,7 +91,7 @@ x-total-results-count: 5
             "chainspec_abi_url": "https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.abi.json",
             "chainspec_url": "https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.json",
             "cloneable_cfg": {
-                "_security": {
+                "security": {
                     "egress": "*",
                     "ingress": {
                         "0.0.0.0/0": {
@@ -330,7 +329,7 @@ x-total-results-count: 5
             "chainspec_abi_url": null,
             "chainspec_url": "https://raw.githubusercontent.com/poanetwork/poa-chain-spec/dai/spec.json",
             "cloneable_cfg": {
-                "_security": {
+                "security": {
                     "egress": "*",
                     "ingress": {
                         "0.0.0.0/0": {
@@ -1145,7 +1144,7 @@ x-total-results-count: 5
             "chainspec_abi_url": null,
             "chainspec_url": null,
             "cloneable_cfg": {
-                "_security": {
+                "security": {
                     "egress": "*",
                     "ingress": {
                         "0.0.0.0/0": {
@@ -1504,7 +1503,7 @@ curl -i \
             "chainspec_abi_url": null,
             "chainspec_url": null,
             "cloneable_cfg": {
-              "_security": {
+              "security": {
                 "egress": "*",
                 "ingress": {
                   "0.0.0.0/0": {
@@ -1719,7 +1718,7 @@ HTTP/2 201
     "chainspec_abi_url": null,
     "chainspec_url": null,
     "cloneable_cfg": {
-      "_security": {
+      "security": {
         "egress": "*",
         "ingress": {
           "0.0.0.0/0": {
@@ -1948,7 +1947,7 @@ HTTP/2 200
         "chainspec_abi_url": null,
         "chainspec_url": null,
         "cloneable_cfg": {
-            "_security": {
+            "security": {
                 "egress": "*",
                 "ingress": {
                     "0.0.0.0/0": {

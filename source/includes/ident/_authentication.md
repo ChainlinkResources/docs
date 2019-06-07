@@ -1,4 +1,4 @@
-# User Authentication
+## User Authentication
 
 You can build applications that leverage Provide to authenticate your users. Note that the `User` and the associated credentials (i.e., email and password) are the same as the ones used to [login](https://dawn.provide.services/login) to the Provide platform.
 
