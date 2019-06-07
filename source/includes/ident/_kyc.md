@@ -102,7 +102,7 @@ HTTP/2 200
 ]
 ```
 
-Enumerate KYC applications visible to the authorized `User` or `Application`.
+List KYC applications visible to the authorized `User` or `Application`.
 
 ## Create a KYC Application
 
@@ -111,7 +111,7 @@ curl -i -XPOST \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/kyc_applications \
     -d '{"params":{"man": "Joe Lubin"}}'
-HTTP/2 200
+HTTP/2 201
 ```
 
 > Response JSON:
@@ -133,15 +133,16 @@ HTTP/2 200
 }
 ```
 
-Retrieve a previously submitted KYC application and enrich it with the latest third-party representation. This is useful to check the remediation status of an application.
+Create a KYC application using the specified third-party `provider`.
 
 ### Request Parameters
 
-Name | Description
---------- | -----------
-provider | third-party KYC provider; delegate to whom the KYC API gateway will passthrough `params`
-params | KYC application parameters specific to the third-party `provider`
-type | `kyc` or `kyb`
+Name | Type | Default | Description
+--------- | ----------- | ----------- | -----------
+provider | string | `"identitymind"` | third-party KYC provider; delegate to whom the KYC API gateway will passthrough `params`
+params | object | `nil` | KYC application parameters specific to the third-party `provider`
+type | string | `"kyc"` | KYC application type (`kyc` or `kyb`)
+status | string | `"pending"` | the status of the KYC application; must be a valid state transition in the context of the application's current state
 
 For `provider`-specific `params` reference, please see [Third-Party API Support](#third-party-api-support).
 
@@ -245,12 +246,12 @@ Update a previously submitted KYC application and asynchronously resubmit it to 
 
 ### Request Parameters
 
-Name | Description
---------- | -----------
-provider | third-party KYC provider; delegate to whom the KYC API gateway will passthrough `params`
-params | KYC application parameters specific to the third-party `provider`
-type | KYC application type (`kyc` or `kyb`)
-status | the status of the KYC application; must be a valid state transition in the context of the application's current state
+Name | Type | Description
+--------- | ----------- | -----------
+provider | string | third-party KYC provider; delegate to whom the KYC API gateway will passthrough `params`
+params | object | KYC application parameters specific to the third-party `provider`
+type | string | KYC application type (`kyc` or `kyb`)
+status | string | the status of the KYC application; must be a valid state transition in the context of the application's current state
 
 For `provider`-specific `params` reference, please see [Third-Party API Support](#third-party-api-support).
 
