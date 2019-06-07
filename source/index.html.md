@@ -1,58 +1,61 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-# shell
+language_tabs:
   - shell
+  - csharp
+  - javascript
+  - go
+  - groovy
+  - php
+  - python
+  - ruby
+  - swift
 
 includes:
-  - ident
-  - goldmine
-  - errors
+  - authorization
+  - pagination
+  - status_codes
+  - rate_limits
+
+  - ident/applications
+  - ident/api_tokens
+  - ident/users
+  - ident/authentication
+  - ident/kyc
+
+  - goldmine/networks
+  - goldmine/network_nodes
+  - goldmine/load_balancers
+  - goldmine/connectors
+  - goldmine/bridges
+  - goldmine/oracles
+  - goldmine/contracts
+  - goldmine/tokens
+  - goldmine/transactions
+  - goldmine/wallets
+
+  - bookie/billing_accounts
+  - bookie/payment_methods
+  - bookie/payment_hubs
+  - bookie/payment_channels
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the [Provide](http://provide.services/) ident and goldmine API  portal. Ident microservice lets you manage Provide platform users and applications. Goldmine API gives you the power to leverage public blockchain information in building best-of-breed applications. Both ident and goldmine are RESTful.
+Welcome to the [Provide](http://provide.services) API. Provided here is all the documentation you need to orchestrate global blockchain networks, build revolutionary new services built using the Provide Platform. With your ingenuity, together we can serve the needs of individuals and organizations across the globe and change the financial services ecosystem forever.
 
-# Authentication
+# Client Libraries
 
-> To authorize a Token on behalf of an authorized User or Application:
+Client libraries are available on [Github](https://github.com/provideservices). The following repositories make our client libraries available to the community:
 
-```shell
-curl -i -H 'content-type: application/json' \
-    https://ident.provide.services/api/v1/authenticate \
-    -d '{"email": "user42@domain.tld", "password": "S00perS3cr3t"}'
-HTTP/2 201
-```
-
-> The above command returns JSON structured like this:
-
-```
-{
-    "user": {
-        "id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-        "created_at": "2018-10-08T23:34:18.70074Z",
-        "name": "Doc U. Mentation",
-        "email": "user42@domain.tld"
-    },
-    "token": {
-        "id": "52d9caf3-0a56-4670-886e-8136b633d52b",
-        "token": "yoUr-AutH-TOKeN-FrOm-sIgnINg-in"
-    }
-}
-```
-
-Provide uses API keys to allow access to the API. If you already have an account on the [Provide console](https://dawn.provide.services/sign-in), you can get a token by simply deploying an application. We recommend you check the status of the service before making requests.
-
-Provide expects for the key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: bearer yoUr-AutH-TOKeN-FrOm-sIgnINg-in`
-
-The `bearer` authorization header is scoped to an authorized platform user or application. This header may contain a sub to further limit scope to a specific token, smart contract, wallet or other entity.
-
-<aside class="success">
-To receive a token, use the email and password you used to create a Provide account.
-</aside>
+- [C#](https://github.com/provideservices/provide-dotnet)
+- [Javascript](https://github.com/provideservices/provide-js)
+- [Go](https://github.com/provideservices/provide-go)
+- [Groovy](https://github.com/provideservices/provide-groovy)
+- [PHP](https://github.com/provideservices/provide-php)
+- [Python](https://github.com/provideservices/provide-python)
+- [Ruby](https://github.com/provideservices/provide-ruby)
+- [Swift](https://github.com/provideservices/provide-swift)
