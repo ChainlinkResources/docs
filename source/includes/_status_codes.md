@@ -12,5 +12,6 @@ Status Code | Meaning
 `403 Forbidden` | The supplied API `Authorization` header does not have permission to access the requested resource
 `404 Not Found` | Platform did not find the requested resource
 `429 Too Many Requests` | The request was not accepted due to exceeding the rate limit
-`500 Internal Server Error` | Platform encountered an internal error during processing
-`503 Not Implemented` | Platform does not implement the requested method
+`500 Internal Server Error` | The request resulted in an internal error during processing
+`501 Not Implemented` | The requested resource is not implemented by the platform
+`503 Service Unavailable` | The request cannot be fulfiled due to temporary unavailability of a backend service

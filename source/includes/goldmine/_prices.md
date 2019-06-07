@@ -23,6 +23,4 @@ HTTP/2 200
 This endpoint retrieves real-time pricing data for major currency pairs and supported tokens.
 
 
-### HTTP Request
 
-`GET /api/v1/prices`

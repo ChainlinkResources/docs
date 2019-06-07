@@ -36,9 +36,7 @@ HTTP/2 200
 
 This endpoint enumerates previously authorized Tokens for the authorized User or Application.
 
-### HTTP Request
 
-`GET /api/v1/tokens`
 
 
 ## Authorize an API Token
@@ -69,11 +67,9 @@ HTTP/2 201
 ]
 ```
 
-This endpoint authorizes a Token on behalf of the authorized User or Application.
+This endpoint authorizes a `Token` on behalf of a `User` or `Application`.
 
-### HTTP Request
 
-`POST /api/v1/tokens`
 
 
 ## Delete Tokens
@@ -88,9 +84,7 @@ HTTP/2 204
 
 This endpoint destroys a previously authorized `Token` on behalf of the authorized `User` or `Application`.
 
-### HTTP Request
 
-`DELETE /api/v1/tokens/:id`
 
 ### Query Parameters
 

@@ -13,38 +13,21 @@ HTTP/2 200
 
 ```json
 [
-  {
-        "id": "cf6ae66a-7cba-48ce-bbd5-9dcd674267be",
-        "created_at": "2018-10-09T01:28:52.704799Z",
-        "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-        "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-        "name": "Enterprise Advantage",
-        "description": null,
-        "config": {
-            "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4"
-        },
-        "hidden": false
-    },
     {
-        "id": "6fd50c17-0d3f-463f-811e-0015e0373f1a",
-        "created_at": "2018-10-09T01:30:05.575747Z",
-        "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
+        "id": "b8afffd7-cb0a-49b4-bb61-fac83ce9673e",
+        "created_at": "2019-06-07T09:04:16.500210244Z",
+        "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f",
         "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-        "name": "Process Turbo",
+        "name": "Provide Payments",
         "description": null,
-        "config": {
-            "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4"
-        },
+        "config": null,
         "hidden": false
     }
 ]
 ```
 
-This endpoint enumerates platform Applications visible to the authorized caller.
+List platform `Application`s visible to the authorized `User`.
 
-### HTTP Request
-
-`GET /api/v1/applications`
 
 ## Create an Application
 
@@ -52,41 +35,35 @@ This endpoint enumerates platform Applications visible to the authorized caller.
 curl -i -H 'content-type: application/json' \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/applications \
-    -d '{"name": "SavvyApp"}'
+    -d '{"name": "Provide Payments", "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f"}'
 HTTP/2 201
 ```
-
 
 > Response JSON:
 
 ```json
 [
-  {
-    "id": "77cb2094-9a99-4de6-ac86-bbd2353b49c8",
-    "created_at": "2018-10-09T02:03:19.617250119Z",
-    "network_id": "00000000-0000-0000-0000-000000000000",
-    "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-    "name": "SavvyExec",
-    "description": null,
-    "config": null,
-    "hidden": false
-}
+    {
+        "id": "b8afffd7-cb0a-49b4-bb61-fac83ce9673e",
+        "created_at": "2019-06-07T09:04:16.500210244Z",
+        "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f",
+        "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
+        "name": "Provide Payments",
+        "description": null,
+        "config": null,
+        "hidden": false
+    }
 ]
 ```
 
 This endpoint creates a new Application on behalf of the authorized platform User.
 
-### HTTP Request
-
-`POST /api/v1/applications`
-
 ## Get Application details
-
 
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/cf6ae66a-7cba-48ce-bbd5-9dcd674267be
+    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e
 HTTP/2 200
 ```
 
@@ -95,27 +72,21 @@ HTTP/2 200
 
 ```json
 [
-  {
-    "id": "cf6ae66a-7cba-48ce-bbd5-9dcd674267be",
-    "created_at": "2018-10-09T01:28:52.704799Z",
-    "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-    "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-    "name": "Enterprise Advantage",
-    "description": null,
-    "config": {
-        "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4"
-    },
-    "hidden": false
-}
+    {
+        "id": "b8afffd7-cb0a-49b4-bb61-fac83ce9673e",
+        "created_at": "2019-06-07T09:04:16.500210244Z",
+        "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f",
+        "user_id": "40bc70bf-1140-4978-99bc-b8b800672842",
+        "name": "Provide Payments",
+        "description": null,
+        "config": null,
+        "hidden": false
+    }
 ]
 ```
 
 This endpoint retrieves the details of the specified Application.
 
-### HTTP Request
-
-`GET /api/vi/applications/:id`
-
 ### Query Parameters
 
 Parameter | Description
@@ -123,32 +94,57 @@ Parameter | Description
 id | id of the `Application`
 
 
-## Update Application details
-
+## Update an Application
 
 ```shell
 curl -i -XPUT \
     -H 'content-type: application/json' \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/6fd50c17-0d3f-463f-811e-0015e0373f1a \
-    -d '{"name": "Turbo Process"}'
+    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e \
+    -d '{"name": "ProvidePay"}'
 HTTP/2 204
 ```
 
-This endpoint updates details of the specified Application.
+Update an `Application`.
 
-### HTTP Request
-
-`PUT /api/vi/applications/:id`
-
-### Query Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | id of the `Application`
 
 
-## Get Application tokens
+## Delete an Application
+
+```shell
+curl -i -XDELETE \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
+    https://ident.provide.services/api/v1/applications/ba562b25-ff4e-4f9d-a332-31550ead9f41
+HTTP/2 501
+```
+
+> Response JSON:
+
+```json
+[
+  {
+    "message": "not implemented"
+}
+]
+```
+
+Delete an `Application`.
+
+<i>(Not yet implemented)</i>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Application`
+
+
+## List Application Tokens
 
 ```shell
 curl -i \
@@ -156,7 +152,6 @@ curl -i \
     https://ident.provide.services/api/v1/applications/cf6ae66a-7cba-48ce-bbd5-9dcd674267be/tokens
 HTTP/2 200
 ```
-
 
 > Response JSON:
 
@@ -173,48 +168,9 @@ HTTP/2 200
 ]
 ```
 
-This endpoint fetches the Tokens of the specified Application.
+List `Token`s associated with the specified `Application`.
 
-### HTTP Request
-
-`GET /api/vi/applications/:id/tokens`
-
-### Query Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the `Application`
-
-## Delete an Application
-
-
-```shell
-curl -i -XDELETE \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/77cb2094-9a99-4de6-ac86-bbd2353b49c8
-HTTP/2 501
-```
-
-
-> Response JSON:
-
-```json
-[
-  {
-    "message": "not implemented"
-}
-]
-```
-
-This endpoint removes the specified Application.
-
-<i>(Not yet implemented)</i>
-
-### HTTP Request
-
-`DELETE /api/vi/applications/:id`
-
-### Query Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------

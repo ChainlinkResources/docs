@@ -16,9 +16,7 @@ HTTP/2 200
 This endpoint enumerates managed oracle contracts.
 
 
-### HTTP Request
 
-`GET /api/v1/oracles`
 
 
 ## Create and deploy an Oracle
@@ -28,9 +26,7 @@ This endpoint creates a managed Oracle smart contract and deploys it to a Networ
 
 <i> (Not yet implemented)</i>
 
-### HTTP Request
 
-`POST /api/v1/oracles`
 
 
 ## Get a Specific Oracle
@@ -39,9 +35,7 @@ This endpoint creates a managed Oracle smart contract and deploys it to a Networ
 This endpoint retrieves details for a specific oracle.
 
 
-### HTTP Request
 
-`GET /api/v1/oracles/:id`
 
 ### URL Parameters
 

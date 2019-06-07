@@ -54,18 +54,13 @@ HTTP/2 200
 
 This endpoint enumerates the specified Network’s Nodes.
 
-
-### HTTP Request
-
-`GET /api/v1/networks/:id/nodes`
-
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | id of the network
 
-## Create a new Network Node
+## Deploy a Network Node
 
 ```shell
 curl -i \
@@ -136,12 +131,7 @@ curl -i \
 }
 ```
 
-This endpoint creates a new Node on the given Network.
-
-
-### HTTP Request
-
-`POST /api/v1/networks/:id/nodes`
+Configure a `NetworkNode` to join a specific peer-to-peer `Network`. Upon successful validation and creation of the `NetworkNode` the platform attempts to deploy it asynchronously. Depending on the `Network` (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed `NetworkNode` occurs. See [Orchestration]
 
 ### URL Parameters
 
@@ -283,11 +273,6 @@ HTTP/2 200
 
 This endpoint retrieves the details of the Network’s specified Node.
 
-
-### HTTP Request
-
-`GET /api/v1/networks/:id/nodes/:nodeId`
-
 ### URL Parameters
 
 Parameter | Description
@@ -333,11 +318,6 @@ HTTP/2 200
 
 This endpoint retrieves the logs for the specified Node.
 
-
-### HTTP Request
-
-`GET /api/v1/networks/:id/nodes/:nodeId/logs`
-
 ### URL Parameters
 
 Parameter | Description
@@ -354,13 +334,7 @@ curl -i -XDELETE \
 HTTP/2 204
 ```
 
-
 This endpoint removes the Network’s specified Node.
-
-
-### HTTP Request
-
-`DELETE /api/v1/networks/:id/nodes/:nodeId`
 
 ### URL Parameters
 

@@ -42,17 +42,15 @@ HTTP/2 200
 This endpoint enumerates managed smart contracts.
 
 
-### HTTP Request
 
-`GET /api/v1/contracts`
 
-### URL Parameters
+### Query Parameters
 
 Parameter | Default | Description
 --------- | ----- | -----------
 filter_tokens | true | Filters token contracts from the response
 
-## Deploy a new Contract
+## Deploy a Contract
 
 ```shell
 curl -i \
@@ -141,9 +139,7 @@ HTTP/2 201
 This endpoint deploys a new contract.
 
 
-### HTTP Request
 
-`POST /api/v1/contracts`
 
 
 ## Get a Specific Contract
@@ -226,9 +222,7 @@ HTTP/2 200
 This endpoint retrieves details for the specified Contract.
 
 
-### HTTP Request
 
-`GET /api/v1/contracts/:id`
 
 ### URL Parameters
 
@@ -258,9 +252,7 @@ HTTP/2 202
 This endpoint executes specific functionality encapsulated within a given Contract.
 
 
-### HTTP Request
 
-`POST /api/v1/contracts/:id/execute`
 
 ### Request Body details
 

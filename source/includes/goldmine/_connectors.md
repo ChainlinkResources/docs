@@ -29,9 +29,7 @@ HTTP/2 200
 
 This endpoint enumerates configured Connectors.
 
-### HTTP Request
 
-`GET /api/v1/connectors`
 
 
 ## Configure a new Connector
@@ -73,12 +71,10 @@ HTTP/2 201
 This endpoint configures a new Connector.
 
 
-### HTTP Request
-
-`POST /api/v1/connectors`
 
 
-## Get details for a Specific Connector
+
+## Retrieve a Connector
 
 ```shell
 curl -i \
@@ -99,9 +95,7 @@ This endpoint retrieves the details for the specified Connector.
 
 <i> (Not yet implemented) </i>
 
-### HTTP Request
 
-`GET /api/v1/connectors/:id`
 
 ### URL Parameters
 
@@ -122,9 +116,7 @@ HTTP/2 204
 This endpoint removes the specified Connector.
 
 
-### HTTP Request
 
-`DELETE /api/v1/connectors/:id`
 
 ### URL Parameters
 

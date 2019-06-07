@@ -315,9 +315,7 @@ HTTP/2 200
 
 This endpoint enumerates available blockchain Networks and related configuration details.
 
-### HTTP Request
 
-`GET /api/v1/networks`
 
 ## Create a Network
 
@@ -731,9 +729,7 @@ HTTP/2 201
 
 This endpoint creates a new `Network`. Depending on the configured protocol, certain configuration items must be present.
 
-### HTTP Request
 
-`POST /api/v1/networks`
 
 ## Retrieve Network Details
 
@@ -963,9 +959,7 @@ HTTP/2 200
 This endpoint retrieves details for the given Network.
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id`
 
 ### URL Parameters
 
@@ -987,9 +981,7 @@ HTTP/2 204
 This endpoint updates a given Network.
 
 
-### HTTP Request
 
-`PUT /api/v1/networks/:id`
 
 ### URL Parameters
 
@@ -1051,9 +1043,7 @@ HTTP/2 200
 This endpoint checks the status of the given Network..
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/status`
 
 ### URL Parameters
 
@@ -1083,9 +1073,7 @@ This endpoint enumerates the addresses of the given Network.
 
 <i> (Not yet implemented)</i>
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/addresses`
 
 ### URL Parameters
 
@@ -1114,9 +1102,7 @@ This endpoint enumerates the blocks of the given Network.
 
 <i> (Not yet implemented)</i>
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/blocks`
 
 ### URL Parameters
 
@@ -1152,9 +1138,7 @@ HTTP/2 200
 
 This endpoint enumerates the contracts of the given Network.
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/contracts`
 
 ### URL Parameters
 
@@ -1214,9 +1198,7 @@ HTTP/2 200
 This endpoint enumerates the transactions of the given Network.
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/transactions`
 
 ### URL Parameters
 
@@ -1286,9 +1268,7 @@ HTTP/2 200
 This endpoint retrieves the details of the Network’s specified Transaction.
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/transactions/:transactionId`
 
 ### URL Parameters
 
@@ -1372,9 +1352,7 @@ HTTP/2 200
 This endpoint retrieves the details of the Network's specified Contract.
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/contracts/:contractId`
 
 ### URL Parameters
 
@@ -1404,9 +1382,7 @@ This endpoint enumerates the specified Network’s Connectors.
 
 <i> (Not yet implemented)</i>
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/connectors`
 
 ### URL Parameters
 
@@ -1436,9 +1412,7 @@ This endpoint enumerates the specified Network’s Bridges.
 <i> (Not yet implemented)</i>
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/bridges`
 
 ### URL Parameters
 
@@ -1467,9 +1441,7 @@ This endpoint enumerates the specified Network’s Oracles.
 <i> (Not yet implemented) </i>
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/oracles`
 
 ### URL Parameters
 
@@ -1490,9 +1462,7 @@ HTTP/2 200
 This endpoint enumerates the specified Network’s Tokens.
 
 
-### HTTP Request
 
-`GET /api/v1/networks/:id/tokens`
 
 ### URL Parameters
 

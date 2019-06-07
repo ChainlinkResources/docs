@@ -20,9 +20,7 @@ HTTP/2 200
 
 This endpoint enumerates managed Token contracts.
 
-### HTTP Request
 
-`GET /api/v1/tokens`
 
 
 ## Create a Token
@@ -32,12 +30,10 @@ This endpoint creates a new Token.
 
 <i>(Not yet implemented)</i>
 
-### HTTP Request
-
-`POST /api/v1/tokens`
 
 
-## Get details for a Specific Token
+
+## Retrieve a Token
 
 ```curl -i \
      -H 'content-type: application/json' \

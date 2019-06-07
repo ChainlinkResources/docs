@@ -36,9 +36,7 @@ HTTP/2 200
 This endpoint enumerates transactions.
 
 
-### HTTP Request
 
-`GET /api/v1/transactions`
 
 
 ## Post a Transaction using a Wallet
@@ -159,9 +157,7 @@ This endpoint prepares and signs a protocol Transaction using a Wallet on behalf
 Under certain conditions, calling this API will result in a transaction being created which requires lifecycle management (i.e., in the case when a managed Sidechain has been configured to scale micropayment channels and/or coalesce an application’s transactions for on-chain settlement).
 
 
-### HTTP Request
 
-`POST /api/v1/transactions`
 
 
 ## Retrieve a Transaction
@@ -227,9 +223,7 @@ HTTP/2 200
 This endpoint retrieves details for a specific Transaction.
 
 
-### HTTP Request
 
-`GET /api/v1/transactions/:id`
 
 ### URL Parameters
 
