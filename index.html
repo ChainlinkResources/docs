@@ -1190,12 +1190,12 @@ HTTP/2 200
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Enumerate KYC applications visible to the authorized <code>User</code> or <code>Application</code>.</p>
+<p>List KYC applications visible to the authorized <code>User</code> or <code>Application</code>.</p>
 <h2 id='create-a-kyc-application'>Create a KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/kyc_applications <span class="se">\</span>
     -d <span class="s1">'{"params":{"man": "Joe Lubin"}}'</span>
-HTTP/2 200
+HTTP/2 201
 </code></pre>
 <blockquote>
 <p>Response JSON:</p>
@@ -1215,25 +1215,39 @@ HTTP/2 200
     </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Retrieve a previously submitted KYC application and enrich it with the latest third-party representation. This is useful to check the remediation status of an application.</p>
+<p>Create a KYC application using the specified third-party <code>provider</code>.</p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
+<th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>provider</td>
+<td>string</td>
+<td><code>&quot;identitymind&quot;</code></td>
 <td>third-party KYC provider; delegate to whom the KYC API gateway will passthrough <code>params</code></td>
 </tr>
 <tr>
 <td>params</td>
+<td>object</td>
+<td><code>nil</code></td>
 <td>KYC application parameters specific to the third-party <code>provider</code></td>
 </tr>
 <tr>
 <td>type</td>
-<td><code>kyc</code> or <code>kyb</code></td>
+<td>string</td>
+<td><code>&quot;kyc&quot;</code></td>
+<td>KYC application type (<code>kyc</code> or <code>kyb</code>)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td><code>&quot;pending&quot;</code></td>
+<td>the status of the KYC application; must be a valid state transition in the context of the application&#39;s current state</td>
 </tr>
 </tbody></table>
 
@@ -1334,23 +1348,28 @@ HTTP/2 202
 <table><thead>
 <tr>
 <th>Name</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>provider</td>
+<td>string</td>
 <td>third-party KYC provider; delegate to whom the KYC API gateway will passthrough <code>params</code></td>
 </tr>
 <tr>
 <td>params</td>
+<td>object</td>
 <td>KYC application parameters specific to the third-party <code>provider</code></td>
 </tr>
 <tr>
 <td>type</td>
+<td>string</td>
 <td>KYC application type (<code>kyc</code> or <code>kyb</code>)</td>
 </tr>
 <tr>
 <td>status</td>
+<td>string</td>
 <td>the status of the KYC application; must be a valid state transition in the context of the application&#39;s current state</td>
 </tr>
 </tbody></table>
