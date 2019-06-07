@@ -1,16 +1,16 @@
 ---
 title: API Reference
 
-language_tabs:
+language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - c#
-  - javascript
-  - go
-  - groovy
-  - php
-  - python
-  - ruby
-  - swift
+  # - csharp
+  # - go
+  # - groovy
+  # - javascript
+  # - php
+  # - python
+  # - ruby
+  # - swift
 
 includes:
   - introduction
