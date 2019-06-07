@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the [Provide](http://provide.services) API. Provided here is all the documentation you need to orchestrate global blockchain networks, build revolutionary new services built using the Provide Platform. With your ingenuity, together we can serve the needs of individuals and organizations across the globe and change the financial services ecosystem forever.
+Welcome to the [Provide Platform](http://provide.services) API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.
 
 # Client Libraries
 

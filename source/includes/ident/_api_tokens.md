@@ -90,4 +90,4 @@ This endpoint destroys a previously authorized `Token` on behalf of the authoriz
 
 Parameter | Description
 --------- | -----------
-id | The ID of the `Token` to delete
+id | id of the `Token`
