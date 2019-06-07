@@ -2893,6 +2893,25 @@ x-total-results-count: 5
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>List available peer-to-peer networks and related configuration details.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>public</td>
+<td>flag for displaying public networks</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>cloneable</td>
+<td>flag for filtering by cloneability of network config</td>
+<td>n/a</td>
+</tr>
+</tbody></table>
 <h2 id='create-a-network'>Create a Network</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/networks <span class="se">\</span>
