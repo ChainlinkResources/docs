@@ -31,7 +31,7 @@ HTTP/2 200
     "application_id": null,
     "user_id": "00d4adc9-b0ca-4c94-9d90-3c61f696b8bd",
     "provider": "identitymind",
-    "identifier": "3d03c423f58747da9ced20bfee199975",
+    "identifier": "9d26c9dbb0174f38b57d76091b979928",
     "type": "kyc",
     "status": "accepted",
     "params": {
