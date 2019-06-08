@@ -56,7 +56,7 @@ HTTP/2 201
 }
 ```
 
-Creates a custodial `Wallet` (also referred to as a signing identity) capable of storing cryptocurrencies and tokens and signing transactions native to a specific `Network`.
+Creates a `Wallet` (also referred to as a signing identity) capable of storing cryptocurrencies and tokens native to a specific `Network`. A `Wallet` may be setup as custodial or non-custodial. If the `Wallet` is custodial then the platform will sign and broadcast transactions to the `Network` on behalf of an authorized `User` or `Application`.
 
 
 ## Retrieve Wallet Details
