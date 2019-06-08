@@ -5054,7 +5054,7 @@ HTTP/2 201
     </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Creates a custodial <code>Wallet</code> (also referred to as a signing identity) capable of storing cryptocurrencies and tokens and signing transactions native to a specific <code>Network</code>.</p>
+<p>Creates a <code>Wallet</code> (also referred to as a signing identity) capable of storing cryptocurrencies and tokens native to a specific <code>Network</code>. A <code>Wallet</code> may be setup as custodial or non-custodial. If the <code>Wallet</code> is custodial then the platform will sign and broadcast transactions to the <code>Network</code> on behalf of an authorized <code>User</code> or <code>Application</code>.</p>
 <h2 id='retrieve-wallet-details'>Retrieve Wallet Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
