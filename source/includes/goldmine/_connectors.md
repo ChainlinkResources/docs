@@ -27,12 +27,10 @@ HTTP/2 200
     }
 ```
 
-This endpoint enumerates configured Connectors.
+List configured connectors.
 
 
-
-
-## Configure a new Connector
+## Create Connector
 
 ```shell
 curl -i \
@@ -68,42 +66,21 @@ HTTP/2 201
 }
 ```
 
-This endpoint configures a new Connector.
+Create a new connector using the given configuration.
 
 
+## Retrieve Connector Details
 
-
-
-## Retrieve a Connector
-
-```shell
-curl -i \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-    https://goldmine.provide.services/api/v1/connectors/9e5e269a-f074-49e2-8383-ab94a33ae30a
-HTTP/2 501
-```
-
-> Response JSON:
-
-```json
-{
-    "message": "not implemented"
-}
-```
-
-This endpoint retrieves the details for the specified Connector.
-
-<i> (Not yet implemented) </i>
-
-
+<i>Documentation forthcoming.</i>
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
+id | id of the `Connector`
 
-## Delete a Specific Connector
+
+## Delete Connector
 
 ```shell
 curl -i -XDELETE \
@@ -112,14 +89,10 @@ curl -i -XDELETE \
 HTTP/2 204
 ```
 
-
-This endpoint removes the specified Connector.
-
-
-
+Delete a configured connector.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the connector
+id | id of the `Connector`

@@ -1,6 +1,6 @@
-# Nodes
+# Network Nodes
 
-## List Nodes for a Network
+## List Network Nodes
 
 ```shell
 curl -i \
@@ -58,9 +58,10 @@ This endpoint enumerates the specified Network’s Nodes.
 
 Parameter | Description
 --------- | -----------
-id | id of the network
+id | id of the `Network`
 
-## Deploy a Network Node
+
+## Deploy Network Node
 
 ```shell
 curl -i \
@@ -131,15 +132,16 @@ curl -i \
 }
 ```
 
-Configure a `NetworkNode` to join a specific peer-to-peer `Network`. Upon successful validation and creation of the `NetworkNode` the platform attempts to deploy it asynchronously. Depending on the `Network` (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed `NetworkNode` occurs. See [Orchestration]
+Configure a `NetworkNode` to join a specific peer-to-peer `Network`. Upon successful validation and creation of the `NetworkNode` the platform attempts to deploy it asynchronously. Depending on the `Network` (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed `NetworkNode` occurs. See [Orchestration](#orchestration).
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
+id | id of the `Network`
 
-## Retrieve a Network Node
+
+## Retrieve Network Node Details
 
 ```shell
 curl -i \
@@ -277,10 +279,11 @@ This endpoint retrieves the details of the Network’s specified Node.
 
 Parameter | Description
 --------- | -----------
-id | id of the network
-nodeId | The ID of the specified Node
+id | id of the `Network`
+nodeId | id of the `NetworkNode`
 
-## Get logs for a specific Network Node
+
+## Retreive Network Node Logs
 
 ```shell
 curl -i \
@@ -316,16 +319,17 @@ HTTP/2 200
 ]
 ```
 
-This endpoint retrieves the logs for the specified Node.
+This endpoint retrieves paginated logs for a network node.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
-nodeId | The ID of the specified Node
+id | id of the `Network`
+nodeId | the id of the `NetworkNode`
 
-## Delete a Specific Node
+
+## Undeploy Network Node
 
 ```shell
 curl -i -XDELETE \
@@ -334,11 +338,11 @@ curl -i -XDELETE \
 HTTP/2 204
 ```
 
-This endpoint removes the Network’s specified Node.
+Undeploy a `NetworkNode`.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
-nodeId | The ID of the specified Node
+id | id of the `Network`
+nodeId | the id of the `NetworkNode`

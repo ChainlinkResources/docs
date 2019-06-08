@@ -30,9 +30,6 @@ This endpoint enumerates wallets used for storing cryptocurrency or tokens on be
 <aside class="warning">Balances are returned as null here for performance reasons; see  <code>GET /api/v1/wallets/:id</code> to get balance details in the native currency for the network.</aside>
 
 
-
-
-
 ## Create a Wallet
 
 ```shell
@@ -59,10 +56,7 @@ HTTP/2 201
 }
 ```
 
-This endpoint creates a managed Wallet (signing identity) capable of storing cryptocurrencies native to a specified Network.
-
-
-
+Creates a custodial `Wallet` (signing identity) capable of storing cryptocurrencies and tokens native to a specific `Network`.
 
 
 ## Wallet Details
@@ -90,23 +84,7 @@ HTTP/2 200
 }
 ```
 
-This endpoint retrieves Network-specific details for a specific Wallet.
-
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the wallet
-
-## Get Wallet balance by Contract
-
-This endpoint retrieves details of a specific `Wallet` balance by token contract.
-
-<i>(Not yet implemented)</i>
-
+Fetch network-specific details about a `Wallet`.
 
 
 ### URL Parameters
@@ -114,4 +92,17 @@ This endpoint retrieves details of a specific `Wallet` balance by token contract
 Parameter | Description
 --------- | -----------
 id | id of the wallet
-tokenId | id of the token contract for which to retrieve the balance
+
+
+## Wallet Token Balance
+
+This endpoint retrieves on-chain token balance details for a specific `Wallet` and `Token` contract.
+
+<i>Documentation forthcoming.</i>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Wallet`
+tokenId | id of the `Token` contract for which to retrieve the balance

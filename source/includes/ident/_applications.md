@@ -29,7 +29,7 @@ HTTP/2 200
 List platform `Application`s visible to the authorized `User`.
 
 
-## Create an Application
+## Create Application
 
 ```shell
 curl -i -H 'content-type: application/json' \
@@ -56,9 +56,10 @@ HTTP/2 201
 ]
 ```
 
-This endpoint creates a new Application on behalf of the authorized platform User.
+Creates a new logical `Application` on behalf of the authorized platform `User`.
 
-## Get Application details
+
+## Retrieve Application details
 
 ```shell
 curl -i \
@@ -66,7 +67,6 @@ curl -i \
     https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e
 HTTP/2 200
 ```
-
 
 > Response JSON:
 
@@ -85,7 +85,7 @@ HTTP/2 200
 ]
 ```
 
-This endpoint retrieves the details of the specified Application.
+Retrieve details for an `Application`.
 
 ### Query Parameters
 
@@ -94,48 +94,18 @@ Parameter | Description
 id | id of the `Application`
 
 
-## Update an Application
+## Update Application
 
 ```shell
 curl -i -XPUT \
     -H 'content-type: application/json' \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e \
-    -d '{"name": "ProvidePay"}'
+    -d '{"enabled": false}'
 HTTP/2 204
 ```
 
 Update an `Application`.
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the `Application`
-
-
-## Delete an Application
-
-```shell
-curl -i -XDELETE \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/ba562b25-ff4e-4f9d-a332-31550ead9f41
-HTTP/2 501
-```
-
-> Response JSON:
-
-```json
-[
-  {
-    "message": "not implemented"
-}
-]
-```
-
-Delete an `Application`.
-
-<i>(Not yet implemented)</i>
 
 ### URL Parameters
 

@@ -25,11 +25,17 @@ includes:
   - ident/authentication
   # - ident/connect
   - ident/kyc
+  - bookie/billing_accounts
+  - bookie/payment_methods
+  - bookie/payment_hubs
+  - bookie/payment_channels
   - divider
-  - orchestration
   - goldmine/networks
   - goldmine/network_nodes
   - goldmine/load_balancers
+  - orchestration
+  - consensus
+  - divider
   - goldmine/connectors
   - goldmine/bridges
   - goldmine/oracles
@@ -37,11 +43,6 @@ includes:
   - goldmine/tokens
   - goldmine/transactions
   - goldmine/wallets
-  - divider
-  - bookie/billing_accounts
-  - bookie/payment_methods
-  - bookie/payment_hubs
-  - bookie/payment_channels
 
 search: true
 ---

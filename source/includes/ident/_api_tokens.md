@@ -2,14 +2,12 @@
 
 ## List API Tokens
 
-
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/tokens
 HTTP/2 200
 ```
-
 
 > Response JSON:
 
@@ -37,8 +35,7 @@ HTTP/2 200
 This endpoint enumerates previously authorized Tokens for the authorized User or Application.
 
 
-## Authorize an API Token
-
+## Create API Token
 
 ```shell
 curl -i -XPOST \
@@ -67,10 +64,7 @@ HTTP/2 201
 This endpoint authorizes a `Token` on behalf of a `User` or `Application`.
 
 
-
-
-## Delete Tokens
-
+## Delete API Token
 
 ```shell
 curl -i -XDELETE \
@@ -81,9 +75,7 @@ HTTP/2 204
 
 This endpoint destroys a previously authorized `Token` on behalf of the authorized `User` or `Application`.
 
-
-
-### Query Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------

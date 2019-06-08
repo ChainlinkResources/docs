@@ -39,18 +39,16 @@ HTTP/2 200
     }
 ```
 
-This endpoint enumerates managed smart contracts.
-
-
-
+List smart contracts visible to the authorized `User` or `Application`.
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ----- | -----------
-filter_tokens | true | Filters token contracts from the response
+filter_tokens | `true` | flat to indicate if `Token` contracts should be filtered from the response
 
-## Deploy a Contract
+
+## Deploy Contract
 
 ```shell
 curl -i \
@@ -136,13 +134,10 @@ HTTP/2 201
 }
 ```
 
-This endpoint deploys a new contract.
+Deploy a smart contract to a specific `Network`.
 
 
-
-
-
-## Get a Specific Contract
+## Retrieve Contract Details
 
 ```shell
 curl -i \
@@ -219,25 +214,23 @@ HTTP/2 200
 }
 ```
 
-This endpoint retrieves details for the specified Contract.
-
-
-
+Retrieves details for a `Contract`.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the contract
+id | id of the `Contract`
 
-## Execute a Specific Contract
+
+## Execute Contract
 
 ```shell
 curl -i \
      -H 'content-type: application/json' \
      -H 'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
      https://goldmine.provide.services/api/v1/contracts/3b9fe62e-5da7-43dc-838f-3cfa1421ed0f/execute \
-     -d '{"wallet_id": "a-signing-identity-identifier", "method": "a_method_from_the_contract", "params": ["arguments", "for", "the", "method"], "value": 0.5}'
+     -d '{"wallet_id": "63b15ede-318b-45be-a7ba-bf965bbd0c2e", "method": "a_method_from_the_contract", "params": ["arguments", "for", "the", "method"], "value": 0}'
 HTTP/2 202
 ```
 
@@ -245,24 +238,24 @@ HTTP/2 202
 
 ```json
 {
-    "ref": "specifics-depend-on-the-nature-of-the-contract-and-method"
+    "confidence": null,
+    "ref": "c73d01f0-bd1c-452d-b198-b7b322432285"
 }
 ```
 
 This endpoint executes specific functionality encapsulated within a given Contract.
 
+### Request Parameters
 
-
-
-### Request Body details
-
-- `wallet_id` is the signing identity to use for the request
-- `method` is the function name from the contract to invoke
-- `params` is an array of values to pass as arguments to the method
-- `value` is the amount of token transfer
+Parameter | Description
+--------- | -----------
+wallet_id | id of the `Wallet`  signing identity to use for the request
+method | method name to invoke in the contract
+params | array of arguments to be encoded and provided to the `method` invocation
+value | the payment to be included with the transaction, in the network's native currency
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the contract
+id | id of the `Contract`

@@ -2013,38 +2013,14 @@ HTTP/2 200
 }
 ```
 
-This endpoint retrieves details for the given Network.
-
-
-
+Retrieve details for a network.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
+id | id of the `Network`
 
-## Update a Network
-
-```shell
-curl -i -XPUT \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50 \
-    -d '{"name": "provide.network \"unicorn\" testnet CLONE now with more update"}'
-HTTP/2 204
-```
-
-
-This endpoint updates a given Network.
-
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the network
 
 ## Retrieve Network Status
 
@@ -2097,16 +2073,32 @@ HTTP/2 200
 }
 ```
 
-This endpoint checks the status of the given Network..
-
-
-
+Retrieve the syncing status and, if fully-synced, real-time network-specific metrics and metadata.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
+id | id of the `Network`
+
+
+## Update a Network
+
+```shell
+curl -i -XPUT \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
+    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50 \
+    -d '{"enabled": false}'
+HTTP/2 204
+```
+
+Update the network.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
 
 
 ## List Network Addresses
@@ -2167,6 +2159,40 @@ Parameter | Description
 --------- | -----------
 id | id of the network
 
+## List Network Connectors
+
+List connectors for the network.
+
+<i>Documentation forthcoming.</i>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+
+## List Network Bridges
+
+<i>Documentation forthcoming.</i>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+
+
+## List Network Oracles
+
+<i>Documentation forthcoming.</i>
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+
+
 ## List Network Contracts
 
 ```shell
@@ -2193,15 +2219,31 @@ HTTP/2 200
     }
 ```
 
-This endpoint enumerates the contracts of the given Network.
-
-
+Retrieve a list of network contracts.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | id of the network
+
+## List Network Token Contracts
+
+```shell
+curl -i \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
+    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/tokens
+HTTP/2 200
+```
+
+List token contracts for the network.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+
 
 ## List Network Transactions
 
@@ -2252,87 +2294,13 @@ HTTP/2 200
     }
 ```
 
-This endpoint enumerates the transactions of the given Network.
-
-
-
+List network transactions.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the network
-
-## Retrieve a Transaction
-
-```shell
-curl -i \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/transactions/f1125746-fa73-4392-a935-7a57faf3f7b0
-HTTP/2 200
-```
-
-> Response JSON:
-
-```json
-{
-    "id": "f1125746-fa73-4392-a935-7a57faf3f7b0",
-    "created_at": "2018-10-01T11:28:26.24501Z",
-    "application_id": null,
-    "user_id": "7062d7f8-d536-4c53-bba5-7486a8724ac3",
-    "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-    "wallet_id": "f924d014-9d76-444a-b8e1-810bd3a75319",
-    "to": null,
-    "value": 0,
-    "data": "0x6080604052604051602080612faa833981016040818152915160008054600160a060020a03831660...",
-    "hash": "0x79b9bef674435c69b25f7564c2cf216b2a3640343bce2a36067016f6a3811894",
-    "status": "success",
-    "params": null,
-    "traces": {
-        "result": [
-            {
-                "action": {
-                    "callType": null,
-                    "from": "0x8cd7e456d1276e7074b10ae94dcd25f62d1ea147",
-                    "gas": "0x2516fd",
-                    "init": "0x6080604052604051602080612faa833981016040818152915160008054600160...",
-                    "input": null,
-                    "to": null,
-                    "value": "0x0"
-                },
-                "blockHash": "0x519dd9d06775eb36d0795c469ed6892f12c5dadc881916f29cca3de9c4fd238d",
-                "blockNumber": 2348545,
-                "result": {
-                    "address": "0x2e49f7d86daf4c3590646c4c2619b2956e8e027b",
-                    "code": "0x608060405260043610620000955763ffffffff60e060020a6000350416632e9d...",
-                    "gasUsed": "0x2516fd",
-                    "output": null
-                },
-                "error": null,
-                "subtraces": 0,
-                "traceAddress": [],
-                "transactionHash": "0x79b9bef674435c69b25f7564c2cf216b2a3640343bce2a36067016f6a3811894",
-                "transactionPosition": 0,
-                "type": "create"
-            }
-        ]
-    },
-    "ref": null,
-    "description": null
-}
-```
-
-This endpoint retrieves the details of the Network’s specified Transaction.
-
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the network
-transactionId | id of the transaction
+id | id of the `Network`
 
 ## Retrieve Network Contract
 
@@ -2406,10 +2374,7 @@ HTTP/2 200
 }
 ```
 
-This endpoint retrieves the details of the Network's specified Contract.
-
-
-
+Retrieve details for a specific network contract.
 
 ### URL Parameters
 
@@ -2418,105 +2383,70 @@ Parameter | Description
 id | id of the network
 contractId | The ID of the specified contract
 
-## List Network Connectors
+
+
+
+
+## Retrieve Network Transaction
 
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50/connectors
-HTTP/2 501
-```
-
-> Response JSON:
-
-```json
-{
-    "message": "not implemented"
-}
-```
-
-This endpoint enumerates the specified Network’s Connectors.
-
-<i> (Not yet implemented)</i>
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the network
-
-## List Network Bridges
-
-```shell
-curl -i \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50/bridges
-HTTP/2 501
-```
-
-> Response JSON:
-
-```json
-{
-    "message": "not implemented"
-}
-```
-
-This endpoint enumerates the specified Network’s Bridges.
-
-<i> (Not yet implemented)</i>
-
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the network
-
-## List Network Oracles
-
-```shell
-curl -i \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50/oracles
-```
-
-> Response JSON:
-
-```json
-{
-    "message": "not implemented"
-}
-```
-
-This endpoint enumerates the specified Network’s Oracles.
-
-<i> (Not yet implemented) </i>
-
-
-
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the network
-
-## List Network Token Contracts
-
-```shell
-curl -i \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/tokens
+    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/transactions/f1125746-fa73-4392-a935-7a57faf3f7b0
 HTTP/2 200
 ```
 
+> Response JSON:
 
-This endpoint enumerates the specified Network’s Tokens.
+```json
+{
+    "id": "f1125746-fa73-4392-a935-7a57faf3f7b0",
+    "created_at": "2018-10-01T11:28:26.24501Z",
+    "application_id": null,
+    "user_id": "7062d7f8-d536-4c53-bba5-7486a8724ac3",
+    "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
+    "wallet_id": "f924d014-9d76-444a-b8e1-810bd3a75319",
+    "to": null,
+    "value": 0,
+    "data": "0x6080604052604051602080612faa833981016040818152915160008054600160a060020a03831660...",
+    "hash": "0x79b9bef674435c69b25f7564c2cf216b2a3640343bce2a36067016f6a3811894",
+    "status": "success",
+    "params": null,
+    "traces": {
+        "result": [
+            {
+                "action": {
+                    "callType": null,
+                    "from": "0x8cd7e456d1276e7074b10ae94dcd25f62d1ea147",
+                    "gas": "0x2516fd",
+                    "init": "0x6080604052604051602080612faa833981016040818152915160008054600160...",
+                    "input": null,
+                    "to": null,
+                    "value": "0x0"
+                },
+                "blockHash": "0x519dd9d06775eb36d0795c469ed6892f12c5dadc881916f29cca3de9c4fd238d",
+                "blockNumber": 2348545,
+                "result": {
+                    "address": "0x2e49f7d86daf4c3590646c4c2619b2956e8e027b",
+                    "code": "0x608060405260043610620000955763ffffffff60e060020a6000350416632e9d...",
+                    "gasUsed": "0x2516fd",
+                    "output": null
+                },
+                "error": null,
+                "subtraces": 0,
+                "traceAddress": [],
+                "transactionHash": "0x79b9bef674435c69b25f7564c2cf216b2a3640343bce2a36067016f6a3811894",
+                "transactionPosition": 0,
+                "type": "create"
+            }
+        ]
+    },
+    "ref": null,
+    "description": null
+}
+```
+
+This endpoint retrieves the details of the Network’s specified Transaction.
 
 
 
@@ -2526,3 +2456,11 @@ This endpoint enumerates the specified Network’s Tokens.
 Parameter | Description
 --------- | -----------
 id | id of the network
+transactionId | id of the transaction
+
+
+
+
+
+
+

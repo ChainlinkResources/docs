@@ -31,7 +31,7 @@ HTTP/2 200
 List `User`s for the authorized `Application`.
 
 
-## Create a User
+## Create User
 
 ```shell
 curl -i -H 'content-type: application/json' \
@@ -60,11 +60,11 @@ Create a new platform `User` or a `User` on behalf of an authorized `Application
 Parameter | Description
 --------- | -----------
 name | full name of the `User`
-email | valid email for the `User`; must be a valid email address which can receive email
+email | email address for the `User`; must be capable of receiving email at time of creation
 application_id | id of the `Application` with which the `User` will be associated
 
 
-## Update a User
+## Update User
 
 ```shell
 curl -i -XPUT \
@@ -75,7 +75,7 @@ curl -i -XPUT \
 HTTP/2 204
 ```
 
-This endpoint updates an existing `User`.
+Update an existing `User`.
 
 ### URL Parameters
 
@@ -86,26 +86,7 @@ id | id of the `User`
 
 ## Delete a User
 
-```shell
-curl -i -XDELETE \
-    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-    https://ident.provide.services/api/v1/users/876e4fc6-b379-432c-8f76-7e42a955d527
-HTTP/2 501
-```
-
-> Response JSON:
-
-```json
-[
-  {
-    "message": "not implemented"
-}
-]
-```
-
-This endpoint removes a User record.
-
-<i> (Not yet implemented)</i>
+<i>Documentation forthcoming.</i>
 
 ### URL Parameters
 
@@ -204,7 +185,7 @@ HTTP/2 200
 ]
 ```
 
-List `KYCApplication`s associated with the specified `User`.
+List `KYCApplication`s associated with a `User`.
 
 ### URL Parameters
 

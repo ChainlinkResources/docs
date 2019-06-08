@@ -2,7 +2,6 @@
 
 ## List Transactions
 
-
 ```shell
 curl -i \
      -H 'content-type: application/json' \
@@ -36,10 +35,7 @@ HTTP/2 200
 This endpoint enumerates transactions.
 
 
-
-
-
-## Post a Transaction using a Wallet
+## Create & Broadcast Transaction
 
 ```shell
 curl -i \
@@ -71,7 +67,8 @@ HTTP/2 201
     "description": null
 }
 ```
-> If the broadcast transaction represents a contract deployment, a contract will be created implicitly after deployment is confirmed with the Network. The following example represents a Contract creation with provided params specific to the Ethereum network.
+
+> If the broadcast transaction represents a contract deployment, a `Contract` will be created implicitly after deployment is confirmed with the Network. The following example represents a Contract creation with provided params specific to the Ethereum network.
 
 ```shell
 curl -i \
@@ -129,6 +126,7 @@ curl -i \
             }'
 HTTP/2 422
 ```
+
 > Response JSON:
 
 ```json
@@ -151,16 +149,10 @@ HTTP/2 422
 }
 ```
 
-
-This endpoint prepares and signs a protocol Transaction using a Wallet on behalf of a specific application User and broadcasts the transaction to the public blockchain Network.
-
-Under certain conditions, calling this API will result in a transaction being created which requires lifecycle management (i.e., in the case when a managed Sidechain has been configured to scale micropayment channels and/or coalesce an application’s transactions for on-chain settlement).
+<i>Documentation forthcoming.</i>
 
 
-
-
-
-## Retrieve a Transaction
+## Retrieve Transaction Details
 
 ```shell
 curl -i \
@@ -220,13 +212,10 @@ HTTP/2 200
 }
 ```
 
-This endpoint retrieves details for a specific Transaction.
-
-
-
+Fetch details about a specific transaction.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the Transaction
+id | id of the `Transaction`
