@@ -549,10 +549,10 @@
                       <a href="#list-wallets" class="toc-h2 toc-link" data-title="List Wallets">List Wallets</a>
                     </li>
                     <li>
-                      <a href="#create-a-wallet" class="toc-h2 toc-link" data-title="Create a Wallet">Create a Wallet</a>
+                      <a href="#create-wallet" class="toc-h2 toc-link" data-title="Create Wallet">Create Wallet</a>
                     </li>
                     <li>
-                      <a href="#wallet-details" class="toc-h2 toc-link" data-title="Wallet Details">Wallet Details</a>
+                      <a href="#retrieve-wallet-details" class="toc-h2 toc-link" data-title="Retrieve Wallet Details">Retrieve Wallet Details</a>
                     </li>
                     <li>
                       <a href="#wallet-token-balance" class="toc-h2 toc-link" data-title="Wallet Token Balance">Wallet Token Balance</a>
@@ -5033,7 +5033,7 @@ HTTP/2 200
 <p>This endpoint enumerates wallets used for storing cryptocurrency or tokens on behalf of Provide users managing cryptographic material (i.e., for signing transactions).</p>
 
 <aside class="warning">Balances are returned as null here for performance reasons; see  <code>GET /api/v1/wallets/:id</code> to get balance details in the native currency for the network.</aside>
-<h2 id='create-a-wallet'>Create a Wallet</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='create-wallet'>Create Wallet</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
      https://goldmine.provide.services/api/v1/wallets <span class="se">\</span>
@@ -5054,8 +5054,8 @@ HTTP/2 201
     </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Creates a custodial <code>Wallet</code> (signing identity) capable of storing cryptocurrencies and tokens native to a specific <code>Network</code>.</p>
-<h2 id='wallet-details'>Wallet Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<p>Creates a custodial <code>Wallet</code> (also referred to as a signing identity) capable of storing cryptocurrencies and tokens and signing transactions native to a specific <code>Network</code>.</p>
+<h2 id='retrieve-wallet-details'>Retrieve Wallet Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
      -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
      -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
      https://goldmine.provide.services/api/v1/wallets/efef1044-4958-43bc-903b-28f2bb938037
@@ -5075,7 +5075,7 @@ HTTP/2 200
     </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T20:48:37.291739Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Fetch network-specific details about a <code>Wallet</code>.</p>
+<p>Retrieve details for a <code>Wallet</code>.</p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -5085,11 +5085,11 @@ HTTP/2 200
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>id of the wallet</td>
+<td>id of the <code>Wallet</code></td>
 </tr>
 </tbody></table>
 <h2 id='wallet-token-balance'>Wallet Token Balance</h2>
-<p>This endpoint retrieves on-chain token balance details for a specific <code>Wallet</code> and <code>Token</code> contract.</p>
+<p>Retrieve the on-chain token balance details for a specific <code>Wallet</code> and <code>Token</code> contract.</p>
 
 <p><i>Documentation forthcoming.</i></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
