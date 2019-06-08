@@ -18,14 +18,14 @@ includes:
   - pagination
   - status_codes
   - rate_limits
-
+  - divider
   - ident/applications
   - ident/api_tokens
   - ident/users
   - ident/authentication
   # - ident/connect
   - ident/kyc
-
+  - divider
   - orchestration
   - goldmine/networks
   - goldmine/network_nodes
@@ -37,7 +37,7 @@ includes:
   - goldmine/tokens
   - goldmine/transactions
   - goldmine/wallets
-
+  - divider
   - bookie/billing_accounts
   - bookie/payment_methods
   - bookie/payment_hubs
