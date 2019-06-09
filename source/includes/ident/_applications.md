@@ -7,6 +7,15 @@ curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/applications
 HTTP/2 200
+date: Sun, 09 Jun 2019 04:58:25 GMT
+content-length: 872
+content-type: application/json; charset=UTF-8
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+x-total-results-count: 2
 ```
 
 > Response JSON:
@@ -14,13 +23,27 @@ HTTP/2 200
 ```json
 [
     {
-        "id": "b8afffd7-cb0a-49b4-bb61-fac83ce9673e",
-        "created_at": "2019-06-07T09:04:16.500210244Z",
-        "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f",
-        "user_id": "3d9d62e8-0acf-47cd-b74f-52c1f96f8397",
-        "name": "Provide Payments",
+        "id": "5c453bea-da24-4123-9b43-d35ded159531",
+        "created_at": "2019-06-09T05:32:24.526827-04:00",
+        "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+        "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+        "name": "providepayments",
         "description": null,
-        "config": null,
+        "config": {
+            "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9"
+        },
+        "hidden": false
+    },
+    {
+        "id": "3861ef98-332a-4666-b5de-d382c77d481c",
+        "created_at": "2019-06-09T05:40:11.911719-04:00",
+        "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+        "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+        "name": "Digitized Bill of Lading",
+        "description": null,
+        "config": {
+            "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9"
+        },
         "hidden": false
     }
 ]
@@ -49,19 +72,28 @@ curl -i -H 'content-type: application/json' \
     "name":"providepayments"
 }'
 HTTP/2 201
+date: Sun, 09 Jun 2019 04:58:25 GMT
+content-type: application/json; charset=UTF-8
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
 ```
 
 > Response JSON:
 
 ```json
 {
-    "id": "0a032196-5e9d-4aa0-afd7-a7e66dd2b963",
-    "created_at": "2019-06-09T01:35:13.044603-04:00",
+    "id": "acc45205-9043-4174-b349-8ea5aded3685",
+    "created_at": "2019-06-09T05:34:09.124485-04:00",
     "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
     "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
     "name": "providepayments",
     "description": null,
-    "config": null,
+    "config": {
+        "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9"
+    },
     "hidden": false
 }
 ```
@@ -81,25 +113,34 @@ network_id | id of the `Network` where `Application` resources will be deployed
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e
+    https://ident.provide.services/api/v1/applications/acc45205-9043-4174-b349-8ea5aded3685
 HTTP/2 200
+date: Sun, 09 Jun 2019 04:58:25 GMT
+content-length: 380
+content-type: application/json; charset=UTF-8
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+
 ```
 
 > Response JSON:
 
 ```json
-[
-    {
-        "id": "b8afffd7-cb0a-49b4-bb61-fac83ce9673e",
-        "created_at": "2019-06-07T09:04:16.500210244Z",
-        "network_id": "aa51a87f-f142-4341-8e94-b4b0214a009f",
-        "user_id": "40bc70bf-1140-4978-99bc-b8b800672842",
-        "name": "Provide Payments",
-        "description": null,
-        "config": null,
-        "hidden": false
-    }
-]
+{
+    "id": "acc45205-9043-4174-b349-8ea5aded3685",
+    "created_at": "2019-06-09T05:34:09.124485-04:00",
+    "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+    "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+    "name": "providepayments",
+    "description": null,
+    "config": {
+        "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9"
+    },
+    "hidden": true
+}
 ```
 
 Retrieve details for an `Application`.
@@ -117,8 +158,8 @@ id | id of the `Application`
 curl -i -XPUT \
     -H 'content-type: application/json' \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/b8afffd7-cb0a-49b4-bb61-fac83ce9673e \
-    -d '{"enabled": false}'
+    https://ident.provide.services/api/v1/applications/acc45205-9043-4174-b349-8ea5aded3685 \
+    -d '{"hidden": true}'
 HTTP/2 204
 ```
 
@@ -136,8 +177,17 @@ id | id of the `Application`
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/applications/cf6ae66a-7cba-48ce-bbd5-9dcd674267be/tokens
+    https://ident.provide.services/api/v1/applications/acc45205-9043-4174-b349-8ea5aded3685/tokens
 HTTP/2 200
+date: Sun, 09 Jun 2019 09:41:26 GMT
+content-length: 523
+content-type: application/json; charset=UTF-8
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+x-total-results-count: 1
 ```
 
 > Response JSON:
@@ -145,11 +195,11 @@ HTTP/2 200
 ```json
 [
     {
-        "id": "ba562b25-ff4e-4f9d-a332-31550ead9f41",
-        "created_at": "2018-10-09T01:28:52.726631Z",
-        "issued_at": "2018-10-09T01:28:52.725677Z",
+        "id": "dff4470f-69ae-47c7-96d3-409fe83aa2f9",
+        "created_at": "2019-06-09T05:34:09.129953-04:00",
+        "issued_at": "2019-06-09T05:34:09.12981-04:00",
         "expires_at": null,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNzI4NDksImp0aSI6ImRmZjQ0NzBmLTY5YWUtNDdjNy05NmQzLTQwOWZlODNhYTJmOSIsInN1YiI6ImFwcGxpY2F0aW9uOmFjYzQ1MjA1LTkwNDMtNDE3NC1iMzQ5LThlYTVhZGVkMzY4NSJ9.Nrwb6yRqYn4TJC-j_xIN9PFoAG5ap63SYkykmuY-MAA",
         "data": null
     }
 ]
