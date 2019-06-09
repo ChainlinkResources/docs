@@ -45,7 +45,7 @@ List smart contracts visible to the authorized `User` or `Application`.
 
 Parameter | Default | Description
 --------- | ----- | -----------
-filter_tokens | `true` | flat to indicate if `Token` contracts should be filtered from the response
+filter_tokens | `true` | flag to indicate if `Token` contracts should be filtered from the response
 
 
 ## Deploy Contract

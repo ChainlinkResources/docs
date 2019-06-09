@@ -5,54 +5,86 @@
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/nodes
+    https://goldmine.provide.services/api/v1/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes
 HTTP/2 200
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+content-type: application/json; charset=UTF-8
+date: Sun, 09 Jun 2019 08:18:10 GMT
+content-length: 2026
+x-total-results-count: 1
 ```
 
 > Response JSON:
 
 ```json
-{
-    "id": "59d1e7ce-3316-45b2-bf06-5fae2c6294fe",
-    "created_at": "2018-09-06T08:13:14.109926Z",
-    "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-    "user_id": "7062d7f8-d536-4c53-bba5-7486a8724ac3",
-    "is_bootnode": true,
-    "host": "ec2-18-206-200-4.compute-1.amazonaws.com",
-    "description": null,
-    "role": "peer",
-    "status": "running",
-    "config": {
-      "default_json_rpc_port": null,
-      "default_websocket_port": null,
-      "engine_id": "authorityRound",
-      "env": {
-        "BOOTNODES": "enode://eb0543bf6c960ad79...",
-        "CHAIN": "unicorn-v0",
-        "CHAIN_SPEC_URL": "https://console.provide.services:443/api/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/spec.json?x-api-authorization=MjE3Nzc4...",
-        "ENGINE_SIGNER": "0xc8cf82765ccc99e5d878A245f7eC9ECe8F9Fae4d",
-        "ENGINE_SIGNER_KEY_JSON": "{\"id\":\"120354c2-f2d5-...\"}",
-        "ENGINE_SIGNER_PRIVATE_KEY": "b9dc0beec2d7f9...",
-        "NETWORK_ID": "22",
-        "PEER_SET": "required:eb0543bf6c960ad79a9..."
-      },
-      "peer_url": "enode://46cd112cbcc91cfe410a697...",
-      "protocol_id": "poa",
-      "provider_id": "docker",
-      "region": "us-east-1",
-      "role": "peer",
-      "target_id": "aws",
-      "target_security_group_ids": [
-        "sg-0f29ec025b64c0a44"
-      ],
-      "target_task_ids": [
-        "arn:aws:ecs:us-east-1:085843810865:task/58953fe..."
-      ]
+[
+    {
+        "id": "db51383c-92cd-4f0a-8ce7-881b70c420ea",
+        "created_at": "2019-06-09T05:04:23.378247-04:00",
+        "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+        "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+        "application_id": null,
+        "is_bootnode": true,
+        "host": null,
+        "ipv4": null,
+        "ipv6": null,
+        "private_ipv4": null,
+        "private_ipv6": null,
+        "description": null,
+        "role": "validator",
+        "status": "genesis",
+        "config": {
+            "default_json_rpc_port": null,
+            "default_websocket_port": null,
+            "engine_id": "authorityRound",
+            "env": {
+                "CHAIN": "dawn",
+                "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+                "CLIENT": "parity",
+                "ENGINE_SIGNER": "0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+                "FAT_DB": "on",
+                "NETWORK_ID": "1560058202",
+                "PRUNING": "archive",
+                "TRACING": "on"
+            },
+            "protocol_id": "poa",
+            "provider_id": "docker",
+            "region": "us-east-2",
+            "role": "validator",
+            "security": {
+                "egress": "*",
+                "ingress": {
+                    "0.0.0.0/0": {
+                        "tcp": [
+                            5001,
+                            8050,
+                            8051,
+                            8080,
+                            30300
+                        ],
+                        "udp": [
+                            30300
+                        ]
+                    }
+                }
+            },
+            "target_id": "aws",
+            "target_security_group_ids": [
+                "sg-0decccab90d31da82"
+            ],
+            "target_task_ids": [
+                "arn:aws:ecs:us-east-2:085843810865:task/d7529823-332e-4004-98c3-d89058653734"
+            ]
+        }
     }
-  }
+]
 ```
 
-This endpoint enumerates the specified Network’s Nodes.
+List `NetworkNodes` for a `Network`.
 
 ### URL Parameters
 
@@ -64,33 +96,31 @@ id | id of the `Network`
 ## Deploy Network Node
 
 ```shell
-curl -i \
-    -H 'Authorization: bearer youR-ToKEn' \
-    https://goldmine.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/nodes \
+curl -i -XPOST \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNTg0NTksImp0aSI6IjU0YWZmMGQ1LTFjY2ItNDRmNy1iYTRiLTExYTA3YWFhZGM2YiIsInN1YiI6InVzZXI6NTE4MzE5MmQtYWM4NS00YzVhLWE3OGQtODAzMWE4ZDIwODc4In0.jI7S0gW__iFjbZi0o8AKyqrH8D01vpCpgV3HOh9TrUE' \
+    -H 'Content-Type: application/json' \
+    https://goldmine.provide.services/api/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes \
     -d '{
-  "network_id": "4617eb8c-4f74-4262-b626-9616ab6fa413",
-  "config": {
-    "protocol_id": "poa",
-    "engine_id": "authorityRound",
-    "target_id": "aws",
-    "provider_id": "docker",
-    "role": "validator",
-    "engines": "[{\"id\":\"authorityRound\",\"name\":\"Authority Round\",\"enabled\":true}]",
-    "providers": "[{\"id\":\"ubuntu-vm\",\"name\":\"Ubuntu\",\"...\":\"...\"}]",
-    "roles": "[{\"id\":\"peer\",\"name\":\"Peer\",\"config\":{\"...\":\"...\"]}]",
-    "credentials": {
-      "aws_access_key_id": "AKIA...",
-      "aws_secret_access_key": "MtM/6RZw0..."
-    },
-    "env": {
-      "CHAIN_SPEC_URL": "https://api.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/spec.json?x-api-authorization=eyJhbGci...",
-      "CHAIN": "unicorn-v0",
-      "ENGINE_SIGNER": "0x...",
-      "NETWORK_ID": "1539570139"
-    },
-    "rc.d": "{\n  \"CHAIN_SPEC_URL\": \"https://api.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/spec.json?x-api-authorization=eyJhbGciOiJI...\",\n  \"CHAIN\": \"unicorn-v0\",\n  \"ENGINE_SIGNER\": \"0x...\",\n  \"NETWORK_ID\": \"1539570139\",\n  \"ENGINE_SIGNER_PRIVATE_KEY\": null\n}",
-    "region": "us-east-1"
-  }
+    "config":{
+        "credentials":{
+            "aws_access_key_id":"AKIXXXXXXXXXXXXXXXXX",
+            "aws_secret_access_key":"75yXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        },
+        "engine_id":"authorityRound",
+        "env":{
+            "CHAIN_SPEC_URL":"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "ENGINE_SIGNER":"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+            "NETWORK_ID":"1560058202",
+            "FAT_DB":"on",
+            "PRUNING":"archive",
+            "TRACING":"on"
+        },
+        "protocol_id":"poa",
+        "provider_id":"docker",
+        "region":"us-east-2",
+        "role":"validator",
+        "target_id":"aws"
+    }
 }'
 ```
 
@@ -98,37 +128,36 @@ curl -i \
 
 ```json
 {
-  "id": "4721cca3-fa2e-4085-b675-c5bea777c408",
-  "created_at": "2018-10-15T02:42:10.375957413Z",
-  "network_id": "4617eb8c-4f74-4262-b626-9616ab6fa413",
-  "user_id": "7062d7f8-d536-4c53-bba5-7486a8724ac3",
-  "is_bootnode": false,
-  "host": null,
-  "description": null,
-  "role": "validator",
-  "status": "pending",
-  "config": {
-    "protocol_id": "poa",
-    "engine_id": "authorityRound",
-    "target_id": "aws",
-    "provider_id": "docker",
+    "id": "eb81ab38-4dc6-45c6-8c4d-5d5645fd3079",
+    "created_at": "2019-06-09T03:53:50.505646-04:00",
+    "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+    "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+    "application_id": null,
+    "is_bootnode": false,
+    "host": null,
+    "ipv4": null,
+    "ipv6": null,
+    "private_ipv4": null,
+    "private_ipv6": null,
+    "description": null,
     "role": "validator",
-    "engines": "[{\"id\":\"authorityRound\",\"name\":\"Authority Round\",\"enabled\":true}]",
-    "providers": "[{\"id\":\"ubuntu-vm\",\"name\":\"Ubuntu\",\"img_src_dark\":\"...\"}]",
-    "roles": "[{\"id\":\"peer\",\"name\":\"Peer\",\"config\":{...}]",
-    "credentials": {
-      "aws_access_key_id": "AKIAJ5Y...",
-      "aws_secret_access_key": "MtM/6..."
-    },
-    "env": {
-      "CHAIN_SPEC_URL": "https://api.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/spec.json?x-api-authorization=eyJhbGciOiJIUz...",
-      "CHAIN": "unicorn-v0",
-      "ENGINE_SIGNER": "0x16E8950...",
-      "NETWORK_ID": "1539570139"
-    },
-    "rc.d": "{\n  \"CHAIN_SPEC_URL\": \"https://api.provide.services/api/networks/4617eb8c-4f74-4262-b626-9616ab6fa413/spec.json?x-api-authorization=eyJhbGci...\",\n  \"CHAIN\": \"unicorn-v0\",\n  \"ENGINE_SIGNER\": \"0x...\",\n  \"NETWORK_ID\": \"1539570139\",\n  \"ENGINE_SIGNER_PRIVATE_KEY\": null\n}",
-    "region": "us-east-1"
-  }
+    "status": "pending",
+    "config": {
+        "engine_id": "authorityRound",
+        "env": {
+            "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "ENGINE_SIGNER": "0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+            "FAT_DB": "on",
+            "NETWORK_ID": "1560058202",
+            "PRUNING": "archive",
+            "TRACING": "on"
+        },
+        "protocol_id": "poa",
+        "provider_id": "docker",
+        "region": "us-east-2",
+        "role": "validator",
+        "target_id": "aws"
+    }
 }
 ```
 
@@ -140,140 +169,96 @@ Parameter | Description
 --------- | -----------
 id | id of the `Network`
 
+### Request Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+
 
 ## Retrieve Network Node Details
 
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/nodes/59d1e7ce-3316-45b2-bf06-5fae2c6294fe
+    https://goldmine.provide.services/api/v1/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes/eb81ab38-4dc6-45c6-8c4d-5d5645fd3079
 HTTP/2 200
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+content-type: application/json; charset=UTF-8
+date: Sun, 09 Jun 2019 08:18:10 GMT
+content-length: 1000
 ```
 
 > Response JSON:
 
 ```json
 {
-    "id": "59d1e7ce-3316-45b2-bf06-5fae2c6294fe",
-    "created_at": "2018-09-06T08:13:14.109926Z",
-    "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-    "user_id": "7062d7f8-d536-4c53-bba5-7486a8724ac3",
+    "id": "eb81ab38-4dc6-45c6-8c4d-5d5645fd3079",
+    "created_at": "2019-06-09T03:53:50.505646-04:00",
+    "network_id": "ef976635-545b-46c6-9576-4e3a893a68e9",
+    "user_id": "5183192d-ac85-4c5a-a78d-8031a8d20878",
+    "application_id": null,
     "is_bootnode": true,
-    "host": "ec2-18-206-200-4.compute-1.amazonaws.com",
+    "host": "ec2-3-16-28-39.us-east-2.compute.amazonaws.com",
+    "ipv4": "3.16.28.39",
+    "ipv6": null,
+    "private_ipv4": "172.31.19.91",
+    "private_ipv6": null,
     "description": null,
-    "role": "peer",
+    "role": "validator",
     "status": "running",
     "config": {
-        "credentials": {
-            "aws_access_key_id": "AKIAIF...",
-            "aws_secret_access_key": "azrrYySnS..."
-        },
         "default_json_rpc_port": null,
         "default_websocket_port": null,
         "engine_id": "authorityRound",
-        "engines": [
-            {
-                "enabled": true,
-                "id": "authorityRound",
-                "name": "Authority Round"
-            }
-        ],
         "env": {
-            "BOOTNODES": "enode://eb0543bf6c9...",
-            "CHAIN": "unicorn-v0",
-            "CHAIN_SPEC_URL": "https://console.provide.services:443/api/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/spec.json?x-api-authorization=MjE3N...",
-            "ENGINE_SIGNER": "0xc8...",
-            "ENGINE_SIGNER_KEY_JSON": "{\"id\":\"...\"}",
-            "ENGINE_SIGNER_PRIVATE_KEY": "b9dc0...",
-            "NETWORK_ID": "22",
-            "PEER_SET": "required:eb0543bf6c960a..."
+            "CHAIN": "dawn",
+            "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT": "parity",
+            "ENGINE_SIGNER": "0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+            "FAT_DB": "on",
+            "NETWORK_ID": "1560058202",
+            "PRUNING": "archive",
+            "TRACING": "on"
         },
-        "peer_url": "enode://46cd112cbcc91cfe410...",
+        "peer_url": "enode://9d83bd776c6cea1f961037ebdd0150b5ba04053038379b3c46293188052e7b98046675f6efaaea6f6851e6c5b651b9d7dd89b734564877744f3b87338090f4ca@172.31.19.91:30300",
         "protocol_id": "poa",
         "provider_id": "docker",
-        "providers": [
-            {
-                "enabled": true,
-                "id": "ubuntu-vm",
-                "img_src": "https://s3.amazonaws.com/provide.services/img/ubuntu.png",
-                "name": "Ubuntu"
-            },
-            {
-                "enabled": true,
-                "id": "docker",
-                "img_src": "https://s3.amazonaws.com/provide.services/img/docker.png",
-                "name": "Docker"
+        "region": "us-east-2",
+        "role": "validator",
+        "security": {
+            "egress": "*",
+            "ingress": {
+                "0.0.0.0/0": {
+                    "tcp": [
+                        5001,
+                        8050,
+                        8051,
+                        8080,
+                        30300
+                    ],
+                    "udp": [
+                        30300
+                    ]
+                }
             }
-        ],
-        "rc.d": "{\n  \"CHAIN_SPEC_URL\": \"https://console.provide.services:443/api/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/spec.json?x-api-authorization=MjE3Nzc...\",\n  \"BOOTNODES\": \"enode://eb0543bf6c9...\",\n  \"NETWORK_ID\": \"22\"\n}",
-        "region": "us-east-1",
-        "role": "peer",
-        "roles": [
-            {
-                "config": {
-                    "allows_multiple_deployment": true,
-                    "default_rcd": {
-                        "provide.network": "#!/bin/bash\n\nservice provide.network stop\n...\n"
-                    },
-                    "quickclone_recommended_node_count": 2
-                },
-                "id": "peer",
-                "name": "Peer",
-                "supported_provider_ids": [
-                    "ubuntu-vm",
-                    "docker"
-                ]
-            },
-            {
-                "config": {
-                    "allows_multiple_deployment": false,
-                    "default_rcd": {
-                        "docker": {
-                            "provide.network": "{\"CHAIN_SPEC_URL\": null, \"ENGINE_SIGNER\": null, \"NETWORK_ID\": null, \"ENGINE_SIGNER_PRIVATE_KEY\": null}"
-                        },
-                        "ubuntu-vm": {
-                            "provide.network": "#!/bin/bash\n\nservice provide.network stop\n...\n"
-                        }
-                    },
-                    "quickclone_recommended_node_count": 1
-                },
-                "id": "validator",
-                "name": "Validator",
-                "supported_provider_ids": [
-                    "ubuntu-vm",
-                    "docker"
-                ]
-            },
-            {
-                "config": {
-                    "allows_multiple_deployment": false,
-                    "default_rcd": {
-                        "docker": {
-                            "provide.network": "{\"JSON_RPC_URL\": null}"
-                        }
-                    },
-                    "quickclone_recommended_node_count": 1
-                },
-                "id": "explorer",
-                "name": "Block Explorer",
-                "supported_provider_ids": [
-                    "ubuntu-vm",
-                    "docker"
-                ]
-            }
-        ],
+        },
         "target_id": "aws",
         "target_security_group_ids": [
-            "sg-0f29..."
+            "sg-0d1af5799e7669858"
         ],
         "target_task_ids": [
-            "arn:aws:ecs:us-east-1:085843810865:task/58953..."
+            "arn:aws:ecs:us-east-2:085843810865:task/7ca2bc60-0fd0-4403-b693-bf232d5c0239"
         ]
     }
 }
 ```
 
-This endpoint retrieves the details of the Network’s specified Node.
+Retrieve details for a `NetworkNode`.
 
 ### URL Parameters
 
@@ -288,38 +273,79 @@ nodeId | id of the `NetworkNode`
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-    https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/nodes/59d1e7ce-3316-45b2-bf06-5fae2c6294fe/logs
+    https://goldmine.provide.services/api/v1/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes/eb81ab38-4dc6-45c6-8c4d-5d5645fd3079/logs
 HTTP/2 200
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+content-type: application/json; charset=UTF-8
+date: Sun, 09 Jun 2019 08:12:47 GMT
 ```
 
-> The above command returns logs structured like this:
+> Response JSON:
 
-```[
-    "2018-10-12 03:07:50 UTC Verifier #1 INFO import  Imported #2532534 0x4720…9c60 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:07:53 UTC IO Worker #1 INFO import          #0    3/25 peers      5 MiB chain   95 MiB db  0 bytes queue  573 KiB sync  RPC:  0 conn,    0 req/s,  179 µs",
-    "2018-10-12 03:07:55 UTC Verifier #0 INFO import  Imported #2532535 0xb01b…3150 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:00 UTC Verifier #1 INFO import  Imported #2532536 0x64c7…b825 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:05 UTC Verifier #0 INFO import  Imported #2532537 0xccb4…d9da (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:10 UTC Verifier #1 INFO import  Imported #2532538 0x70ed…97ea (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:15 UTC Verifier #0 INFO import  Imported #2532539 0x75c5…1712 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:20 UTC Verifier #1 INFO import  Imported #2532540 0xbb17…a470 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:25 UTC Verifier #0 INFO import  Imported #2532541 0x61d8…37a8 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 03:08:28 UTC IO Worker #2 INFO import          #0    3/25 peers      5 MiB chain   95 MiB db  0 bytes queue  573 KiB sync  RPC:  0 conn,    0 req/s,  167 µs",
-    ...
-    "2018-10-12 11:42:30 UTC Verifier #0 INFO import  Imported #2538710 0x320b…da62 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:42:35 UTC Verifier #1 INFO import  Imported #2538711 0x00b2…3346 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:42:40 UTC Verifier #0 INFO import  Imported #2538712 0xdbba…9811 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:42:45 UTC Verifier #1 INFO import  Imported #2538713 0x473d…2c6c (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:42:50 UTC Verifier #0 INFO import  Imported #2538714 0x194a…fffb (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:42:55 UTC Verifier #1 INFO import  Imported #2538715 0xd854…cca5 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:43:00 UTC Verifier #0 INFO import  Imported #2538716 0x5249…1343 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:43:04 UTC IO Worker #1 INFO import          #0    3/25 peers      4 MiB chain   95 MiB db  0 bytes queue  573 KiB sync  RPC:  0 conn, 6558 req/s,  173 µs",
-    "2018-10-12 11:43:05 UTC Verifier #1 INFO import  Imported #2538717 0xdf84…3b4d (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)",
-    "2018-10-12 11:43:10 UTC Verifier #1 INFO import  Imported #2538718 0x888d…7b65 (0 txs, 0.00 Mgas, 1 ms, 0.57 KiB)"
+```json
+[
+    "Starting client: parity",
+    "IPFS daemon starting; bin: /usr/local/bin/ipfs",
+    "Initializing daemon...",
+    "Swarm listening on /ip4/127.0.0.1/tcp/4001",
+    "Swarm listening on /ip4/169.254.172.42/tcp/4001",
+    "Swarm listening on /ip4/172.31.19.91/tcp/4001",
+    "Swarm listening on /p2p-circuit/ipfs/QmYv5vmq3Fa24AgQG9tik7cP6pxdBk5koVYqHGuB3XWKwM",
+    "Swarm announcing /ip4/127.0.0.1/tcp/4001",
+    "Swarm announcing /ip4/169.254.172.42/tcp/4001",
+    "Swarm announcing /ip4/172.31.19.91/tcp/4001",
+    "API server listening on /ip4/0.0.0.0/tcp/5001",
+    "Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080",
+    "Daemon is ready",
+    "Found invalid characters in bootnodes.txt",
+    "provide.network node starting in /opt; parity bin: /usr/bin/parity",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::run  Starting Parity-Ethereum/v2.5.0-beta-b52ac20-20190408/x86_64-linux-gnu/rustc1.33.0",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::run  Keys path /opt/keys/dawn",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::run  DB path /opt/chains/dawn/db/6df54e29399e56eb",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::run  State DB configuration: archive +Fat +Trace",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::run  Operating mode: active",
+    "2019-06-09 07:58:41 UTC main WARN parity_ethereum::run  Warning: Warp Sync is disabled because Fat DB is turned on.",
+    "2019-06-09 07:58:41 UTC main INFO parity_ethereum::upgrade  Moved 1 keys from /opt/keys to /opt/keys/dawn",
+    "2019-06-09 07:58:41 UTC main INFO ethcore_service::service  Configured for dawn using AuthorityRound engine",
+    "2019-06-09 07:58:41 UTC main INFO engine  Signal for switch to contract-based validator set.",
+    "2019-06-09 07:58:41 UTC main INFO engine  Initial contract validators: [0x1a8d2ae512134b640035a97330b433f075d0480c]",
+    "2019-06-09 07:58:41 UTC main INFO parity_ws  Listening for new connections on 0.0.0.0:8051.",
+    "2019-06-09 07:58:47 UTC IO Worker #1 INFO network  Public node URL: enode://9d83bd776c6cea1f961037ebdd0150b5ba04053038379b3c46293188052e7b98046675f6efaaea6f6851e6c5b651b9d7dd89b734564877744f3b87338090f4ca@172.31.19.91:30300",
+    "2019-06-09 07:59:11 UTC IO Worker #1 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 07:59:41 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:00:11 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:00:41 UTC IO Worker #1 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:01:11 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:01:41 UTC IO Worker #1 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:02:11 UTC IO Worker #2 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:02:41 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:03:11 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:03:41 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:04:11 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:04:41 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:05:11 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:05:41 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:06:16 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:06:46 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:07:16 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:07:46 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:08:16 UTC IO Worker #2 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:08:46 UTC IO Worker #1 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:09:16 UTC IO Worker #0 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:09:46 UTC IO Worker #2 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:10:16 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:10:46 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:11:16 UTC IO Worker #2 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:11:46 UTC IO Worker #3 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs",
+    "2019-06-09 08:12:16 UTC IO Worker #1 INFO import     0/25 peers      8 KiB chain   53 KiB db  0 bytes queue 448 bytes sync  RPC:  0 conn,    0 req/s,    0 µs"
 ]
 ```
 
-This endpoint retrieves paginated logs for a network node.
+Retrieve paginated logs for a network node.
 
 ### URL Parameters
 
