@@ -13,9 +13,3 @@
 ## Retrieve Bridge Details
 
 <i>Documentation forthcoming.</i>
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-id | id of the `Bridge`
