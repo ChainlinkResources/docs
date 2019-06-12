@@ -311,13 +311,13 @@
                       <a href="#list-kyc-applications" class="toc-h2 toc-link" data-title="List KYC Applications">List KYC Applications</a>
                     </li>
                     <li>
-                      <a href="#create-a-kyc-application" class="toc-h2 toc-link" data-title="Create a KYC Application">Create a KYC Application</a>
+                      <a href="#create-kyc-application" class="toc-h2 toc-link" data-title="Create KYC Application">Create KYC Application</a>
                     </li>
                     <li>
-                      <a href="#update-a-kyc-application" class="toc-h2 toc-link" data-title="Update a KYC Application">Update a KYC Application</a>
+                      <a href="#update-kyc-application" class="toc-h2 toc-link" data-title="Update KYC Application">Update KYC Application</a>
                     </li>
                     <li>
-                      <a href="#retrieve-a-kyc-application" class="toc-h2 toc-link" data-title="Retrieve a KYC Application">Retrieve a KYC Application</a>
+                      <a href="#retrieve-kyc-application-details" class="toc-h2 toc-link" data-title="Retrieve KYC Application Details">Retrieve KYC Application Details</a>
                     </li>
                     <li>
                       <a href="#upload-kyc-application-document" class="toc-h2 toc-link" data-title="Upload KYC Application Document">Upload KYC Application Document</a>
@@ -1206,113 +1206,154 @@ HTTP/2 200
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/kyc_applications
 HTTP/2 200
+date: Wed, 12 Jun 2019 05:39:19 GMT
+content-type: application/json; <span class="nv">charset</span><span class="o">=</span>UTF-8
+access-control-allow-credentials: <span class="nb">true
+</span>access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: <span class="k">*</span>
+access-control-expose-headers: X-Total-Results-Count
+x-total-results-count: 3
 </code></pre>
 <blockquote>
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5286091c-a6ea-4546-9212-9c50925289f3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-04T14:53:34.497081-04:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00d4adc9-b0ca-4c94-9d90-3c61f696b8bd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d26c9dbb0174f38b57d76091b979928"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"man"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vitalik Buterin"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d03c423f58747da9ced20bfee199975"</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"72258a99-1518-4526-a5fa-043081eee7f0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-06-12T02:31:33.613098-04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="s2">"bca2348c-442f-4c48-99a4-7b3510385e53"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="s2">"47069619-2035-4193-bdd0-af4d5096b649"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"No national id country specified, and invalid format for US Social Security Number"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"params"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ednaScoreCard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"er"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"reportedRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule fired from sandbox"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sandbox Rule"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPT"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"ruleId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1002</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"testResults"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                        </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"right"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"fired"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1559889000000</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">]</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"etr"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:20"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:31"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:2"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:28"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"sc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed:1"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"mtid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d26c9dbb0174f38b57d76091b979928"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"rcd"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d26c9dbb0174f38b57d76091b979928"</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"9dc4c2e1-b651-41bf-b67f-3bed255990d0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-06-12T02:30:52.519887-04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="s2">"bca2348c-442f-4c48-99a4-7b3510385e53"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="s2">"47069619-2035-4193-bdd0-af4d5096b649"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"880c4ba7877d43c09c70f0ca89ea1e17"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"params"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"c95fbbce-dd1b-46ee-a147-4c324dfbccd8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-06-12T02:27:17.393292-04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="s2">"bca2348c-442f-4c48-99a4-7b3510385e53"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="s2">"47069619-2035-4193-bdd0-af4d5096b649"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"4ab49de247bc44ec864434163ec1fe2e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"params"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>List KYC applications visible to the authorized <code>User</code> or <code>Application</code>.</p>
-<h2 id='create-a-kyc-application'>Create a KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
+<p>List KYC applications visible to the authorized User or Application.</p>
+<h2 id='create-kyc-application'>Create KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
-    https://ident.provide.services/api/v1/kyc_applications <span class="se">\</span>
-    -d <span class="s1">'{"params":{"man": "Joe Lubin"}}'</span>
-HTTP/2 201
+    https://ident.provide.services/api/v1/kyc_applications/1bd7e730-67e5-4418-b624-c0c47b072f8b <span class="se">\</span>
+    -d <span class="s1">'{"params":{"man": "Joe Lubin", "tea": "joe@example.com"}}'</span>
+HTTP/2 202
 </code></pre>
 <blockquote>
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1bd7e730-67e5-4418-b624-c0c47b072f8b"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-07T02:30:00.115517-04:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00d4adc9-b0ca-4c94-9d90-3c61f696b8bd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"man"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Lubin"</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"1bd7e730-67e5-4418-b624-c0c47b072f8b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-06-07T02:30:00.115517-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="s2">"00d4adc9-b0ca-4c94-9d90-3c61f696b8bd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"provider"</span><span class="p">:</span><span class="s2">"identitymind"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"95ed799287ee48ccadf4cf1f654e064c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"man"</span><span class="p">:</span><span class="s2">"Joe Lubin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tea"</span><span class="p">:</span><span class="s2">"joe@example.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"provider_representation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"provider_representation"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"ednaScoreCard"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"er"</span><span class="p">:{</span><span class="w">
+                </span><span class="s2">"profile"</span><span class="p">:</span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reportedRule"</span><span class="p">:{</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Rule fired from sandbox"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Sandbox Rule"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resultCode"</span><span class="p">:</span><span class="s2">"ACCEPT"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ruleId"</span><span class="p">:</span><span class="mi">1002</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"testResults"</span><span class="p">:[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"condition"</span><span class="p">:{</span><span class="w">
+                                </span><span class="s2">"left"</span><span class="p">:</span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"operator"</span><span class="p">:</span><span class="s2">"eq"</span><span class="p">,</span><span class="w">
+                                </span><span class="s2">"right"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"fired"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"stage"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:1"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1559891359000</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"etr"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:20"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:31"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:2"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:1"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:28"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"sc"</span><span class="p">:[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"details"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"test"</span><span class="p">:</span><span class="s2">"ed:1"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"erd"</span><span class="p">:</span><span class="s2">"Unknown User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"frd"</span><span class="p">:</span><span class="s2">"[Fired] details"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"frn"</span><span class="p">:</span><span class="s2">"Sandbox Rule"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"frp"</span><span class="p">:</span><span class="s2">"ACCEPT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mtid"</span><span class="p">:</span><span class="s2">"95ed799287ee48ccadf4cf1f654e064c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rcd"</span><span class="p">:</span><span class="s2">"131,101,50005,150,202,1002"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"res"</span><span class="p">:</span><span class="s2">"ACCEPT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tid"</span><span class="p">:</span><span class="s2">"95ed799287ee48ccadf4cf1f654e064c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upr"</span><span class="p">:</span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="s2">"UNKNOWN"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Create a KYC application using the specified third-party <code>provider</code>.</p>
+<p>Create a KYC application using the specified third-party provider.</p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
@@ -1349,7 +1390,7 @@ HTTP/2 201
 </tbody></table>
 
 <p>For <code>provider</code>-specific <code>params</code> reference, please see <a href="#third-party-api-support">Third-Party API Support</a>.</p>
-<h2 id='update-a-kyc-application'>Update a KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
+<h2 id='update-kyc-application'>Update KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/kyc_applications/1bd7e730-67e5-4418-b624-c0c47b072f8b <span class="se">\</span>
     -d <span class="s1">'{"params":{"man": "Joe Lubin", "tea": "joe@example.com"}}'</span>
@@ -1367,6 +1408,7 @@ HTTP/2 202
     </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"95ed799287ee48ccadf4cf1f654e064c"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"man"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Lubin"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tea"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joe@example.com"</span><span class="w">
@@ -1506,9 +1548,9 @@ HTTP/2 202
 <td>the KYC application is under review</td>
 </tr>
 </tbody></table>
-<h2 id='retrieve-a-kyc-application'>Retrieve a KYC Application</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+<h2 id='retrieve-kyc-application-details'>Retrieve KYC Application Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
-    https://ident.provide.services/api/v1/kyc_applications
+    https://ident.provide.services/api/v1/kyc_applications/1bd7e730-67e5-4418-b624-c0c47b072f8b
 HTTP/2 200
 </code></pre>
 <blockquote>
@@ -1523,6 +1565,7 @@ HTTP/2 200
     </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"95ed799287ee48ccadf4cf1f654e064c"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kyc"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"man"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe Lubin"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tea"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joe@example.com"</span><span class="w">
