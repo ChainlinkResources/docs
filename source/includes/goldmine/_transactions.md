@@ -190,9 +190,7 @@ Parameter | Description
 --------- | -----------
 network_id | id of the `Network` on which the `Transaction` will be broadcast; must match `Wallet` network if the `Transaction` is being signed custodially
 wallet_id | id of the `Wallet`; will result in the `Transaction` being signed custodially; `Wallet` must match the `Network` and `Application`, if applicable
-from | address of the `Wallet` sending the transaction; will result in the `Transaction` being signed custodially if the `Wallet` is a signing identity managed by the platform
-status | comma-delimited list of statuses by which the transactions response is filtered | n/a
-signer | `Network` address of the signer for the transaction; will resolve to a `Wallet`
+signer | `Network` address of the signer for the transaction; will resolve to a `Wallet` and result in the `Transaction` being signed custodially if the `Wallet` is a signing identity managed by the platform
 
 
 ## Retrieve Transaction Details
