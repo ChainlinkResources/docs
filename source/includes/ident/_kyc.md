@@ -423,6 +423,8 @@ HTTP/2 202
 
 Upload and attach a document to an existing KYC application.
 
+<i>Documentation forthcoming.</i>
+
 
 ## List KYC Application Documents
 
@@ -443,6 +445,7 @@ HTTP/2 200
 
 List documents attached to a KYC application.
 
+<i>Documentation forthcoming.</i>
 
 ## Download KYC Application Document
 
@@ -462,3 +465,5 @@ HTTP/2 200
 ```
 
 Download a document attached to a KYC application.
+
+<i>Documentation forthcoming.</i>
