@@ -19,121 +19,163 @@ curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
     https://ident.provide.services/api/v1/kyc_applications
 HTTP/2 200
+date: Wed, 12 Jun 2019 05:39:19 GMT
+content-type: application/json; charset=UTF-8
+access-control-allow-credentials: true
+access-control-allow-headers: Accept, Accept-Encoding, Authorization, Cache-Control, Content-Length, Content-Type, Origin, User-Agent, X-CSRF-Token, X-Requested-With
+access-control-allow-methods: GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin: *
+access-control-expose-headers: X-Total-Results-Count
+x-total-results-count: 3
 ```
 
 > Response JSON:
 
 ```json
 [
-  {
-    "id": "5286091c-a6ea-4546-9212-9c50925289f3",
-    "created_at": "2019-06-04T14:53:34.497081-04:00",
-    "application_id": null,
-    "user_id": "00d4adc9-b0ca-4c94-9d90-3c61f696b8bd",
-    "provider": "identitymind",
-    "identifier": "9d26c9dbb0174f38b57d76091b979928",
-    "type": "kyc",
-    "status": "accepted",
-    "params": {
-        "man": "Vitalik Buterin",
-        "tid": "3d03c423f58747da9ced20bfee199975"
+    {
+        "id":"72258a99-1518-4526-a5fa-043081eee7f0",
+        "created_at":"2019-06-12T02:31:33.613098-04:00",
+        "application_id":"bca2348c-442f-4c48-99a4-7b3510385e53",
+        "user_id":"47069619-2035-4193-bdd0-af4d5096b649",
+        "provider":"identitymind",
+        "identifier":null,
+        "type":"kyc",
+        "status":"failed",
+        "description":"No national id country specified, and invalid format for US Social Security Number",
+        "params":null,
+        "provider_representation":null
     },
-    "provider_representation": {
-        "ednaScoreCard": {
-            "er": {
-                "profile": "DEFAULT",
-                "reportedRule": {
-                    "description": "Rule fired from sandbox",
-                    "details": "[Fired] details",
-                    "name": "Sandbox Rule",
-                    "resultCode": "ACCEPT",
-                    "ruleId": 1002,
-                    "testResults": [
-                        {
-                            "condition": {
-                                "left": "ed:1",
-                                "operator": "eq",
-                                "right": true
-                            },
-                            "details": "[Fired] details",
-                            "fired": true,
-                            "stage": "1",
-                            "test": "ed:1",
-                            "ts": 1559889000000
-                        }
-                    ]
-                }
-            },
-            "etr": [
-                {
-                    "details": "true",
-                    "test": "ed:20"
-                },
-                {
-                    "details": "true",
-                    "test": "ed:31"
-                },
-                {
-                    "details": "true",
-                    "test": "ed:2"
-                },
-                {
-                    "details": "true",
-                    "test": "ed:1"
-                },
-                {
-                    "details": "true",
-                    "test": "ed:28"
-                }
-            ],
-            "sc": [
-                {
-                    "details": "true",
-                    "test": "ed:1"
-                }
-            ]
-        },
-        "mtid": "9d26c9dbb0174f38b57d76091b979928",
-        "rcd": "",
-        "state": "A",
-        "tid": "9d26c9dbb0174f38b57d76091b979928"
+    {
+        "id":"9dc4c2e1-b651-41bf-b67f-3bed255990d0",
+        "created_at":"2019-06-12T02:30:52.519887-04:00",
+        "application_id":"bca2348c-442f-4c48-99a4-7b3510385e53",
+        "user_id":"47069619-2035-4193-bdd0-af4d5096b649",
+        "provider":"identitymind",
+        "identifier":"880c4ba7877d43c09c70f0ca89ea1e17",
+        "type":"kyc",
+        "status":"accepted",
+        "description":null,
+        "params":null,
+        "provider_representation":null
+    },
+    {
+        "id":"c95fbbce-dd1b-46ee-a147-4c324dfbccd8",
+        "created_at":"2019-06-12T02:27:17.393292-04:00",
+        "application_id":"bca2348c-442f-4c48-99a4-7b3510385e53",
+        "user_id":"47069619-2035-4193-bdd0-af4d5096b649",
+        "provider":"identitymind",
+        "identifier":"4ab49de247bc44ec864434163ec1fe2e",
+        "type":"kyc",
+        "status":"accepted",
+        "description":null,
+        "params":null,
+        "provider_representation":null
     }
-  }
 ]
 ```
 
-List KYC applications visible to the authorized `User` or `Application`.
+List KYC applications visible to the authorized User or Application.
 
-## Create a KYC Application
+
+## Create KYC Application
 
 ```shell
-curl -i -XPOST \
+curl -i -XPUT \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/kyc_applications \
-    -d '{"params":{"man": "Joe Lubin"}}'
-HTTP/2 201
+    https://ident.provide.services/api/v1/kyc_applications/1bd7e730-67e5-4418-b624-c0c47b072f8b \
+    -d '{"params":{"man": "Joe Lubin", "tea": "joe@example.com"}}'
+HTTP/2 202
 ```
 
 > Response JSON:
 
 ```json
 {
-    "id": "1bd7e730-67e5-4418-b624-c0c47b072f8b",
-    "created_at": "2019-06-07T02:30:00.115517-04:00",
-    "application_id": null,
-    "user_id": "00d4adc9-b0ca-4c94-9d90-3c61f696b8bd",
-    "provider": "identitymind",
-    "identifier": null,
-    "type": "kyc",
-    "status": "pending",
-    "params": {
-        "man": "Joe Lubin"
+    "id":"1bd7e730-67e5-4418-b624-c0c47b072f8b",
+    "created_at":"2019-06-07T02:30:00.115517-04:00",
+    "application_id":null,
+    "user_id":"00d4adc9-b0ca-4c94-9d90-3c61f696b8bd",
+    "provider":"identitymind",
+    "identifier":"95ed799287ee48ccadf4cf1f654e064c",
+    "type":"kyc",
+    "status":"submitted",
+    "description":null,
+    "params":{
+        "man":"Joe Lubin",
+        "tea":"joe@example.com"
     },
-    "provider_representation": null
+    "provider_representation":{
+        "ednaScoreCard":{
+            "er":{
+                "profile":"DEFAULT",
+                "reportedRule":{
+                    "description":"Rule fired from sandbox",
+                    "details":"[Fired] details",
+                    "name":"Sandbox Rule",
+                    "resultCode":"ACCEPT",
+                    "ruleId":1002,
+                    "testResults":[
+                        {
+                            "condition":{
+                                "left":"ed:1",
+                                "operator":"eq",
+                                "right":true
+                            },
+                            "details":"[Fired] details",
+                            "fired":true,
+                            "stage":"1",
+                            "test":"ed:1",
+                            "ts":1559891359000
+                        }
+                    ]
+                }
+            },
+            "etr":[
+                {
+                    "details":"true",
+                    "test":"ed:20"
+                },
+                {
+                    "details":"true",
+                    "test":"ed:31"
+                },
+                {
+                    "details":"true",
+                    "test":"ed:2"
+                },
+                {
+                    "details":"true",
+                    "test":"ed:1"
+                },
+                {
+                    "details":"true",
+                    "test":"ed:28"
+                }
+            ],
+            "sc":[
+                {
+                    "details":"true",
+                    "test":"ed:1"
+                }
+            ]
+        },
+        "erd":"Unknown User",
+        "frd":"[Fired] details",
+        "frn":"Sandbox Rule",
+        "frp":"ACCEPT",
+        "mtid":"95ed799287ee48ccadf4cf1f654e064c",
+        "rcd":"131,101,50005,150,202,1002",
+        "res":"ACCEPT",
+        "state":"A",
+        "tid":"95ed799287ee48ccadf4cf1f654e064c",
+        "upr":"UNKNOWN",
+        "user":"UNKNOWN"
+    }
 }
 ```
 
-Create a KYC application using the specified third-party `provider`.
+Create a KYC application using the specified third-party provider.
 
 ### Request Parameters
 
@@ -146,7 +188,8 @@ status | string | `"pending"` | the status of the KYC application; must be a val
 
 For `provider`-specific `params` reference, please see [Third-Party API Support](#third-party-api-support).
 
-## Update a KYC Application
+
+## Update KYC Application
 
 ```shell
 curl -i -XPUT \
@@ -168,6 +211,7 @@ HTTP/2 202
     "identifier": "95ed799287ee48ccadf4cf1f654e064c",
     "type": "kyc",
     "status": "submitted",
+    "description":null,
     "params": {
         "man": "Joe Lubin",
         "tea": "joe@example.com"
@@ -269,12 +313,12 @@ submitted | the KYC application has been submitted to the third-party `provider`
 review | the KYC application is under review
 
 
-## Retrieve a KYC Application
+## Retrieve KYC Application Details
 
 ```shell
 curl -i \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
-    https://ident.provide.services/api/v1/kyc_applications
+    https://ident.provide.services/api/v1/kyc_applications/1bd7e730-67e5-4418-b624-c0c47b072f8b
 HTTP/2 200
 ```
 
@@ -290,6 +334,7 @@ HTTP/2 200
     "identifier": "95ed799287ee48ccadf4cf1f654e064c",
     "type": "kyc",
     "status": "accepted",
+    "description":null,
     "params": {
         "man": "Joe Lubin",
         "tea": "joe@example.com"
@@ -359,6 +404,7 @@ HTTP/2 200
 
 Retrieve a previously submitted KYC application and enrich it with the latest third-party representation. This is useful to check the remediation status of an application.
 
+
 ## Upload KYC Application Document
 
 ```shell
@@ -376,6 +422,7 @@ HTTP/2 202
 ```
 
 Upload and attach a document to an existing KYC application.
+
 
 ## List KYC Application Documents
 
@@ -395,6 +442,7 @@ HTTP/2 200
 ```
 
 List documents attached to a KYC application.
+
 
 ## Download KYC Application Document
 
