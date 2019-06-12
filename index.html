@@ -21107,16 +21107,8 @@ HTTP/2 201
 <td>id of the <code>Wallet</code>; will result in the <code>Transaction</code> being signed custodially; <code>Wallet</code> must match the <code>Network</code> and <code>Application</code>, if applicable</td>
 </tr>
 <tr>
-<td>from</td>
-<td>address of the <code>Wallet</code> sending the transaction; will result in the <code>Transaction</code> being signed custodially if the <code>Wallet</code> is a signing identity managed by the platform</td>
-</tr>
-<tr>
-<td>status</td>
-<td>comma-delimited list of statuses by which the transactions response is filtered</td>
-</tr>
-<tr>
 <td>signer</td>
-<td><code>Network</code> address of the signer for the transaction; will resolve to a <code>Wallet</code></td>
+<td><code>Network</code> address of the signer for the transaction; will resolve to a <code>Wallet</code> and result in the <code>Transaction</code> being signed custodially if the <code>Wallet</code> is a signing identity managed by the platform</td>
 </tr>
 </tbody></table>
 <h2 id='retrieve-transaction-details'>Retrieve Transaction Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
