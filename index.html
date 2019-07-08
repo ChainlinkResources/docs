@@ -1776,212 +1776,20 @@ x-total-results-count: 5
             </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unicorn-v0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chainspec_abi_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.abi.json"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chainspec_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.json"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cloneable_cfg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">5001</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8050</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8051</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8080</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">],</span><span class="w">
-                            </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">]</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"docker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="s2">"ubuntu-vm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8050</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8051</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8080</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -2014,212 +1822,20 @@ x-total-results-count: 5
             </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DaiChain"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chainspec_abi_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chainspec_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/poanetwork/poa-chain-spec/dai/spec.json"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cloneable_cfg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">5001</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8050</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8051</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8080</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">],</span><span class="w">
-                            </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">]</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"docker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="s2">"ubuntu-vm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8050</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8051</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8080</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -2829,212 +2445,20 @@ x-total-results-count: 5
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"chainspec_abi_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"chainspec_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cloneable_cfg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">5001</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8050</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8051</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">8080</span><span class="p">,</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">],</span><span class="w">
-                            </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                </span><span class="mi">30300</span><span class="w">
-                            </span><span class="p">]</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"docker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="s2">"ubuntu-vm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8050</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8051</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">8080</span><span class="p">,</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="mi">30300</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -3082,212 +2506,20 @@ x-total-results-count: 5
         "chain":null,
         "chainspec_abi_url":null,
         "chainspec_url":null,
-        "cloneable_cfg":{
-            "security":{
-                "egress":"*",
-                "ingress":{
-                    "0.0.0.0/0":{
-                        "tcp":[
-                            5001,
-                            8050,
-                            8051,
-                            8080,
-                            30300
-                        ],
-                        "udp":[
-                            30300
-                        ]
-                    }
-                }
-            },
-            "aws":{
-                "docker":{
-                    "regions":{
-                        "ap-northeast-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-northeast-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-south-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-southeast-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-southeast-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ca-central-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-central-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-3":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "sa-east-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-east-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-east-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-west-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-west-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        }
-                    }
-                },
-                "ubuntu-vm":{
-                    "regions":{
-                        "ap-northeast-1":{
-                            "peer":{
-                                "0.0.9":"ami-1e22e061"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-1e22e061"
-                            }
-                        },
-                        "ap-northeast-2":{
-                            "peer":{
-                                "0.0.9":"ami-bfa802d1"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-bfa802d1"
-                            }
-                        },
-                        "ap-south-1":{
-                            "peer":{
-                                "0.0.9":"ami-6c2f0703"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-6c2f0703"
-                            }
-                        },
-                        "ap-southeast-1":{
-                            "peer":{
-                                "0.0.9":"ami-578f8a2b"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-578f8a2b"
-                            }
-                        },
-                        "ap-southeast-2":{
-                            "peer":{
-                                "0.0.9":"ami-ed2df18f"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-ed2df18f"
-                            }
-                        },
-                        "ca-central-1":{
-                            "peer":{
-                                "0.0.9":"ami-8d60e3e9"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-8d60e3e9"
-                            }
-                        },
-                        "eu-central-1":{
-                            "peer":{
-                                "0.0.9":"ami-b17c4c5a"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b17c4c5a"
-                            }
-                        },
-                        "eu-west-1":{
-                            "peer":{
-                                "0.0.9":"ami-86dddbff"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-86dddbff"
-                            }
-                        },
-                        "eu-west-2":{
-                            "peer":{
-                                "0.0.9":"ami-e1799686"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-e1799686"
-                            }
-                        },
-                        "eu-west-3":{
-                            "peer":{
-                                "0.0.9":"ami-132d9c6e"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-132d9c6e"
-                            }
-                        },
-                        "sa-east-1":{
-                            "peer":{
-                                "0.0.9":"ami-67f6ae0b"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-67f6ae0b"
-                            }
-                        },
-                        "us-east-1":{
-                            "peer":{
-                                "0.0.9":"ami-b55a20ca"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b55a20ca"
-                            }
-                        },
-                        "us-east-2":{
-                            "peer":{
-                                "0.0.9":"ami-c83c02ad"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-c83c02ad"
-                            }
-                        },
-                        "us-west-1":{
-                            "peer":{
-                                "0.0.9":"ami-b95ebbda"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b95ebbda"
-                            }
-                        },
-                        "us-west-2":{
-                            "peer":{
-                                "0.0.9":"ami-813777f9"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-813777f9"
-                            }
-                        }
-                    }
+        "security":{
+            "egress":"*",
+            "ingress":{
+                "0.0.0.0/0":{
+                    "tcp":[
+                        5001,
+                        8050,
+                        8051,
+                        8080,
+                        30300
+                    ],
+                    "udp":[
+                        30300
+                    ]
                 }
             }
         },
@@ -4520,212 +3752,20 @@ access-control-expose-headers: X-Total-Results-Count
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"chainspec_abi_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chainspec_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cloneable_cfg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="mi">5001</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">8050</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">8051</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">8080</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">30300</span><span class="w">
-                        </span><span class="p">],</span><span class="w">
-                        </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="mi">30300</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"docker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"ubuntu-vm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-northeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-bfa802d1"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-south-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-6c2f0703"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-southeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-578f8a2b"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ap-southeast-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-ed2df18f"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"ca-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-8d60e3e9"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-central-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b17c4c5a"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-86dddbff"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-e1799686"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"eu-west-3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-132d9c6e"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"sa-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-67f6ae0b"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-east-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b55a20ca"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-east-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-c83c02ad"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-west-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-b95ebbda"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">8050</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">8051</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">8080</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">30300</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">30300</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -4898,55 +3938,18 @@ HTTP/2 200
         </span><span class="s2">"chainspec_abi_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chainspec_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cloneable_cfg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="mi">8050</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">8051</span><span class="p">,</span><span class="w">
-                            </span><span class="mi">30300</span><span class="w">
-                        </span><span class="p">],</span><span class="w">
-                        </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="mi">30300</span><span class="w">
-                        </span><span class="p">]</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"aws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"docker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="err">...</span><span class="w">
-                        </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"ubuntu-vm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"regions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"ap-northeast-1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-1e22e061"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="err">...</span><span class="w">
-                        </span><span class="s2">"us-west-2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"peer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                            </span><span class="p">},</span><span class="w">
-                            </span><span class="s2">"validator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"0.0.9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ami-813777f9"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">8050</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">8051</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">30300</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">30300</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
