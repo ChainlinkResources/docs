@@ -90,212 +90,20 @@ x-total-results-count: 5
             "chain": "unicorn-v0",
             "chainspec_abi_url": "https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.abi.json",
             "chainspec_url": "https://raw.githubusercontent.com/providenetwork/chain-spec/unicorn-v0/spec.json",
-            "cloneable_cfg": {
-                "security": {
-                    "egress": "*",
-                    "ingress": {
-                        "0.0.0.0/0": {
-                            "tcp": [
-                                5001,
-                                8050,
-                                8051,
-                                8080,
-                                30300
-                            ],
-                            "udp": [
-                                30300
-                            ]
-                        }
-                    }
-                },
-                "aws": {
-                    "docker": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-northeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-south-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ca-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-3": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "sa-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            }
-                        }
-                    },
-                    "ubuntu-vm": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-1e22e061"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-1e22e061"
-                                }
-                            },
-                            "ap-northeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-bfa802d1"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-bfa802d1"
-                                }
-                            },
-                            "ap-south-1": {
-                                "peer": {
-                                    "0.0.9": "ami-6c2f0703"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-6c2f0703"
-                                }
-                            },
-                            "ap-southeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-578f8a2b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-578f8a2b"
-                                }
-                            },
-                            "ap-southeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-ed2df18f"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-ed2df18f"
-                                }
-                            },
-                            "ca-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                }
-                            },
-                            "eu-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                }
-                            },
-                            "eu-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-86dddbff"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-86dddbff"
-                                }
-                            },
-                            "eu-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-e1799686"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-e1799686"
-                                }
-                            },
-                            "eu-west-3": {
-                                "peer": {
-                                    "0.0.9": "ami-132d9c6e"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-132d9c6e"
-                                }
-                            },
-                            "sa-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                }
-                            },
-                            "us-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b55a20ca"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b55a20ca"
-                                }
-                            },
-                            "us-east-2": {
-                                "peer": {
-                                    "0.0.9": "ami-c83c02ad"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-c83c02ad"
-                                }
-                            },
-                            "us-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b95ebbda"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b95ebbda"
-                                }
-                            },
-                            "us-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-813777f9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-813777f9"
-                                }
-                            }
-                        }
+            "security": {
+                "egress": "*",
+                "ingress": {
+                    "0.0.0.0/0": {
+                        "tcp": [
+                            5001,
+                            8050,
+                            8051,
+                            8080,
+                            30300
+                        ],
+                        "udp": [
+                            30300
+                        ]
                     }
                 }
             },
@@ -328,212 +136,20 @@ x-total-results-count: 5
             "chain": "DaiChain",
             "chainspec_abi_url": null,
             "chainspec_url": "https://raw.githubusercontent.com/poanetwork/poa-chain-spec/dai/spec.json",
-            "cloneable_cfg": {
-                "security": {
-                    "egress": "*",
-                    "ingress": {
-                        "0.0.0.0/0": {
-                            "tcp": [
-                                5001,
-                                8050,
-                                8051,
-                                8080,
-                                30300
-                            ],
-                            "udp": [
-                                30300
-                            ]
-                        }
-                    }
-                },
-                "aws": {
-                    "docker": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-northeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-south-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ca-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-3": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "sa-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            }
-                        }
-                    },
-                    "ubuntu-vm": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-1e22e061"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-1e22e061"
-                                }
-                            },
-                            "ap-northeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-bfa802d1"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-bfa802d1"
-                                }
-                            },
-                            "ap-south-1": {
-                                "peer": {
-                                    "0.0.9": "ami-6c2f0703"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-6c2f0703"
-                                }
-                            },
-                            "ap-southeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-578f8a2b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-578f8a2b"
-                                }
-                            },
-                            "ap-southeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-ed2df18f"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-ed2df18f"
-                                }
-                            },
-                            "ca-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                }
-                            },
-                            "eu-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                }
-                            },
-                            "eu-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-86dddbff"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-86dddbff"
-                                }
-                            },
-                            "eu-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-e1799686"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-e1799686"
-                                }
-                            },
-                            "eu-west-3": {
-                                "peer": {
-                                    "0.0.9": "ami-132d9c6e"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-132d9c6e"
-                                }
-                            },
-                            "sa-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                }
-                            },
-                            "us-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b55a20ca"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b55a20ca"
-                                }
-                            },
-                            "us-east-2": {
-                                "peer": {
-                                    "0.0.9": "ami-c83c02ad"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-c83c02ad"
-                                }
-                            },
-                            "us-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b95ebbda"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b95ebbda"
-                                }
-                            },
-                            "us-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-813777f9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-813777f9"
-                                }
-                            }
-                        }
+            "security": {
+                "egress": "*",
+                "ingress": {
+                    "0.0.0.0/0": {
+                        "tcp": [
+                            5001,
+                            8050,
+                            8051,
+                            8080,
+                            30300
+                        ],
+                        "udp": [
+                            30300
+                        ]
                     }
                 }
             },
@@ -1143,212 +759,20 @@ x-total-results-count: 5
             },
             "chainspec_abi_url": null,
             "chainspec_url": null,
-            "cloneable_cfg": {
-                "security": {
-                    "egress": "*",
-                    "ingress": {
-                        "0.0.0.0/0": {
-                            "tcp": [
-                                5001,
-                                8050,
-                                8051,
-                                8080,
-                                30300
-                            ],
-                            "udp": [
-                                30300
-                            ]
-                        }
-                    }
-                },
-                "aws": {
-                    "docker": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-northeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-south-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ap-southeast-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "ca-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-central-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "eu-west-3": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "sa-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-east-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-1": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            },
-                            "us-west-2": {
-                                "peer": "providenetwork-node",
-                                "validator": "providenetwork-node"
-                            }
-                        }
-                    },
-                    "ubuntu-vm": {
-                        "regions": {
-                            "ap-northeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-1e22e061"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-1e22e061"
-                                }
-                            },
-                            "ap-northeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-bfa802d1"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-bfa802d1"
-                                }
-                            },
-                            "ap-south-1": {
-                                "peer": {
-                                    "0.0.9": "ami-6c2f0703"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-6c2f0703"
-                                }
-                            },
-                            "ap-southeast-1": {
-                                "peer": {
-                                    "0.0.9": "ami-578f8a2b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-578f8a2b"
-                                }
-                            },
-                            "ap-southeast-2": {
-                                "peer": {
-                                    "0.0.9": "ami-ed2df18f"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-ed2df18f"
-                                }
-                            },
-                            "ca-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-8d60e3e9"
-                                }
-                            },
-                            "eu-central-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b17c4c5a"
-                                }
-                            },
-                            "eu-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-86dddbff"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-86dddbff"
-                                }
-                            },
-                            "eu-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-e1799686"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-e1799686"
-                                }
-                            },
-                            "eu-west-3": {
-                                "peer": {
-                                    "0.0.9": "ami-132d9c6e"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-132d9c6e"
-                                }
-                            },
-                            "sa-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-67f6ae0b"
-                                }
-                            },
-                            "us-east-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b55a20ca"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b55a20ca"
-                                }
-                            },
-                            "us-east-2": {
-                                "peer": {
-                                    "0.0.9": "ami-c83c02ad"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-c83c02ad"
-                                }
-                            },
-                            "us-west-1": {
-                                "peer": {
-                                    "0.0.9": "ami-b95ebbda"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-b95ebbda"
-                                }
-                            },
-                            "us-west-2": {
-                                "peer": {
-                                    "0.0.9": "ami-813777f9"
-                                },
-                                "validator": {
-                                    "0.0.9": "ami-813777f9"
-                                }
-                            }
-                        }
+            "security": {
+                "egress": "*",
+                "ingress": {
+                    "0.0.0.0/0": {
+                        "tcp": [
+                            5001,
+                            8050,
+                            8051,
+                            8080,
+                            30300
+                        ],
+                        "udp": [
+                            30300
+                        ]
                     }
                 }
             },
@@ -1389,212 +813,20 @@ curl -i -XPOST \
         "chain":null,
         "chainspec_abi_url":null,
         "chainspec_url":null,
-        "cloneable_cfg":{
-            "security":{
-                "egress":"*",
-                "ingress":{
-                    "0.0.0.0/0":{
-                        "tcp":[
-                            5001,
-                            8050,
-                            8051,
-                            8080,
-                            30300
-                        ],
-                        "udp":[
-                            30300
-                        ]
-                    }
-                }
-            },
-            "aws":{
-                "docker":{
-                    "regions":{
-                        "ap-northeast-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-northeast-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-south-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-southeast-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ap-southeast-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "ca-central-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-central-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "eu-west-3":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "sa-east-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-east-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-east-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-west-1":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        },
-                        "us-west-2":{
-                            "peer":"providenetwork-node",
-                            "validator":"providenetwork-node"
-                        }
-                    }
-                },
-                "ubuntu-vm":{
-                    "regions":{
-                        "ap-northeast-1":{
-                            "peer":{
-                                "0.0.9":"ami-1e22e061"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-1e22e061"
-                            }
-                        },
-                        "ap-northeast-2":{
-                            "peer":{
-                                "0.0.9":"ami-bfa802d1"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-bfa802d1"
-                            }
-                        },
-                        "ap-south-1":{
-                            "peer":{
-                                "0.0.9":"ami-6c2f0703"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-6c2f0703"
-                            }
-                        },
-                        "ap-southeast-1":{
-                            "peer":{
-                                "0.0.9":"ami-578f8a2b"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-578f8a2b"
-                            }
-                        },
-                        "ap-southeast-2":{
-                            "peer":{
-                                "0.0.9":"ami-ed2df18f"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-ed2df18f"
-                            }
-                        },
-                        "ca-central-1":{
-                            "peer":{
-                                "0.0.9":"ami-8d60e3e9"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-8d60e3e9"
-                            }
-                        },
-                        "eu-central-1":{
-                            "peer":{
-                                "0.0.9":"ami-b17c4c5a"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b17c4c5a"
-                            }
-                        },
-                        "eu-west-1":{
-                            "peer":{
-                                "0.0.9":"ami-86dddbff"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-86dddbff"
-                            }
-                        },
-                        "eu-west-2":{
-                            "peer":{
-                                "0.0.9":"ami-e1799686"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-e1799686"
-                            }
-                        },
-                        "eu-west-3":{
-                            "peer":{
-                                "0.0.9":"ami-132d9c6e"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-132d9c6e"
-                            }
-                        },
-                        "sa-east-1":{
-                            "peer":{
-                                "0.0.9":"ami-67f6ae0b"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-67f6ae0b"
-                            }
-                        },
-                        "us-east-1":{
-                            "peer":{
-                                "0.0.9":"ami-b55a20ca"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b55a20ca"
-                            }
-                        },
-                        "us-east-2":{
-                            "peer":{
-                                "0.0.9":"ami-c83c02ad"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-c83c02ad"
-                            }
-                        },
-                        "us-west-1":{
-                            "peer":{
-                                "0.0.9":"ami-b95ebbda"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-b95ebbda"
-                            }
-                        },
-                        "us-west-2":{
-                            "peer":{
-                                "0.0.9":"ami-813777f9"
-                            },
-                            "validator":{
-                                "0.0.9":"ami-813777f9"
-                            }
-                        }
-                    }
+        "security":{
+            "egress":"*",
+            "ingress":{
+                "0.0.0.0/0":{
+                    "tcp":[
+                        5001,
+                        8050,
+                        8051,
+                        8080,
+                        30300
+                    ],
+                    "udp":[
+                        30300
+                    ]
                 }
             }
         },
@@ -2828,212 +2060,20 @@ access-control-expose-headers: X-Total-Results-Count
         },
         "chainspec_abi_url": null,
         "chainspec_url": null,
-        "cloneable_cfg": {
-            "security": {
-                "egress": "*",
-                "ingress": {
-                    "0.0.0.0/0": {
-                        "tcp": [
-                            5001,
-                            8050,
-                            8051,
-                            8080,
-                            30300
-                        ],
-                        "udp": [
-                            30300
-                        ]
-                    }
-                }
-            },
-            "aws": {
-                "docker": {
-                    "regions": {
-                        "ap-northeast-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "ap-northeast-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "ap-south-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "ap-southeast-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "ap-southeast-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "ca-central-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "eu-central-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "eu-west-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "eu-west-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "eu-west-3": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "sa-east-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "us-east-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "us-east-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "us-west-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        "us-west-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        }
-                    }
-                },
-                "ubuntu-vm": {
-                    "regions": {
-                        "ap-northeast-1": {
-                            "peer": {
-                                "0.0.9": "ami-1e22e061"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-1e22e061"
-                            }
-                        },
-                        "ap-northeast-2": {
-                            "peer": {
-                                "0.0.9": "ami-bfa802d1"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-bfa802d1"
-                            }
-                        },
-                        "ap-south-1": {
-                            "peer": {
-                                "0.0.9": "ami-6c2f0703"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-6c2f0703"
-                            }
-                        },
-                        "ap-southeast-1": {
-                            "peer": {
-                                "0.0.9": "ami-578f8a2b"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-578f8a2b"
-                            }
-                        },
-                        "ap-southeast-2": {
-                            "peer": {
-                                "0.0.9": "ami-ed2df18f"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-ed2df18f"
-                            }
-                        },
-                        "ca-central-1": {
-                            "peer": {
-                                "0.0.9": "ami-8d60e3e9"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-8d60e3e9"
-                            }
-                        },
-                        "eu-central-1": {
-                            "peer": {
-                                "0.0.9": "ami-b17c4c5a"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-b17c4c5a"
-                            }
-                        },
-                        "eu-west-1": {
-                            "peer": {
-                                "0.0.9": "ami-86dddbff"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-86dddbff"
-                            }
-                        },
-                        "eu-west-2": {
-                            "peer": {
-                                "0.0.9": "ami-e1799686"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-e1799686"
-                            }
-                        },
-                        "eu-west-3": {
-                            "peer": {
-                                "0.0.9": "ami-132d9c6e"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-132d9c6e"
-                            }
-                        },
-                        "sa-east-1": {
-                            "peer": {
-                                "0.0.9": "ami-67f6ae0b"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-67f6ae0b"
-                            }
-                        },
-                        "us-east-1": {
-                            "peer": {
-                                "0.0.9": "ami-b55a20ca"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-b55a20ca"
-                            }
-                        },
-                        "us-east-2": {
-                            "peer": {
-                                "0.0.9": "ami-c83c02ad"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-c83c02ad"
-                            }
-                        },
-                        "us-west-1": {
-                            "peer": {
-                                "0.0.9": "ami-b95ebbda"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-b95ebbda"
-                            }
-                        },
-                        "us-west-2": {
-                            "peer": {
-                                "0.0.9": "ami-813777f9"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-813777f9"
-                            }
-                        }
-                    }
+        "security": {
+            "egress": "*",
+            "ingress": {
+                "0.0.0.0/0": {
+                    "tcp": [
+                        5001,
+                        8050,
+                        8051,
+                        8080,
+                        30300
+                    ],
+                    "udp": [
+                        30300
+                    ]
                 }
             }
         },
@@ -3214,55 +2254,18 @@ HTTP/2 200
         "chainspec_abi_url": null,
         "chainspec_url": null,
         "cloneable_cfg": {
-            "security": {
-                "egress": "*",
-                "ingress": {
-                    "0.0.0.0/0": {
-                        "tcp": [
-                            8050,
-                            8051,
-                            30300
-                        ],
-                        "udp": [
-                            30300
-                        ]
-                    }
-                }
-            },
-            "aws": {
-                "docker": {
-                    "regions": {
-                        "ap-northeast-1": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        },
-                        ...
-                        "us-west-2": {
-                            "peer": "providenetwork-node",
-                            "validator": "providenetwork-node"
-                        }
-                    }
-                },
-                "ubuntu-vm": {
-                    "regions": {
-                        "ap-northeast-1": {
-                            "peer": {
-                                "0.0.9": "ami-1e22e061"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-1e22e061"
-                            }
-                        },
-                        ...
-                        "us-west-2": {
-                            "peer": {
-                                "0.0.9": "ami-813777f9"
-                            },
-                            "validator": {
-                                "0.0.9": "ami-813777f9"
-                            }
-                        }
-                    }
+        "security": {
+            "egress": "*",
+            "ingress": {
+                "0.0.0.0/0": {
+                    "tcp": [
+                        8050,
+                        8051,
+                        30300
+                    ],
+                    "udp": [
+                        30300
+                    ]
                 }
             }
         },
