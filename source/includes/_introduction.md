@@ -17,6 +17,7 @@ Client libraries are available on [Github](https://github.com/provideservices). 
 - [Javascript](https://github.com/provideservices/provide-js)
 - [Go](https://github.com/provideservices/provide-go)
 - [Groovy](https://github.com/provideservices/provide-groovy)
+- [Java](https://github.com/provideservices/provide-java)
 - [PHP](https://github.com/provideservices/provide-php)
 - [Python](https://github.com/provideservices/provide-python)
 - [Ruby](https://github.com/provideservices/provide-ruby)

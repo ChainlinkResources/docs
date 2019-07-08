@@ -31,7 +31,7 @@ includes:
   - bookie/payment_channels
   - divider
   - goldmine/networks
-  - goldmine/network_nodes
+  - goldmine/nodes
   - goldmine/load_balancers
   - orchestration
   - consensus

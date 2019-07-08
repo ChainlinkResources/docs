@@ -2,7 +2,7 @@
 
 Collection endpoints which return large datasets support the following pagination query parameters:
 
-Query Param | Purpose
+Query Param | Description
 ---------- | -------
 `page` | The `1`-based page number being requested
 `rpp` | The results per page being requested
