@@ -4845,9 +4845,11 @@ x-total-results-count: 1
         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validator"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"genesis"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parity"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"default_json_rpc_port"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"default_websocket_port"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorityRound"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aura"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"CHAIN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dawn"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"CHAIN_SPEC_URL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1"</span><span class="p">,</span><span class="w">
@@ -4909,13 +4911,16 @@ x-total-results-count: 1
     https://goldmine.provide.services/api/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes <span class="se">\</span>
     -d <span class="s1">'{
     "config":{
+        "client":"parity",
+        "container":"providenetwork-node",
         "credentials":{
             "aws_access_key_id":"AKIXXXXXXXXXXXXXXXXX",
             "aws_secret_access_key":"75yXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         },
-        "engine_id":"authorityRound",
+        "engine_id":"aura",
         "env":{
             "CHAIN_SPEC_URL":"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT":"parity",
             "ENGINE_SIGNER":"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
             "NETWORK_ID":"1560058202",
             "FAT_DB":"on",
@@ -4949,9 +4954,12 @@ x-total-results-count: 1
     </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validator"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorityRound"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parity"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aura"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"CHAIN_SPEC_URL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CLIENT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parity"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ENGINE_SIGNER"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"FAT_DB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"NETWORK_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560058202"</span><span class="p">,</span><span class="w">
@@ -5023,9 +5031,11 @@ content-length: 1000
     </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validator"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parity"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"default_json_rpc_port"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"default_websocket_port"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authorityRound"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aura"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"CHAIN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dawn"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"CHAIN_SPEC_URL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1"</span><span class="p">,</span><span class="w">
