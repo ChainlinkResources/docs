@@ -110,7 +110,7 @@ x-total-results-count: 5
             "json_rpc_url":"https://dai-trace-ws.blockscout.com",
             "native_currency":"xDAI",
             "network_id":22,
-            "platform":"evm",
+            "platform":"xdai",
             "protocol_id":"poa",
             "websocket_url":"wss://dai-trace-ws.blockscout.com/ws"
         },
