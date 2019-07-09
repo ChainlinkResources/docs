@@ -38,9 +38,11 @@ x-total-results-count: 1
         "role": "validator",
         "status": "genesis",
         "config": {
+            "client": "parity",
+            "container": "providenetwork-node",
             "default_json_rpc_port": null,
             "default_websocket_port": null,
-            "engine_id": "authorityRound",
+            "engine_id": "aura",
             "env": {
                 "CHAIN": "dawn",
                 "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
@@ -102,13 +104,16 @@ curl -i -XPOST \
     https://goldmine.provide.services/api/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes \
     -d '{
     "config":{
+        "client":"parity",
+        "container":"providenetwork-node",
         "credentials":{
             "aws_access_key_id":"AKIXXXXXXXXXXXXXXXXX",
             "aws_secret_access_key":"75yXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         },
-        "engine_id":"authorityRound",
+        "engine_id":"aura",
         "env":{
             "CHAIN_SPEC_URL":"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT":"parity",
             "ENGINE_SIGNER":"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
             "NETWORK_ID":"1560058202",
             "FAT_DB":"on",
@@ -143,9 +148,12 @@ curl -i -XPOST \
     "role": "validator",
     "status": "pending",
     "config": {
-        "engine_id": "authorityRound",
+        "client": "parity",
+        "container": "providenetwork-node",
+        "engine_id": "aura",
         "env": {
             "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT": "parity",
             "ENGINE_SIGNER": "0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
             "FAT_DB": "on",
             "NETWORK_ID": "1560058202",
@@ -212,9 +220,11 @@ content-length: 1000
     "role": "validator",
     "status": "running",
     "config": {
+        "client": "parity",
+        "container": "providenetwork-node",
         "default_json_rpc_port": null,
         "default_websocket_port": null,
-        "engine_id": "authorityRound",
+        "engine_id": "aura",
         "env": {
             "CHAIN": "dawn",
             "CHAIN_SPEC_URL": "https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
