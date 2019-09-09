@@ -9,7 +9,7 @@ Additional consensus discussion & considerations forthcoming.
 
 ## Peer-to-Peer Clients
 
-<img alt="Peer-to-Peer Clients Supported on Provide Platform" src="https://provide-github.s3.amazonaws.com/supported-p2p-clients.png" style="height: 75px;" />
+<img alt="Peer-to-Peer Clients Supported on Provide Platform" src="https://s3.amazonaws.com/dawn.provide.services/img/supported-p2p-clients.png" />
 
 ### EVM
 
