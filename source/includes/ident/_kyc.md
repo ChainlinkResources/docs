@@ -11,6 +11,7 @@ Provide's KYC service currently supports the following third-party vendors:
 Name | KYC Application Provider | API Reference
 --------- | ----------- | -----------
 IdentityMind | `identitymind` | <a href="https://edoc.identitymind.com/reference" target="_blank">https://edoc.identitymind.com/reference</a>
+Vouched | `vouched` | <a href="https://docs.vouched.id" target="_blank">https://docs.vouched.id</a>
 
 ## List KYC Applications
 
