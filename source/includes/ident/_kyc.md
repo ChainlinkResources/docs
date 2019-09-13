@@ -55,7 +55,7 @@ You achieve this by concatenating:
 
 ### Step 3: Determine the expected signature
 
-Compute an HMAC with the SHA256 hash function. Use the application's signing secret as the key, and use the signed_payload string as the message.
+Compute an HMAC with the SHA256 hash function. Use the application's signing secret as the key, and use the signed payload string generated in step (2) above as the message.
 
 ### Step 4: Compare signatures
 
