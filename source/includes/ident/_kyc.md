@@ -1,6 +1,6 @@
 # KYC
 
-Provide has built a KYC service which acts as an API gateway to third-party digital identity management platforms in an effort to create a standard, developer-friendly way to interact with digital signing identities in the context of KYC (and KYB), AML compliance and fraud prevention. We are open to adding support for additional third-party KYC/AML API providers. If you would like to see us add support for a new provider, please [contact us](https://provide.services/contact-us).
+Provide has built a KYC service which acts as an API gateway to third-party digital identity management platforms in an effort to create a standard, developer-friendly way to interact with digital signing identities in the context of KYC (and KYB), AML compliance and fraud prevention. The KYC API gateway allows applications to conform to an upstream partner's compliance requirements without compromising the UX of their own applications. We are open to adding support for additional third-party KYC/AML API providers. If you would like to see us add support for a new provider, please [contact us](https://provide.services/contact-us).
 
 The KYC API gateway acts as a passthrough to a configured third-party API (the `provider`). Provide manages the KYC/KYB application lifecycle to help your compliance department perform remediation. Upon submission of a KYC (or KYB) application, the platform asyncronously monitors the application for state changes; subscriptions can be configured to notify your application when manual remediation is required. More details on these notifications will be provided in a subsequent update to this documentation.
 
@@ -12,6 +12,56 @@ Name | KYC Application Provider | API Reference
 --------- | ----------- | -----------
 IdentityMind | `identitymind` | <a href="https://edoc.identitymind.com/reference" target="_blank">https://edoc.identitymind.com/reference</a>
 Vouched | `vouched` | <a href="https://docs.vouched.id" target="_blank">https://docs.vouched.id</a>
+
+## Webhook Support
+
+The Provide KYC API gateway implements fault-tolerant KYC remediation. When the status of a KYC application changes, your application can be configured to receive notifications at a configured HTTP `webhook_url`. Webhook notifications requests sent to this URL include a signature in the `X-Request-Signature` header. This allows you to verify that the requests were sent by Provide and not by a third party. Signatures can only be verified manually at this time as described below.
+
+### Preventing replay attacks
+
+A replay attack is when an attacker intercepts a valid payload and its signature and retransmits them. To mitigate such attacks, Provide includes a timestamp in the `X-Request-Signature` header. Because this timestamp is also part of the signed payload, it is verified by the signature. An attacker cannot change the timestamp without invalidating the signature. If the signature is valid but the timestamp is too old, you can have your application reject the payload at your discretion.
+
+We recommend that you use Network Time Protocol (NTP) to ensure that your server's clock is accurate and synchronizes with the time on Provide's servers.
+
+Provide generates the timestamp and signature each time we send an notification to your endpoint. If a notification is retried (i.e., in the event your configured endpoint previously issued a non-2xx response), then a new signature and timestamp is generated for the retry attempt.
+
+### Verifying signatures
+
+We may release webhook signature verification examples using one of our official libraries in the future. Please use the following instructions to implement signature verification in your configured webhook endpoint.
+
+The `X-Request-Signature` header contains a timestamp and signature. The timestamp and signature are prefixed by `t=` and `s=`, respectively, and comma-delimited.
+
+```shell
+X-Request-Signature: t=1257894000,s=5b5e838f593e1bae355109bce56939f5ccae74586635f4f95d68bb6b526c40ac
+```
+
+Provide generates signatures using a hash-based message authentication code (<a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a>) with <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-256</a>.
+
+It is not currently possible to have multiple active secrets for generating signatures.
+
+### Step 1: Extract the timestamp and signatures from the header
+
+Split the header, using the `,` character as the delimiter to split on, to get a list of key/value pair strings. Then split each raw string, using the `=` character as the separator, to arrive at each key and its associated value.
+
+The value for the prefix `t` corresponds to the timestamp, and `s` corresponds to the signature.
+
+### Step 2: Generate the signed payload string
+
+You achieve this by concatenating:
+
+- The timestamp (as a string)
+- The character `.`
+- The raw JSON payload (i.e., the request body)
+
+### Step 3: Determine the expected signature
+
+Compute an HMAC with the SHA256 hash function. Use the application's signing secret as the key, and use the signed_payload string as the message.
+
+### Step 4: Compare signatures
+
+Compare the signature in the header to the expected signature. If the signatures match, compute the difference between the current and received timestamps. It is up to you to determine if the difference is within your tolerance. A higher tolerance is more susceptible to replay attaacks.
+
+To protect against timing attacks, use a constant-time string comparison to compare the expected signature to the received signature.
 
 ## List KYC Applications
 
