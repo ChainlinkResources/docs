@@ -1262,7 +1262,7 @@ HTTP/2 200
 <li>The raw JSON payload (i.e., the request body)</li>
 </ul>
 <h3 id='step-3-determine-the-expected-signature'>Step 3: Determine the expected signature</h3>
-<p>Compute an HMAC with the SHA256 hash function. Use the application&#39;s signing secret as the key, and use the signed_payload string as the message.</p>
+<p>Compute an HMAC with the SHA256 hash function. Use the application&#39;s signing secret as the key, and use the signed payload string generated in step (2) above as the message.</p>
 <h3 id='step-4-compare-signatures'>Step 4: Compare signatures</h3>
 <p>Compare the signature in the header to the expected signature. If the signatures match, compute the difference between the current and received timestamps. It is up to you to determine if the difference is within your tolerance. A higher tolerance is more susceptible to replay attaacks.</p>
 
