@@ -308,6 +308,9 @@
                       <a href="#third-party-api-support" class="toc-h2 toc-link" data-title="Third-Party API Support">Third-Party API Support</a>
                     </li>
                     <li>
+                      <a href="#webhook-support" class="toc-h2 toc-link" data-title="Webhook Support">Webhook Support</a>
+                    </li>
+                    <li>
                       <a href="#list-kyc-applications" class="toc-h2 toc-link" data-title="List KYC Applications">List KYC Applications</a>
                     </li>
                     <li>
@@ -1205,7 +1208,7 @@ HTTP/2 200
     }
 }
 </code></pre><h1 id='kyc'>KYC</h1>
-<p>Provide has built a KYC service which acts as an API gateway to third-party digital identity management platforms in an effort to create a standard, developer-friendly way to interact with digital signing identities in the context of KYC (and KYB), AML compliance and fraud prevention. We are open to adding support for additional third-party KYC/AML API providers. If you would like to see us add support for a new provider, please <a href="https://provide.services/contact-us">contact us</a>.</p>
+<p>Provide has built a KYC service which acts as an API gateway to third-party digital identity management platforms in an effort to create a standard, developer-friendly way to interact with digital signing identities in the context of KYC (and KYB), AML compliance and fraud prevention. The KYC API gateway allows applications to conform to an upstream partner&#39;s compliance requirements without compromising the UX of their own applications. We are open to adding support for additional third-party KYC/AML API providers. If you would like to see us add support for a new provider, please <a href="https://provide.services/contact-us">contact us</a>.</p>
 
 <p>The KYC API gateway acts as a passthrough to a configured third-party API (the <code>provider</code>). Provide manages the KYC/KYB application lifecycle to help your compliance department perform remediation. Upon submission of a KYC (or KYB) application, the platform asyncronously monitors the application for state changes; subscriptions can be configured to notify your application when manual remediation is required. More details on these notifications will be provided in a subsequent update to this documentation.</p>
 <h2 id='third-party-api-support'>Third-Party API Support</h2>
@@ -1229,6 +1232,41 @@ HTTP/2 200
 <td><a href="https://docs.vouched.id" target="_blank">https://docs.vouched.id</a></td>
 </tr>
 </tbody></table>
+<h2 id='webhook-support'>Webhook Support</h2>
+<p>The Provide KYC API gateway implements fault-tolerant KYC remediation. When the status of a KYC application changes, your application can be configured to receive notifications at a configured HTTP <code>webhook_url</code>. Webhook notifications requests sent to this URL include a signature in the <code>X-Request-Signature</code> header. This allows you to verify that the requests were sent by Provide and not by a third party. Signatures can only be verified manually at this time as described below.</p>
+<h3 id='preventing-replay-attacks'>Preventing replay attacks</h3>
+<p>A replay attack is when an attacker intercepts a valid payload and its signature and retransmits them. To mitigate such attacks, Provide includes a timestamp in the <code>X-Request-Signature</code> header. Because this timestamp is also part of the signed payload, it is verified by the signature. An attacker cannot change the timestamp without invalidating the signature. If the signature is valid but the timestamp is too old, you can have your application reject the payload at your discretion.</p>
+
+<p>We recommend that you use Network Time Protocol (NTP) to ensure that your server&#39;s clock is accurate and synchronizes with the time on Provide&#39;s servers.</p>
+
+<p>Provide generates the timestamp and signature each time we send an notification to your endpoint. If a notification is retried (i.e., in the event your configured endpoint previously issued a non-2xx response), then a new signature and timestamp is generated for the retry attempt.</p>
+<h3 id='verifying-signatures'>Verifying signatures</h3>
+<p>We may release webhook signature verification examples using one of our official libraries in the future. Please use the following instructions to implement signature verification in your configured webhook endpoint.</p>
+
+<p>The <code>X-Request-Signature</code> header contains a timestamp and signature. The timestamp and signature are prefixed by <code>t=</code> and <code>s=</code>, respectively, and comma-delimited.</p>
+<pre class="highlight shell tab-shell"><code>X-Request-Signature: <span class="nv">t</span><span class="o">=</span>1257894000,s<span class="o">=</span>5b5e838f593e1bae355109bce56939f5ccae74586635f4f95d68bb6b526c40ac
+</code></pre>
+<p>Provide generates signatures using a hash-based message authentication code (<a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a>) with <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-256</a>.</p>
+
+<p>It is not currently possible to have multiple active secrets for generating signatures.</p>
+<h3 id='step-1-extract-the-timestamp-and-signatures-from-the-header'>Step 1: Extract the timestamp and signatures from the header</h3>
+<p>Split the header, using the <code>,</code> character as the delimiter to split on, to get a list of key/value pair strings. Then split each raw string, using the <code>=</code> character as the separator, to arrive at each key and its associated value.</p>
+
+<p>The value for the prefix <code>t</code> corresponds to the timestamp, and <code>s</code> corresponds to the signature.</p>
+<h3 id='step-2-generate-the-signed-payload-string'>Step 2: Generate the signed payload string</h3>
+<p>You achieve this by concatenating:</p>
+
+<ul>
+<li>The timestamp (as a string)</li>
+<li>The character <code>.</code></li>
+<li>The raw JSON payload (i.e., the request body)</li>
+</ul>
+<h3 id='step-3-determine-the-expected-signature'>Step 3: Determine the expected signature</h3>
+<p>Compute an HMAC with the SHA256 hash function. Use the application&#39;s signing secret as the key, and use the signed_payload string as the message.</p>
+<h3 id='step-4-compare-signatures'>Step 4: Compare signatures</h3>
+<p>Compare the signature in the header to the expected signature. If the signatures match, compute the difference between the current and received timestamps. It is up to you to determine if the difference is within your tolerance. A higher tolerance is more susceptible to replay attaacks.</p>
+
+<p>To protect against timing attacks, use a constant-time string comparison to compare the expected signature to the received signature.</p>
 <h2 id='list-kyc-applications'>List KYC Applications</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://ident.provide.services/api/v1/kyc_applications
