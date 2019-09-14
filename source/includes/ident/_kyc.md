@@ -35,7 +35,7 @@ The `X-Request-Signature` header contains a timestamp and signature. The timesta
 X-Request-Signature: t=1257894000,s=5b5e838f593e1bae355109bce56939f5ccae74586635f4f95d68bb6b526c40ac
 ```
 
-Provide generates signatures using a hash-based message authentication code (<a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a>) with <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-256</a>.
+Provide generates signatures using a hash-based message authentication code (<a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code" target="_blank">HMAC</a>) with <a href="https://en.wikipedia.org/wiki/SHA-2" target="_blank">SHA-256</a>.
 
 It is not currently possible to have multiple active secrets for generating signatures.
 
