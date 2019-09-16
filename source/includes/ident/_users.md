@@ -40,6 +40,7 @@ curl -i -H 'content-type: application/json' \
     -d '{"name": "Vitalik Buterin", "email": "vitalik@example.com", password": "3sWWKn7jQhbj#XW5CXTappB!E6WzwZuc"}'
 HTTP/2 201
 ```
+
 > Response JSON:
 
 ```json
@@ -61,7 +62,7 @@ Parameter | Description
 --------- | -----------
 name | full name of the `User`
 email | email address for the `User`; must be capable of receiving email at time of creation
-application_id | id of the `Application` with which the `User` will be associated
+password | password for the `User`; an `Application` may create a `User` without a password for use with certain APIs
 
 
 ## Update User

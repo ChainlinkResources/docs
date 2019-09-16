@@ -34,3 +34,54 @@ curl -i -H 'content-type: application/json' \
     }
 }
 ```
+
+
+## Reset Password Request
+
+```shell
+curl -i -H 'content-type: application/json' \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
+    https://ident.provide.services/api/v1/users/reset_password \
+    -d '{"email": "vitalik@example.com"}'
+HTTP/2 201
+```
+
+> Response JSON:
+
+```json
+{
+    "reset_password_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJLeWxlIFRob21hcyJ9LCJleHAiOjE1Njg2MjE1ODIsImlhdCI6MTU2ODYxNzk4MiwianRpIjoiYmUyNjRmYTAtM2Q1OC00Yjk1LTg1ZTktY2MzZGM1ZWI3Y2ZjIiwic3ViIjoidXNlcjo5ZTE1NzkxYS1kYmYxLTRlNWUtOGM2Yi1hNzI1M2UxOThiNGMifQ.vthjA4dkvNz8VXFftyoAhjiT-FANVrEbmIiQ7C4kKzM"
+}
+```
+
+Initiate a password reset request for a platform `User` or a `User` on behalf of an authorized `Application`, in which case the `Authorization` header is provided containing `Application` credentials.
+
+### Request Parameters
+
+Parameter | Description
+--------- | -----------
+email | email address for the `User` to initiate the password reset request
+
+
+## Reset Password
+
+```shell
+curl -i -H 'content-type: application/json' \
+    https://ident.provide.services/api/v1/users/reset_password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJLeWxlIFRob21hcyJ9LCJleHAiOjE1Njg2MjE1ODIsImlhdCI6MTU2ODYxNzk4MiwianRpIjoiYmUyNjRmYTAtM2Q1OC00Yjk1LTg1ZTktY2MzZGM1ZWI3Y2ZjIiwic3ViIjoidXNlcjo5ZTE1NzkxYS1kYmYxLTRlNWUtOGM2Yi1hNzI1M2UxOThiNGMifQ.vthjA4dkvNz8VXFftyoAhjiT-FANVrEbmIiQ7C4kKzM \
+    -d '{"password": "the new password"}'
+HTTP/2 204
+```
+
+Complete a password reset request for a platform `User` or a `User` on behalf of an authorized `Application`.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+token | reset password token acquired in the reset password request
+
+### Request Parameters
+
+Parameter | Description
+--------- | -----------
+password | the new password for the `User`
