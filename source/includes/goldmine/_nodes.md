@@ -86,7 +86,7 @@ x-total-results-count: 1
 ]
 ```
 
-List `NetworkNodes` for a `Network`.
+List `Nodes` for a `Network`.
 
 ### URL Parameters
 
@@ -169,7 +169,7 @@ curl -i -XPOST \
 }
 ```
 
-Configure a `NetworkNode` to join a specific peer-to-peer `Network`. Upon successful validation and creation of the `NetworkNode` the platform attempts to deploy it asynchronously. Depending on the `Network` (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed `NetworkNode` occurs. See [Orchestration](#orchestration).
+Configure a `Node` to join a specific peer-to-peer `Network`. Upon successful validation and creation of the `Node` the platform attempts to deploy it asynchronously. Depending on the `Network` (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed `Node` occurs. See [Orchestration](#orchestration).
 
 ### URL Parameters
 
@@ -268,14 +268,14 @@ content-length: 1000
 }
 ```
 
-Retrieve details for a `NetworkNode`.
+Retrieve details for a `Node`.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | id of the `Network`
-nodeId | id of the `NetworkNode`
+nodeId | id of the `Node`
 
 
 ## Retreive Network Node Logs
@@ -562,7 +562,7 @@ Retrieve paginated logs for a network node. Currently the logs are returned sort
 Parameter | Description
 --------- | -----------
 id | id of the `Network`
-nodeId | the id of the `NetworkNode`
+nodeId | the id of the `Node`
 
 ### Query Parameters
 
@@ -581,11 +581,11 @@ curl -i -XDELETE \
 HTTP/2 204
 ```
 
-Undeploy a `NetworkNode`.
+Undeploy a `Node`.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | id of the `Network`
-nodeId | the id of the `NetworkNode`
+nodeId | the id of the `Node`
