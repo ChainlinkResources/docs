@@ -299,6 +299,12 @@
                     <li>
                       <a href="#user-authentication" class="toc-h2 toc-link" data-title="User Authentication">User Authentication</a>
                     </li>
+                    <li>
+                      <a href="#reset-password-request" class="toc-h2 toc-link" data-title="Reset Password Request">Reset Password Request</a>
+                    </li>
+                    <li>
+                      <a href="#reset-password" class="toc-h2 toc-link" data-title="Reset Password">Reset Password</a>
+                    </li>
                 </ul>
           </li>
           <li>
@@ -1039,8 +1045,8 @@ HTTP/2 201
 <td>email address for the <code>User</code>; must be capable of receiving email at time of creation</td>
 </tr>
 <tr>
-<td>application_id</td>
-<td>id of the <code>Application</code> with which the <code>User</code> will be associated</td>
+<td>password</td>
+<td>password for the <code>User</code>; an <code>Application</code> may create a <code>User</code> without a password for use with certain APIs</td>
 </tr>
 </tbody></table>
 <h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
@@ -1207,7 +1213,63 @@ HTTP/2 200
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4ODEwNTQsImp0aSI6Ijg2MmMyNzFlLTJiZWYtNGJlOS05MmNlLTQzY2UyNzdmNzEwMCIsInN1YiI6InVzZXI6M2Q5ZDYyZTgtMGFjZi00N2NkLWI3NGYtNTJjMWY5NmY4Mzk3In0.QQW5purvJbjxUXW51rH4cFReNQMLLOm4oTV2qwvi_AM"
     }
 }
-</code></pre><h1 id='kyc'>KYC</h1>
+</code></pre><h2 id='reset-password-request'>Reset Password Request</h2><pre class="highlight shell tab-shell"><code>curl -i -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
+    https://ident.provide.services/api/v1/users/reset_password <span class="se">\</span>
+    -d <span class="s1">'{"email": "vitalik@example.com"}'</span>
+HTTP/2 201
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"reset_password_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJLeWxlIFRob21hcyJ9LCJleHAiOjE1Njg2MjE1ODIsImlhdCI6MTU2ODYxNzk4MiwianRpIjoiYmUyNjRmYTAtM2Q1OC00Yjk1LTg1ZTktY2MzZGM1ZWI3Y2ZjIiwic3ViIjoidXNlcjo5ZTE1NzkxYS1kYmYxLTRlNWUtOGM2Yi1hNzI1M2UxOThiNGMifQ.vthjA4dkvNz8VXFftyoAhjiT-FANVrEbmIiQ7C4kKzM"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Initiate a password reset request for a platform <code>User</code> or a <code>User</code> on behalf of an authorized <code>Application</code>, in which case the <code>Authorization</code> header is provided containing <code>Application</code> credentials.</p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>email address for the <code>User</code> to initiate the password reset request</td>
+</tr>
+</tbody></table>
+<h2 id='reset-password'>Reset Password</h2><pre class="highlight shell tab-shell"><code>curl -i -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+    https://ident.provide.services/api/v1/users/reset_password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJLeWxlIFRob21hcyJ9LCJleHAiOjE1Njg2MjE1ODIsImlhdCI6MTU2ODYxNzk4MiwianRpIjoiYmUyNjRmYTAtM2Q1OC00Yjk1LTg1ZTktY2MzZGM1ZWI3Y2ZjIiwic3ViIjoidXNlcjo5ZTE1NzkxYS1kYmYxLTRlNWUtOGM2Yi1hNzI1M2UxOThiNGMifQ.vthjA4dkvNz8VXFftyoAhjiT-FANVrEbmIiQ7C4kKzM <span class="se">\</span>
+    -d <span class="s1">'{"password": "the new password"}'</span>
+HTTP/2 204
+</code></pre>
+<p>Complete a password reset request for a platform <code>User</code> or a <code>User</code> on behalf of an authorized <code>Application</code>.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>reset password token acquired in the reset password request</td>
+</tr>
+</tbody></table>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>password</td>
+<td>the new password for the <code>User</code></td>
+</tr>
+</tbody></table>
+<h1 id='kyc'>KYC</h1>
 <p>Provide has built a KYC service which acts as an API gateway to third-party digital identity management platforms in an effort to create a standard, developer-friendly way to interact with digital signing identities in the context of KYC (and KYB), AML compliance and fraud prevention. The KYC API gateway allows applications to conform to an upstream partner&#39;s compliance requirements without compromising the UX of their own applications. We are open to adding support for additional third-party KYC/AML API providers. If you would like to see us add support for a new provider, please <a href="https://provide.services/contact-us">contact us</a>.</p>
 
 <p>The KYC API gateway acts as a passthrough to a configured third-party API (the <code>provider</code>). Provide manages the KYC/KYB application lifecycle to help your compliance department perform remediation. Upon submission of a KYC (or KYB) application, the platform asyncronously monitors the application for state changes; subscriptions can be configured to notify your application when manual remediation is required. More details on these notifications will be provided in a subsequent update to this documentation.</p>
