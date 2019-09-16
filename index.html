@@ -5044,7 +5044,7 @@ x-total-results-count: 1
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>List <code>NetworkNodes</code> for a <code>Network</code>.</p>
+<p>List <code>Nodes</code> for a <code>Network</code>.</p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -5126,7 +5126,7 @@ x-total-results-count: 1
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Configure a <code>NetworkNode</code> to join a specific peer-to-peer <code>Network</code>. Upon successful validation and creation of the <code>NetworkNode</code> the platform attempts to deploy it asynchronously. Depending on the <code>Network</code> (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed <code>NetworkNode</code> occurs. See <a href="#orchestration">Orchestration</a>.</p>
+<p>Configure a <code>Node</code> to join a specific peer-to-peer <code>Network</code>. Upon successful validation and creation of the <code>Node</code> the platform attempts to deploy it asynchronously. Depending on the <code>Network</code> (i.e., its consensus protocol, security model, etc.) and the target infrastructure (i.e., AWS, Azure or locally via Docker), various enrichment of the deployed <code>Node</code> occurs. See <a href="#orchestration">Orchestration</a>.</p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -5230,7 +5230,7 @@ content-length: 1000
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Retrieve details for a <code>NetworkNode</code>.</p>
+<p>Retrieve details for a <code>Node</code>.</p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -5244,7 +5244,7 @@ content-length: 1000
 </tr>
 <tr>
 <td>nodeId</td>
-<td>id of the <code>NetworkNode</code></td>
+<td>id of the <code>Node</code></td>
 </tr>
 </tbody></table>
 <h2 id='retreive-network-node-logs'>Retreive Network Node Logs</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
@@ -5533,7 +5533,7 @@ date: Sun, 09 Jun 2019 08:12:47 GMT
 </tr>
 <tr>
 <td>nodeId</td>
-<td>the id of the <code>NetworkNode</code></td>
+<td>the id of the <code>Node</code></td>
 </tr>
 </tbody></table>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -5560,7 +5560,7 @@ date: Sun, 09 Jun 2019 08:12:47 GMT
     https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/nodes/59d1e7ce-3316-45b2-bf06-5fae2c6294fe
 HTTP/2 204
 </code></pre>
-<p>Undeploy a <code>NetworkNode</code>.</p>
+<p>Undeploy a <code>Node</code>.</p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -5574,7 +5574,7 @@ HTTP/2 204
 </tr>
 <tr>
 <td>nodeId</td>
-<td>the id of the <code>NetworkNode</code></td>
+<td>the id of the <code>Node</code></td>
 </tr>
 </tbody></table>
 <h1 id='load-balancers'>Load Balancers</h1>
