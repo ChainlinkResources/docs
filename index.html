@@ -5698,31 +5698,73 @@ HTTP/2 200
 <blockquote>
 <p>Response JSON:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9e5e269a-f074-49e2-8383-ab94a33ae30a"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-15T03:18:07.942554Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25b6339c-f11f-4a00-94d7-0a6e9b64586d"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC Corp Private IPFS Endpoint"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipfs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"gateway_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ec2-54-175-49-39.compute-1.amazonaws.com:8080"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"rpc_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ec2-54-175-49-39.compute-1.amazonaws.com:5001"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"e7ceec61-dae7-4697-aa5a-a6868fbb89ca"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-09-17T16:03:35.397391-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="s2">"a1ed9f4b-0770-44d5-a5e5-c9625fe3480f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"network_id"</span><span class="p">:</span><span class="s2">"aa51a87f-f142-4341-8e94-b4b0214a009f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"IPFS us-east-1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ipfs"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"init"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"config"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"api_port"</span><span class="p">:</span><span class="mi">5001</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"container"</span><span class="p">:</span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gateway_port"</span><span class="p">:</span><span class="mi">8080</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"provider_id"</span><span class="p">:</span><span class="s2">"docker"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"region"</span><span class="p">:</span><span class="s2">"us-east-1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role"</span><span class="p">:</span><span class="s2">"peer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"security"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"egress"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ingress"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"0.0.0.0/0"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"tcp"</span><span class="p">:[</span><span class="w">
+              </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+              </span><span class="mi">8080</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"udp"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"target_id"</span><span class="p">:</span><span class="s2">"aws"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>List configured connectors.</p>
 <h2 id='create-connector'>Create Connector</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/applications/25b6339c-f11f-4a00-94d7-0a6e9b64586d/connectors <span class="se">\</span>
-    -d <span class="s1">'{"network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-          "application_id": "25b6339c-f11f-4a00-94d7-0a6e9b64586d",
-          "type": "ipfs",
-          "name": "ABC Corp Private IPFS Endpoint",
-          "config": {
-            "gateway_url": "http://ec2-54-175-49-39.compute-1.amazonaws.com:8080",
-            "rpc_url": "http://ec2-54-175-49-39.compute-1.amazonaws.com:5001"
+    -d <span class="s1">'{
+          "name":"IPFS us-east-1",
+          "network_id":"aa51a87f-f142-4341-8e94-b4b0214a009f",
+          "type":"ipfs",
+          "config":{
+            "region":"us-east-1",
+            "target_id":"aws",
+            "provider_id":"docker",
+            "role":"peer",
+            "container":"providenetwork-ipfs",
+            "rpc_port":5001,
+            "gateway_port":8080,
+            "credentials":{
+              "aws_access_key_id":"AKIAXXXXXXXXXXXXXXXX",
+              "aws_secret_access_key":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            },
+            "security":{
+              "egress":"*",
+              "ingress":{
+                "0.0.0.0/0":{
+                  "tcp":[
+                    5001,
+                    8080
+                  ],
+                  "udp":[]
+                }
+              }
+            }
           }
         }'</span>
 HTTP/2 201
@@ -5731,17 +5773,36 @@ HTTP/2 201
 <p>Response JSON:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9e5e269a-f074-49e2-8383-ab94a33ae30a"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-15T03:18:07.942553712Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25b6339c-f11f-4a00-94d7-0a6e9b64586d"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"024ff1ef-7369-4dee-969c-1918c6edb5d4"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC Corp Private IPFS Endpoint"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipfs"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"gateway_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ec2-54-175-49-39.compute-1.amazonaws.com:8080"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rpc_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ec2-54-175-49-39.compute-1.amazonaws.com:5001"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"e7ceec61-dae7-4697-aa5a-a6868fbb89ca"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2019-09-17T16:03:35.397391-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="s2">"a1ed9f4b-0770-44d5-a5e5-c9625fe3480f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"network_id"</span><span class="p">:</span><span class="s2">"aa51a87f-f142-4341-8e94-b4b0214a009f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"IPFS us-east-1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ipfs"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"init"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"config"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"api_port"</span><span class="p">:</span><span class="mi">5001</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"container"</span><span class="p">:</span><span class="s2">"providenetwork-node"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gateway_port"</span><span class="p">:</span><span class="mi">8080</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"provider_id"</span><span class="p">:</span><span class="s2">"docker"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"region"</span><span class="p">:</span><span class="s2">"us-east-1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"role"</span><span class="p">:</span><span class="s2">"peer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"security"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"egress"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ingress"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"0.0.0.0/0"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"tcp"</span><span class="p">:[</span><span class="w">
+            </span><span class="mi">5001</span><span class="p">,</span><span class="w">
+            </span><span class="mi">8080</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"udp"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"target_id"</span><span class="p">:</span><span class="s2">"aws"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="s2">"accessed_at"</span><span class="p">:</span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Create a new connector using the given configuration.</p>
