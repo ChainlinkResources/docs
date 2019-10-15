@@ -1,9 +1,9 @@
 # Orchestration
 
-<img alt="Amazon Web Services" src="https://s3.amazonaws.com/dawn.provide.services/img/aws-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Microsoft Azure Cloud" src="https://s3.amazonaws.com/dawn.provide.services/img/azure-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Docker" src="https://s3.amazonaws.com/dawn.provide.services/img/docker-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Kubernetes" src="https://s3.amazonaws.com/dawn.provide.services/img/kubernetes-light.png" style="height: 40px; margin-left: 18px;" />
+<img alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" style="height: 40px; margin-left: 10px;" />
+<img alt="Microsoft Azure Cloud" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" style="height: 40px; margin-left: 10px;" />
+<img alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" style="height: 40px; margin-left: 10px;" />
+<img alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" style="height: 40px; margin-left: 18px;" />
 
 <i>Documentation forthcoming.</i>
 
