@@ -572,6 +572,50 @@ page | n/a | page number or token indicating the next page in the log stream
 rpp | 100 | number of logs to include in the response
 
 
+## Update a Network Node
+
+```shell
+curl -i -XPUT \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64' \
+    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50 \
+    -d '{
+    "config":{
+        "client":"parity",
+        "container":"providenetwork-node",
+        "credentials":{
+            "aws_access_key_id":"AKIXXXXXXXXXXXXXXXXX",
+            "aws_secret_access_key":"77zXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        },
+        "engine_id":"aura",
+        "env":{
+            "CHAIN_SPEC_URL":"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT":"parity",
+            "ENGINE_SIGNER":"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+            "NETWORK_ID":"1560058202",
+            "FAT_DB":"on",
+            "PRUNING":"archive",
+            "TRACING":"on"
+        },
+        "protocol_id":"poa",
+        "provider_id":"docker",
+        "region":"us-east-2",
+        "role":"validator",
+        "target_id":"aws"
+    }
+}'
+HTTP/2 204
+```
+
+Update a node. This is especially useful when credentails needed to manage underlying infrastructure are rotated. The encrypted configuration stored for the node is patched, such that any sensitive configuration items provided in the request overwrite those items in the encrypted configuration without affecting the rest of the encrypted config.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | id of the `Network`
+nodeId | the id of the `Node`
+
+
 ## Undeploy Network Node
 
 ```shell
