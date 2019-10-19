@@ -1,9 +1,10 @@
 # Orchestration
 
-<img alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Microsoft Azure Cloud" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" style="height: 40px; margin-left: 10px;" />
-<img alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" style="height: 40px; margin-left: 18px;" />
+<img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
+<img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
+<img class="cloud-provider" alt="Google Cloud Platform" src="https://s3.amazonaws.com/static.provide.services/img/google-light.png" />
+<img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" />
+<img class="cloud-provider" alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" />
 
 <i>Documentation forthcoming.</i>
 
@@ -36,6 +37,10 @@ When a load balancer is provisioned for you by the platform, it is currently add
 
 ## Microsoft Azure
 
+<i>Documentation forthcoming.</i>
+
+
+## Google Cloud Platform
 
 <i>Documentation forthcoming.</i>
 
@@ -49,11 +54,7 @@ When a load balancer is provisioned for you by the platform, it is currently add
 
 <i>Documentation forthcoming.</i>
 
+
 ## On-Premise Support
-
-
-<i>Documentation forthcoming.</i>
-
-## Automated Testing
 
 <i>Documentation forthcoming.</i>

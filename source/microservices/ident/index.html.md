@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Ident API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -13,11 +13,17 @@ language_tabs: # must be one of https://git.io/vQNgJ
   # - swift
 
 includes:
-  - introduction
+  - ident/introduction
+  - divider
   - authorization
-  - pagination
-  - status_codes
-  - rate_limits
+  - ident/api_tokens
+  - ident/authentication
+  - divider
+  - ident/applications
+  - ident/users
+  # - ident/connect
+  - divider
+  - ident/kyc
   - divider
 
 search: true

@@ -7,9 +7,13 @@ The Provide Platform is a scalable, protocol-agnostic PaaS for deploying public,
 Provide supports various configurable consensus protocols depending on the peer-to-peer network configuration of a given network (see Supported Peer-to-Peer Clients below).
 Additional consensus discussion & considerations forthcoming.
 
-## Peer-to-Peer Clients
+<br/>
 
-<img alt="Peer-to-Peer Clients Supported on Provide Platform" src="https://s3.amazonaws.com/static.provide.services/img/supported-p2p-clients.png" />
+<img class="protocol-provider" alt="EVM" src="https://s3.amazonaws.com/static.provide.services/img/evm-logo.png" />
+<img class="protocol-provider" alt="Parity" src="https://s3.amazonaws.com/static.provide.services/img/parity-light.png" />
+<img class="protocol-provider" alt="Bitcoin" src="https://s3.amazonaws.com/static.provide.services/img/bcoin-light.png" />
+<img class="protocol-provider" alt="Handshake" src="https://s3.amazonaws.com/static.provide.services/img/handshake-light.png" />
+<img class="protocol-provider" alt="Hyperledger" src="https://s3.amazonaws.com/static.provide.services/img/hyperledger-light.png" />
 
 ### EVM
 
@@ -27,4 +31,4 @@ Handshake is a UTXO-based blockchain protocol which manages the registration, re
 
 ### Hyperledger
 
-We are supporting Hyperledger Burrow with Tendermint consensus as well as Hyperledger Fabric.
+Documentation forthcoming.

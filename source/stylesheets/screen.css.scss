@@ -613,3 +613,11 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+// Customizations
+
+img.cloud-provider,
+img.protocol-provider {
+  height: 45px;
+  margin-left: 30px;
+}

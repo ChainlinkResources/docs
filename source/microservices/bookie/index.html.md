@@ -13,11 +13,12 @@ language_tabs: # must be one of https://git.io/vQNgJ
   # - swift
 
 includes:
-  - introduction
-  - authorization
-  - pagination
-  - status_codes
-  - rate_limits
+  - bookie/introduction
+  - divider
+  - bookie/billing_accounts
+  - bookie/payment_methods
+  - bookie/payment_hubs
+  - bookie/payment_channels
   - divider
 
 search: true

@@ -13,12 +13,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
   # - swift
 
 includes:
-  - introduction
-  - authorization
-  - pagination
-  - status_codes
-  - rate_limits
-  - divider
 
 search: true
 ---
