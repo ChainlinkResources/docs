@@ -420,6 +420,9 @@
                       <a href="#retreive-network-node-logs" class="toc-h2 toc-link" data-title="Retreive Network Node Logs">Retreive Network Node Logs</a>
                     </li>
                     <li>
+                      <a href="#update-a-network-node" class="toc-h2 toc-link" data-title="Update a Network Node">Update a Network Node</a>
+                    </li>
+                    <li>
                       <a href="#undeploy-network-node" class="toc-h2 toc-link" data-title="Undeploy Network Node">Undeploy Network Node</a>
                     </li>
                 </ul>
@@ -5617,13 +5620,60 @@ date: Sun, 09 Jun 2019 08:12:47 GMT
 <td>number of logs to include in the response</td>
 </tr>
 </tbody></table>
+<h2 id='update-a-network-node'>Update a Network Node</h2><pre class="highlight shell tab-shell"><code>curl -i -XPUT <span class="se">\</span>
+    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
+    https://goldmine.provide.services/api/v1/networks/e5e0a051-6af7-4d1e-88cd-0ea1f67abd50 <span class="se">\</span>
+    -d <span class="s1">'{
+    "config":{
+        "client":"parity",
+        "container":"providenetwork-node",
+        "credentials":{
+            "aws_access_key_id":"AKIXXXXXXXXXXXXXXXXX",
+            "aws_secret_access_key":"77zXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        },
+        "engine_id":"aura",
+        "env":{
+            "CHAIN_SPEC_URL":"https://www.dropbox.com/s/xbuadz3odhpux7i/spec-us-east-2.json?dl=1",
+            "CLIENT":"parity",
+            "ENGINE_SIGNER":"0x549871a39Eeb7E406C1E4b199A8A46962fB78a9C",
+            "NETWORK_ID":"1560058202",
+            "FAT_DB":"on",
+            "PRUNING":"archive",
+            "TRACING":"on"
+        },
+        "protocol_id":"poa",
+        "provider_id":"docker",
+        "region":"us-east-2",
+        "role":"validator",
+        "target_id":"aws"
+    }
+}'</span>
+HTTP/2 204
+</code></pre>
+<p>Update a node. This is especially useful when credentails needed to manage underlying infrastructure are rotated. The encrypted configuration stored for the node is patched, such that any sensitive configuration items provided in the request overwrite those items in the encrypted configuration without affecting the rest of the encrypted config.</p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>id of the <code>Network</code></td>
+</tr>
+<tr>
+<td>nodeId</td>
+<td>the id of the <code>Node</code></td>
+</tr>
+</tbody></table>
 <h2 id='undeploy-network-node'>Undeploy Network Node</h2><pre class="highlight shell tab-shell"><code>curl -i -XDELETE <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/networks/024ff1ef-7369-4dee-969c-1918c6edb5d4/nodes/59d1e7ce-3316-45b2-bf06-5fae2c6294fe
 HTTP/2 204
 </code></pre>
 <p>Undeploy a <code>Node</code>.</p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
