@@ -19,6 +19,9 @@ includes:
   - status_codes
   - rate_limits
   - divider
+  - microservices
+  - use_cases
+  - divider
 
 search: true
 ---
