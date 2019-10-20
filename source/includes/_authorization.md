@@ -1,10 +1,10 @@
 # Authorization
 
-Provide requires an API token to authorize the vast majority of platform requests. An API token is encoded using JWT and contains an identifier referencing the authorized entity as the subject (`sub`) in the JWT payload. The encoded JWT token may also include an expiration (`exp`) and arbitrary data (`data`), among other standard JWT fields, and is signed using the `RS256` algorithm. The authorized entity (i.e., the `User` or `Application`) may use the signed `Token` to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: `Authorization: bearer <JWT>`.
+Provide requires an API token to authorize the vast majority of platform requests. An API token is an encoded JWT and contains an identifier referencing the authorized entity as the subject (`sub`) in the claims. The encoded JWT token may also include an expiration (`exp`) and arbitrary data (`data`), among other standard JWT claims, and is signed using the `RS256` algorithm. The authorized entity (i.e., the `User` or `Application`) may use the signed `Token` to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: `Authorization: bearer <JWT>`.
 
 The bearer `Authorization` header is scoped to an authorized platform `User` or an `Application` as described above.
 
-> The encoded JWT token is signed using the `RS256` (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:
+> The encoded JWT is signed using the `RS256` (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:
 
 ```shell
 -----BEGIN PUBLIC KEY-----

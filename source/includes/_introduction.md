@@ -1,12 +1,12 @@
 # Introduction
 
-Welcome to the [Provide Platform](http://provide.services) API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.
+Welcome to the [Provide](http://provide.services) API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.
 
 # Platform Overview
 
-Provide Platform is a scalable, chain- and protocol-agnostic PaaS for deploying public, private or permissioned blockchain networks. Provide creates a modern developer experience with easy-to-understand APIs. Provide Platform helps your blockchain developers operationalize smart contracts for use in decentralized applications and integrate with enterprise application architectures. The transaction, signing identities, oracles, bridges, smart contracts and other decentralized application elements are manageable using our [web UI](https://static.provide.services) or [CLI](https://github.com/provideservices/provide-cli). You can use Provide Platform to rapidly prototype a DApp or architect a new platform or network. Our abstraction layer makes deploying decentralized applications to production a seamless experience for DevOps.
+Provide is a scalable chain- and cloud-agnostic platform for deploying public, private or permissioned peer-to-peer infrastructure. Provide enables Web3 innovation with a suite of developer tools and modern APIs. Provide can help you or your organization experiment with and ultimately adopt DLT (distributed ledger technology) in a way that compliments your legacy enterprise architecture. Provide has a [web UI](https://dawn.provide.services) and [CLI](https://github.com/provideservices/provide-cli) to manage platform resources.
 
-Provide’s structured platform abstracts away much of the DevOps and engineering overhead associated with blockchain projects. Your project can be up and running across thousands of nodes all over the world in minutes.
+We are working to make our [web experience](https://dawn.provide.services) suitable for bizdev and product owners. If you are a developer, you will likely want to work with the [CLI](https://github.com/provideservices/provide-cli).
 
 
 # Client Libraries
