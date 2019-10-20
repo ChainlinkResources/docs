@@ -342,12 +342,12 @@
 <p>Authentication, authorization, device and identity APIs for platform users and applications.</p>
 <h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='authorization'>Authorization</h1>
-<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is encoded using JWT and contains an identifier referencing the authorized entity as the subject (<code>sub</code>) in the JWT payload. The encoded JWT token may also include an expiration (<code>exp</code>) and arbitrary data (<code>data</code>), among other standard JWT fields, and is signed using the <code>RS256</code> algorithm. The authorized entity (i.e., the <code>User</code> or <code>Application</code>) may use the signed <code>Token</code> to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
+<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is an encoded JWT and contains an identifier referencing the authorized entity as the subject (<code>sub</code>) in the claims. The encoded JWT token may also include an expiration (<code>exp</code>) and arbitrary data (<code>data</code>), among other standard JWT claims, and is signed using the <code>RS256</code> algorithm. The authorized entity (i.e., the <code>User</code> or <code>Application</code>) may use the signed <code>Token</code> to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
 
 <p>The bearer <code>Authorization</code> header is scoped to an authorized platform <code>User</code> or an <code>Application</code> as described above.</p>
 
 <blockquote>
-<p>The encoded JWT token is signed using the <code>RS256</code> (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:</p>
+<p>The encoded JWT is signed using the <code>RS256</code> (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>-----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0yqdJMBej1X8WwMMkMZw

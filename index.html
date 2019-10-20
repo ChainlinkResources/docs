@@ -287,11 +287,11 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the <a href="http://provide.services">Provide Platform</a> API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.</p>
+<p>Welcome to the <a href="http://provide.services">Provide</a> API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.</p>
 <h1 id='platform-overview'>Platform Overview</h1>
-<p>Provide Platform is a scalable, chain- and protocol-agnostic PaaS for deploying public, private or permissioned blockchain networks. Provide creates a modern developer experience with easy-to-understand APIs. Provide Platform helps your blockchain developers operationalize smart contracts for use in decentralized applications and integrate with enterprise application architectures. The transaction, signing identities, oracles, bridges, smart contracts and other decentralized application elements are manageable using our <a href="https://static.provide.services">web UI</a> or <a href="https://github.com/provideservices/provide-cli">CLI</a>. You can use Provide Platform to rapidly prototype a DApp or architect a new platform or network. Our abstraction layer makes deploying decentralized applications to production a seamless experience for DevOps.</p>
+<p>Provide is a scalable chain- and cloud-agnostic platform for deploying public, private or permissioned peer-to-peer infrastructure. Provide enables Web3 innovation with a suite of developer tools and modern APIs. Provide can help you or your organization experiment with and ultimately adopt DLT (distributed ledger technology) in a way that compliments your legacy enterprise architecture. Provide has a <a href="https://dawn.provide.services">web UI</a> and <a href="https://github.com/provideservices/provide-cli">CLI</a> to manage platform resources.</p>
 
-<p>Provide’s structured platform abstracts away much of the DevOps and engineering overhead associated with blockchain projects. Your project can be up and running across thousands of nodes all over the world in minutes.</p>
+<p>We are working to make our <a href="https://dawn.provide.services">web experience</a> suitable for bizdev and product owners. If you are a developer, you will likely want to work with the <a href="https://github.com/provideservices/provide-cli">CLI</a>.</p>
 <h1 id='client-libraries'>Client Libraries</h1>
 <p>Client libraries are available on <a href="https://github.com/provideservices">Github</a>. The following repositories make our client libraries available to the community:</p>
 
@@ -307,12 +307,12 @@
 <li><a href="https://github.com/provideservices/provide-swift">Swift</a></li>
 </ul>
 <h1 id='authorization'>Authorization</h1>
-<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is encoded using JWT and contains an identifier referencing the authorized entity as the subject (<code>sub</code>) in the JWT payload. The encoded JWT token may also include an expiration (<code>exp</code>) and arbitrary data (<code>data</code>), among other standard JWT fields, and is signed using the <code>RS256</code> algorithm. The authorized entity (i.e., the <code>User</code> or <code>Application</code>) may use the signed <code>Token</code> to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
+<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is an encoded JWT and contains an identifier referencing the authorized entity as the subject (<code>sub</code>) in the claims. The encoded JWT token may also include an expiration (<code>exp</code>) and arbitrary data (<code>data</code>), among other standard JWT claims, and is signed using the <code>RS256</code> algorithm. The authorized entity (i.e., the <code>User</code> or <code>Application</code>) may use the signed <code>Token</code> to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
 
 <p>The bearer <code>Authorization</code> header is scoped to an authorized platform <code>User</code> or an <code>Application</code> as described above.</p>
 
 <blockquote>
-<p>The encoded JWT token is signed using the <code>RS256</code> (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:</p>
+<p>The encoded JWT is signed using the <code>RS256</code> (RSA Signature with SHA-256) algorithm. The following public key can be used to verify the signature:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>-----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0yqdJMBej1X8WwMMkMZw
