@@ -26,7 +26,7 @@ HTTP/2 200
 
 This endpoint enumerates accounts used for storing cryptocurrency or tokens on behalf of Provide users managing cryptographic material (i.e., for signing transactions).
 
-<aside class="info">Balances are not returned here for performance reasons; see <code>GET /api/v1/accounts/:id</code> to get balance details in the native currency for the network and <code>GET /api/v1/accounts/:id/balances/:token_id</code> to get balance details for a specific token, if supported by the wallet and network.</aside>
+<aside class="info">Balances are not returned here for performance reasons; see <code>GET /api/v1/accounts/:id</code> to get balance details in the native currency for the network and <code>GET /api/v1/accounts/:id/balances/:token_id</code> to get balance details for a specific token, if supported by the account and network.</aside>
 
 
 ## Create Account

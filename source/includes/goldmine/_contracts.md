@@ -75,7 +75,7 @@ curl -i \
         "lang":"solidity",
         "name":"X12",
         "raw_source":"pragma solidity ^0.5.1;\n\ncontract X12 {\n\n   struct transaction {\n       string _sndr_interchange_id;\n       string _sndr_interchange_qualifier;\n       string _recv_interchange_id;\n       string _recv_interchange_qualifier;\n       string _tx_version;\n       string _tx_type;\n       string _edi_payload;\n   }\n\n   transaction[] internal txs;\n\n   function ipfs_fields() public pure returns (bytes32[] memory) {\n       bytes32[] memory _fields = new bytes32[](1);\n       _fields[0] = \"edi_payload\";\n       return _fields;\n   }\n\n   function send(\n       string memory sndr_interchange_id,\n       string memory sndr_interchange_qualifier,\n       string memory recv_interchange_id,\n       string memory recv_interchange_qualifier,\n       string memory tx_version,\n       string memory tx_type,\n       string memory edi_payload\n    ) public\n       {\n           transaction memory _tx = X12.transaction(sndr_interchange_id,sndr_interchange_qualifier,recv_interchange_id,recv_interchange_qualifier,tx_version,tx_type,edi_payload);\n           txs.push(_tx);\n       }\n}\n",
-        "wallet_id":"e6ef498b-589e-4514-9924-278b7bd6e3de"
+        "account_id":"e6ef498b-589e-4514-9924-278b7bd6e3de"
     }
 }'
 HTTP/2 201
@@ -106,7 +106,7 @@ access-control-expose-headers: X-Total-Results-Count
         "lang":"solidity",
         "name":"X12",
         "raw_source":"pragma solidity ^0.5.1;\n\ncontract X12 {\n\n   struct transaction {\n       string _sndr_interchange_id;\n       string _sndr_interchange_qualifier;\n       string _recv_interchange_id;\n       string _recv_interchange_qualifier;\n       string _tx_version;\n       string _tx_type;\n       string _edi_payload;\n   }\n\n   transaction[] internal txs;\n\n   function ipfs_fields() public pure returns (bytes32[] memory) {\n       bytes32[] memory _fields = new bytes32[](1);\n       _fields[0] = \"edi_payload\";\n       return _fields;\n   }\n\n   function send(\n       string memory sndr_interchange_id,\n       string memory sndr_interchange_qualifier,\n       string memory recv_interchange_id,\n       string memory recv_interchange_qualifier,\n       string memory tx_version,\n       string memory tx_type,\n       string memory edi_payload\n    ) public\n       {\n           transaction memory _tx = X12.transaction(sndr_interchange_id,sndr_interchange_qualifier,recv_interchange_id,recv_interchange_qualifier,tx_version,tx_type,edi_payload);\n           txs.push(_tx);\n       }\n}\n",
-        "wallet_id":"d9700171-54da-4a4a-88b0-9ce4b99454dc"
+        "account_id":"d9700171-54da-4a4a-88b0-9ce4b99454dc"
     },
     "accessed_at":null
 }
@@ -14875,7 +14875,7 @@ curl -i \
     "{}"
   ],
   "value": 0,
-  "wallet_id": "e6ef498b-589e-4514-9924-278b7bd6e3de"
+  "account_id": "e6ef498b-589e-4514-9924-278b7bd6e3de"
 }'
 HTTP/2 202
 date: Sun, 10 Jun 2019 04:15:41 GMT
@@ -14906,7 +14906,7 @@ curl -i \
      -H 'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
     -H 'content-type: application/json' \
      https://goldmine.provide.services/api/v1/contracts/3b9fe62e-5da7-43dc-838f-3cfa1421ed0f/execute \
-     -d '{"wallet_id": "63b15ede-318b-45be-a7ba-bf965bbd0c2e", "method": "ipfs_fields", "params": [], "value": 0}'
+     -d '{"account_id": "63b15ede-318b-45be-a7ba-bf965bbd0c2e", "method": "ipfs_fields", "params": [], "value": 0}'
 HTTP/2 200
 date: Sun, 10 Jun 2019 04:15:04 GMT
 content-type: application/json; charset=UTF-8
@@ -14931,7 +14931,7 @@ access-control-expose-headers: X-Total-Results-Count
 
 Parameter | Description
 --------- | -----------
-wallet_id | id of the `Wallet`  signing identity to use for the request
+account_id | id of the `Wallet`  signing identity to use for the request
 method | method name to invoke in the contract
 params | array of arguments to be encoded and provided to the `method` invocation
 value | the payment to be included with the transaction, in the network's native currency
