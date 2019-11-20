@@ -14931,7 +14931,7 @@ access-control-expose-headers: X-Total-Results-Count
 
 Parameter | Description
 --------- | -----------
-account_id | id of the `Wallet`  signing identity to use for the request
+account_id | id of the `Account`  signing identity to use for the request
 method | method name to invoke in the contract
 params | array of arguments to be encoded and provided to the `method` invocation
 value | the payment to be included with the transaction, in the network's native currency

@@ -133,8 +133,8 @@ Parameter | Description | Default
 filter_contract_creations | when `true`, contract creation transactions are filtered | `false`
 status | comma-delimited list of statuses by which the transactions response is filtered | n/a
 network_id | id of the `Network` where the transaction was broadcast
-account_id | id of the `Wallet` which signed the transaction
-from | network address of the sender of the transaction (corresponds to the `Wallet` address)
+account_id | id of the `Account` which signed the transaction
+from | network address of the sender of the transaction (corresponds to the `Account` address)
 to | network address of the recipient of the transaction
 
 
@@ -188,9 +188,9 @@ HTTP/2 201
 
 Parameter | Description 
 --------- | -----------
-network_id | id of the `Network` on which the `Transaction` will be broadcast; must match `Wallet` network if the `Transaction` is being signed custodially
-account_id | id of the `Wallet`; will result in the `Transaction` being signed custodially; `Wallet` must match the `Network` and `Application`, if applicable
-signer | `Network` address of the signer for the transaction; will resolve to a `Wallet` and result in the `Transaction` being signed custodially if the `Wallet` is a signing identity managed by the platform
+network_id | id of the `Network` on which the `Transaction` will be broadcast; must match `Account` network if the `Transaction` is being signed custodially
+account_id | id of the `Account`; will result in the `Transaction` being signed custodially; `Account` must match the `Network` and `Application`, if applicable
+signer | `Network` address of the signer for the transaction; will resolve to a `Account` and result in the `Transaction` being signed custodially if the `Account` is a signing identity managed by the platform
 
 
 ## Retrieve Transaction Details
