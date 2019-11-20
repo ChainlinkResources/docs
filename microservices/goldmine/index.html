@@ -19377,7 +19377,7 @@ access-control-expose-headers: X-Total-Results-Count
 </thead><tbody>
 <tr>
 <td>account_id</td>
-<td>id of the <code>Wallet</code>  signing identity to use for the request</td>
+<td>id of the <code>Account</code>  signing identity to use for the request</td>
 </tr>
 <tr>
 <td>method</td>
@@ -19555,12 +19555,12 @@ x-total-results-count: 3
 </tr>
 <tr>
 <td>account_id</td>
-<td>id of the <code>Wallet</code> which signed the transaction</td>
+<td>id of the <code>Account</code> which signed the transaction</td>
 <td></td>
 </tr>
 <tr>
 <td>from</td>
-<td>network address of the sender of the transaction (corresponds to the <code>Wallet</code> address)</td>
+<td>network address of the sender of the transaction (corresponds to the <code>Account</code> address)</td>
 <td></td>
 </tr>
 <tr>
@@ -19620,15 +19620,15 @@ HTTP/2 201
 </thead><tbody>
 <tr>
 <td>network_id</td>
-<td>id of the <code>Network</code> on which the <code>Transaction</code> will be broadcast; must match <code>Wallet</code> network if the <code>Transaction</code> is being signed custodially</td>
+<td>id of the <code>Network</code> on which the <code>Transaction</code> will be broadcast; must match <code>Account</code> network if the <code>Transaction</code> is being signed custodially</td>
 </tr>
 <tr>
 <td>account_id</td>
-<td>id of the <code>Wallet</code>; will result in the <code>Transaction</code> being signed custodially; <code>Wallet</code> must match the <code>Network</code> and <code>Application</code>, if applicable</td>
+<td>id of the <code>Account</code>; will result in the <code>Transaction</code> being signed custodially; <code>Account</code> must match the <code>Network</code> and <code>Application</code>, if applicable</td>
 </tr>
 <tr>
 <td>signer</td>
-<td><code>Network</code> address of the signer for the transaction; will resolve to a <code>Wallet</code> and result in the <code>Transaction</code> being signed custodially if the <code>Wallet</code> is a signing identity managed by the platform</td>
+<td><code>Network</code> address of the signer for the transaction; will resolve to a <code>Account</code> and result in the <code>Transaction</code> being signed custodially if the <code>Account</code> is a signing identity managed by the platform</td>
 </tr>
 </tbody></table>
 <h2 id='retrieve-transaction-details'>Retrieve Transaction Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
