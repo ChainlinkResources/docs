@@ -28,7 +28,7 @@ includes:
   - goldmine/contracts
   - goldmine/tokens
   - goldmine/transactions
-  - goldmine/wallets
+  - goldmine/accounts
   - divider
 
 search: true

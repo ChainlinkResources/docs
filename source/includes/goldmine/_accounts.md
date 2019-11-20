@@ -1,12 +1,12 @@
-# Wallets
+# Accounts
 
-## List Wallets
+## List Accounts
 
 ```shell
 curl -i \
      -H 'content-type: application/json' \
      -H 'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-     https://goldmine.provide.services/api/v1/wallets
+     https://goldmine.provide.services/api/v1/accounts
 HTTP/2 200
 ```
 
@@ -20,23 +20,22 @@ HTTP/2 200
         "user_id": null,
         "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
         "address": "0xAC805F1c2Bf9a19b448bc207075B992Be29bC91a",
-        "balance": null,
         "accessed_at": "2018-10-03T20:48:37.291739Z"
     }
 ```
 
-This endpoint enumerates wallets used for storing cryptocurrency or tokens on behalf of Provide users managing cryptographic material (i.e., for signing transactions).
+This endpoint enumerates accounts used for storing cryptocurrency or tokens on behalf of Provide users managing cryptographic material (i.e., for signing transactions).
 
-<aside class="info">Balances are returned as null here for performance reasons; see  <code>GET /api/v1/wallets/:id</code> to get balance details in the native currency for the network.</aside>
+<aside class="info">Balances are not returned here for performance reasons; see <code>GET /api/v1/accounts/:id</code> to get balance details in the native currency for the network and <code>GET /api/v1/accounts/:id/balances/:token_id</code> to get balance details for a specific token, if supported by the wallet and network.</aside>
 
 
-## Create Wallet
+## Create Account
 
 ```shell
 curl -i \
      -H 'content-type: application/json' \
      -H 'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-     https://goldmine.provide.services/api/v1/wallets \
+     https://goldmine.provide.services/api/v1/accounts \
      -d '{"network_id":"024ff1ef-7369-4dee-969c-1918c6edb5d4"}'
 HTTP/2 201
 ```
@@ -50,22 +49,20 @@ HTTP/2 201
     "application_id": "e49302c5-e485-4e14-9b0f-db5643b6a15c",
     "user_id": null,
     "network_id": "024ff1ef-7369-4dee-969c-1918c6edb5d4",
-    "address": "0xa4f8874C971EB257C0Fd8e33401b274e2a27133d",
-    "balance": null,
-    "accessed_at": null
+    "address": "0xa4f8874C971EB257C0Fd8e33401b274e2a27133d"
 }
 ```
 
-Creates a `Wallet` (also referred to as a signing identity) capable of storing cryptocurrencies and tokens native to a specific `Network`. A `Wallet` may be setup as custodial or non-custodial. If the `Wallet` is custodial then the platform will sign and broadcast transactions to the `Network` on behalf of an authorized `User` or `Application`.
+Creates an `Account` (also referred to as a signing identity) capable of storing cryptocurrencies and tokens native to a specific `Network`. An `Account` may be setup as custodial or non-custodial, and may be derived from a HD (hierarchical deterministic) `Wallet`. If the `Account` is custodial then the platform will sign and broadcast transactions to the `Network` on behalf of an authorized `User` or `Application`.
 
 
-## Retrieve Wallet Details
+## Retrieve Account Details
 
 ```shell
 curl -i \
      -H 'content-type: application/json' \
      -H 'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE' \
-     https://goldmine.provide.services/api/v1/wallets/efef1044-4958-43bc-903b-28f2bb938037
+     https://goldmine.provide.services/api/v1/accounts/efef1044-4958-43bc-903b-28f2bb938037
 HTTP/2 200
 ```
 
@@ -84,19 +81,19 @@ HTTP/2 200
 }
 ```
 
-Retrieve details for a `Wallet`.
+Retrieve details for an `Account`.
 
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-id | id of the `Wallet`
+id | id of the `Account`
 
 
-## Wallet Token Balance
+## Account Token Balance
 
-Retrieve the on-chain token balance details for a specific `Wallet` and `Token` contract.
+Retrieve the on-chain token balance details for a specific `Account` and `Token` contract, if supported by the `Account` and `Network`.
 
 <i>Documentation forthcoming.</i>
 
@@ -104,5 +101,5 @@ Retrieve the on-chain token balance details for a specific `Wallet` and `Token` 
 
 Parameter | Description
 --------- | -----------
-id | id of the `Wallet`
-tokenId | id of the `Token` contract for which to retrieve the balance
+id | id of the `Account`
+token | id or address of the `Token` contract for which to retrieve the balance
