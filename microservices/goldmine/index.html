@@ -430,6 +430,17 @@
                 </ul>
           </li>
           <li>
+              <a href="#hd-wallets" class="toc-h1 toc-link" data-title="HD Wallets">HD Wallets</a>
+                <ul class="toc-list-h2">
+                    <li>
+                      <a href="#list-hd-wallets" class="toc-h2 toc-link" data-title="List HD Wallets">List HD Wallets</a>
+                    </li>
+                    <li>
+                      <a href="#create-hd-wallet" class="toc-h2 toc-link" data-title="Create HD Wallet">Create HD Wallet</a>
+                    </li>
+                </ul>
+          </li>
+          <li>
               <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
                 <ul class="toc-list-h2">
                     <li>
@@ -19711,6 +19722,70 @@ access-control-expose-headers: X-Total-Results-Count
 <tr>
 <td>id</td>
 <td>id of the <code>Transaction</code></td>
+</tr>
+</tbody></table>
+<h1 id='hd-wallets'>HD Wallets</h1><h2 id='list-hd-wallets'>List HD Wallets</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+     -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+     -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
+     https://goldmine.provide.services/api/v1/wallets
+HTTP/2 200
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ec81de72-c08a-432d-ac9d-664a0d021b97"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-21T02:10:40.584071Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60cad358-8d93-4d61-9f15-ecfd4a9dd9cb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"purpose"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mnemonic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twist dice country pink crystal thrive shy dumb laugh lounge liquid radar project eyebrow right monster mom hurt never whale unusual lesson squeeze seat"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpub661MyMwAqRbcGkyMb8rnET1T1KT2NMEUTNMRaiQrvR9Hnbevpt72jePhwhAxqQm1Ci4rw1XPPwcQe89Tyn6bndkNGXP8fLHdEDnL9JPMA2z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"private_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xprv9s21ZrQH143K4GttV7KmsK4iTHcXxtWd69RpnL1FN5cJuoKnHLnnBr5E6SL28ibSebnwsfdBjG7NL2UC6ZMztWcoWFRmS6UNnUGbxNh3VXV"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1e1c7fe-a038-4eb4-9f4b-ddd0de54ac36"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-21T01:57:46.467658Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60cad358-8d93-4d61-9f15-ecfd4a9dd9cb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"purpose"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mnemonic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"work trip twenty sea leisure metal nerve canal demand text column like thrive wing tent equal exhibit hand canyon wolf core skill enact produce"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpub661MyMwAqRbcF9PyW5qTg8MK5Ba1hpri8wUhmLhSgkCjwyipQb2L63z6k68n4eRgwPdnU34M6ufsPMRLw7eAapx5Eu7p5HBAaEwWhN1dNiw"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"private_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xprv9s21ZrQH143K2fKWQ4JTJzQaX9jXJN8rmiZ6xxHq8Qfm5BPfs3i5YFfctoCau8Q3DZHvmZDtQ1vmqEEGK2eq97Ayc1RyGTRyMKYLtmxak1X"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint enumerates HD (hierarchical deterministic) wallets used for deriving addresses in accordance with BIP32.</p>
+<h2 id='create-hd-wallet'>Create HD Wallet</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
+     -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+     -H <span class="s1">'authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
+     https://goldmine.provide.services/api/v1/wallets <span class="se">\</span>
+     -d <span class="s1">'{"purpose": 44}'</span>
+HTTP/2 201
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1e1c7fe-a038-4eb4-9f4b-ddd0de54ac36"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-21T01:57:46.467658479Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60cad358-8d93-4d61-9f15-ecfd4a9dd9cb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"purpose"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mnemonic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"work trip twenty sea leisure metal nerve canal demand text column like thrive wing tent equal exhibit hand canyon wolf core skill enact produce"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpub661MyMwAqRbcF9PyW5qTg8MK5Ba1hpri8wUhmLhSgkCjwyipQb2L63z6k68n4eRgwPdnU34M6ufsPMRLw7eAapx5Eu7p5HBAaEwWhN1dNiw"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"private_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xprv9s21ZrQH143K2fKWQ4JTJzQaX9jXJN8rmiZ6xxHq8Qfm5BPfs3i5YFfctoCau8Q3DZHvmZDtQ1vmqEEGK2eq97Ayc1RyGTRyMKYLtmxak1X"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Creates an HD (hierarchical deterministic) <code>Wallet</code> in accordance with BIP32. A <code>Wallet</code> may be setup as custodial or non-custodial. If the <code>Wallet</code> is custodial then the platform will derive addresses and securely persist an <code>Account</code> for each of those derived addresses.</p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>purpose</td>
+<td>specification to be used by the HD node subtree; set to <code>44</code> for <code>44&#39;</code> (i.e., <code>0x8000002C</code> following the BIP43 recommendation)</td>
 </tr>
 </tbody></table>
 <h1 id='accounts'>Accounts</h1><h2 id='list-accounts'>List Accounts</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
