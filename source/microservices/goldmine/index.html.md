@@ -22,8 +22,8 @@ includes:
   - goldmine/load_balancers
   - divider
   - goldmine/connectors
-  - goldmine/bridges
   - goldmine/oracles
+  - goldmine/bridges
   - divider
   - goldmine/contracts
   - goldmine/tokens

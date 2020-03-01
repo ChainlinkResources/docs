@@ -1,24 +1,23 @@
 # Orchestration
 
-<img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
-<img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
-<img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" />
-
-<i>Documentation forthcoming.</i>
+Provide supports orchestration of load balanced peer-to-peer networks across multiple regions and data centers using the [network](/microservices/goldmine#networks) and [node](/microservices/goldmine#node) APIs.
 
 ## Amazon Web Services
 
-<i>Documentation forthcoming.</i>
+<img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
 
-### Your AWS Credentials (IAM)
+<pre><b>target</b>&nbsp;aws</pre>
 
-<i>Documentation forthcoming.</i>
+### Credentials
+
+The following object illustrates how to securely pass your IAM `credentials` within a `Node` configuration.
+
+Name | Description
+--------- | -------- |
+aws_access_key_id | the AWS access key id to use for the request
+aws_secret_access_key | the AWS secret access key to
 
 ### VPC Considerations
-
-<i>Documentation forthcoming.</i>
-
-### Security
 
 <i>Documentation forthcoming.</i>
 
@@ -28,30 +27,21 @@ Provide leverages the second-generation Elastic Load Balancing (ELB) service on 
 
 When a load balancer is provisioned for you by the platform, it is currently added to a list of regional load balancers under management which are, in turn, used in a pool-like fashion (i.e., a simple round-robin algorithm is used to distribute JSON-RPC and similar requests across all healthy balancers in a region). We are considering other algorithms for distributing this load.
 
-### Elastic Container Service (ECS & Fargate)
-
-<i>Documentation forthcoming.</i>
-
-
 ## Microsoft Azure
 
+<img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
+
+<pre><b>target</b>&nbsp;azure</pre>
+
 <i>Documentation forthcoming.</i>
-
-
-## Google Cloud Platform
-
-<i>Documentation forthcoming.</i>
-
 
 ## Docker
 
+<img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" />
+
+<pre><b>target</b>&nbsp;docker</pre>
+
 <i>Documentation forthcoming.</i>
-
-
-## Kubernetes
-
-<i>Documentation forthcoming.</i>
-
 
 ## On-Premise Support
 
