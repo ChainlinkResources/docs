@@ -328,6 +328,9 @@
                     <li>
                       <a href="#undeploy-network-node" class="toc-h2 toc-link" data-title="Undeploy Network Node">Undeploy Network Node</a>
                     </li>
+                    <li>
+                      <a href="#types" class="toc-h2 toc-link" data-title="Types">Types</a>
+                    </li>
                 </ul>
           </li>
           <li>
@@ -473,9 +476,9 @@
 <h1 id='orchestration'>Orchestration</h1>
 <p><img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
 <img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
-<img class="cloud-provider" alt="Google Cloud Platform" src="https://s3.amazonaws.com/static.provide.services/img/google-light.png" />
+&lt;!-- <img class="cloud-provider" alt="Google Cloud Platform" src="https://s3.amazonaws.com/static.provide.services/img/google-light.png" /> --&gt;
 <img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" />
-<img class="cloud-provider" alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" /></p>
+&lt;!-- <img class="cloud-provider" alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" /> --&gt;</p>
 
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='amazon-web-services'>Amazon Web Services</h2>
@@ -3831,8 +3834,8 @@ x-total-results-count: 1
 </tr>
 </thead><tbody>
 <tr>
-<td>id</td>
-<td>id of the <code>Network</code></td>
+<td>config</td>
+<td>the <code>Node</code> configuration object</td>
 </tr>
 </tbody></table>
 <h2 id='retrieve-network-node-details'>Retrieve Network Node Details</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
@@ -4306,6 +4309,94 @@ HTTP/2 204
 <tr>
 <td>nodeId</td>
 <td>the id of the <code>Node</code></td>
+</tr>
+</tbody></table>
+<h2 id='types'>Types</h2><h3 id='node-configuration-object'>Node Configuration Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>credentials</td>
+<td>object providing vendor-specific API credentials (see examples)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>entrypoint</td>
+<td>array representing the container entrypoint command and its arguments</td>
+<td>--</td>
+</tr>
+<tr>
+<td>env</td>
+<td>object providing environment variables to be set for the new <code>Node</code></td>
+<td>--</td>
+</tr>
+<tr>
+<td>image</td>
+<td>the Docker image from which a new container will be run; required unless the <code>container</code> parameter is provided</td>
+<td>--</td>
+</tr>
+<tr>
+<td>container</td>
+<td>the vendor-specific resource (i.e., a task definition family in the case of AWS) from which a new <code>Node</code> will be run; required unless the <code>image</code> parameter is provided</td>
+<td>--</td>
+</tr>
+<tr>
+<td>p2p</td>
+<td>flag indicating if the underlying container should resolve peers; if unset, peer resolution will be attempted based on the given <code>engine_id</code> and/or <code>role_id</code> parameters</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>provider_id</td>
+<td>string indicating the type of underlying infrastructure or virtualization technology to be used for the deployment; should be set to <code>docker</code> at this time</td>
+<td>--</td>
+</tr>
+<tr>
+<td>region</td>
+<td>any supported vendor-specific region for the deployment (i.e., <code>us-east-1</code> in the case of AWS)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>role</td>
+<td>the string indicating the role for the new <code>Node</code></td>
+<td></td>
+</tr>
+<tr>
+<td>security</td>
+<td><code>Security</code> configuration object containing egress and ingress rules for the new <code>Node</code></td>
+<td>--</td>
+</tr>
+<tr>
+<td>target_id</td>
+<td>the string representing the targeted vendor (i.e., <code>aws</code> or <code>azure</code>)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>task_role</td>
+<td>the optional vendor-specific task role (i.e., the ECS task execution role in the case of AWS)</td>
+<td>--</td>
+</tr>
+</tbody></table>
+<h3 id='security-configuration-object'>Security Configuration Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>egress</td>
+<td>mapping of IP CIDR strings to a protocol/port mapping for <code>Node</code> egress; alternatively, the value <code>*</code> may be passed instead of an object to indicate &quot;all ports, all protocols&quot;</td>
+<td>--</td>
+</tr>
+<tr>
+<td>ingress</td>
+<td>mapping of IP CIDR strings to a protocol/port mapping for <code>Node</code> ingress; alternatively, the value <code>*</code> may be passed instead of an object to indicate &quot;all ports, all protocols&quot;</td>
+<td>--</td>
 </tr>
 </tbody></table>
 <h1 id='load-balancers'>Load Balancers</h1>
@@ -19462,7 +19553,7 @@ x-total-results-count: 3
         </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="s2">"2019-06-10T00:30:13.264201-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="s2">"2019-06-10T00:30:24.150262-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"published_at"</span><span class="p">:</span><span class="s2">"2019-06-10T00:30:12.769587-04:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="mi">494</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="mi">494</span><span class="p">,</span><span class="w">
         </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="mi">10886</span><span class="p">,</span><span class="w">
         </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="mi">11380</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -19487,7 +19578,7 @@ x-total-results-count: 3
         </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="s2">"2019-06-10T00:14:36.356977-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"published_at"</span><span class="p">:</span><span class="s2">"2019-06-10T00:14:35.764088-04:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -19512,7 +19603,7 @@ x-total-results-count: 3
         </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:50:17.034999-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:50:24.313648-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"published_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:50:16.065006-04:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="mi">969</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="mi">969</span><span class="p">,</span><span class="w">
         </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="mi">7278</span><span class="p">,</span><span class="w">
         </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="mi">8248</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -19537,7 +19628,7 @@ x-total-results-count: 3
         </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:48:31.168685-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:48:39.575262-04:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"published_at"</span><span class="p">:</span><span class="s2">"2019-06-09T23:48:28.194784-04:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="mi">2973</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="mi">2973</span><span class="p">,</span><span class="w">
         </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="mi">8406</span><span class="p">,</span><span class="w">
         </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="mi">11380</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -19615,7 +19706,7 @@ HTTP/2 201
     </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-10T03:01:17.562293-04:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -19709,7 +19800,7 @@ access-control-expose-headers: X-Total-Results-Count
     </span><span class="s2">"broadcast_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-09T23:48:31.168685-04:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"finalized_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-09T23:48:39.575262-04:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-09T23:48:28.194784-04:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"publish_latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2973</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"queue_latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2973</span><span class="p">,</span><span class="w">
     </span><span class="s2">"broadcast_latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">8406</span><span class="p">,</span><span class="w">
     </span><span class="s2">"e2e_latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">11380</span><span class="w">
 </span><span class="p">}</span><span class="w">

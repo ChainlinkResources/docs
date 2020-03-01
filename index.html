@@ -225,9 +225,23 @@
           </li>
           <li>
               <a href="#platform-overview" class="toc-h1 toc-link" data-title="Platform Overview">Platform Overview</a>
+                <ul class="toc-list-h2">
+                    <li>
+                      <a href="#infrastructure-apis" class="toc-h2 toc-link" data-title="Infrastructure APIs">Infrastructure APIs</a>
+                    </li>
+                    <li>
+                      <a href="#core-apis" class="toc-h2 toc-link" data-title="Core APIs">Core APIs</a>
+                    </li>
+                    <li>
+                      <a href="#composite-apis" class="toc-h2 toc-link" data-title="Composite APIs">Composite APIs</a>
+                    </li>
+                </ul>
           </li>
           <li>
               <a href="#client-libraries" class="toc-h1 toc-link" data-title="Client Libraries">Client Libraries</a>
+          </li>
+          <li>
+              <a href="#architecture" class="toc-h1 toc-link" data-title="Architecture">Architecture</a>
           </li>
           <li>
               <a href="#authorization" class="toc-h1 toc-link" data-title="Authorization">Authorization</a>
@@ -256,26 +270,6 @@
                     <li>
                       <a href="#bookie" class="toc-h2 toc-link" data-title="Bookie">Bookie</a>
                     </li>
-                    <li>
-                      <a href="#tourguide" class="toc-h2 toc-link" data-title="Tourguide">Tourguide</a>
-                    </li>
-                </ul>
-          </li>
-          <li>
-              <a href="#use-cases" class="toc-h1 toc-link" data-title="Use-Cases">Use-Cases</a>
-                <ul class="toc-list-h2">
-                    <li>
-                      <a href="#general-web3-applications" class="toc-h2 toc-link" data-title="General Web3 Applications">General Web3 Applications</a>
-                    </li>
-                    <li>
-                      <a href="#payments-applications" class="toc-h2 toc-link" data-title="Payments Applications">Payments Applications</a>
-                    </li>
-                    <li>
-                      <a href="#identity-applications" class="toc-h2 toc-link" data-title="Identity Applications">Identity Applications</a>
-                    </li>
-                    <li>
-                      <a href="#enterprise-applications" class="toc-h2 toc-link" data-title="Enterprise Applications">Enterprise Applications</a>
-                    </li>
                 </ul>
           </li>
           <li>
@@ -287,27 +281,52 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the <a href="http://provide.services">Provide</a> API. Provided here is all the documentation you need to orchestrate global blockchain networks and build revolutionary new decentralized applications and services using Provide.</p>
+<p>Provide is an enterprise low-code application platform for distributed systems that makes it quick and easy to add blockchain to your organization&#39;s technology stack. This documentation describes the Provide architecture and a holistic suite of APIs made available by Provide for organizations and developers looking to build, test and scale Web3 applications and distributed systems.</p>
 <h1 id='platform-overview'>Platform Overview</h1>
-<p>Provide is a scalable chain- and cloud-agnostic platform for deploying public, private or permissioned peer-to-peer infrastructure. Provide enables Web3 innovation with a suite of developer tools and modern APIs. Provide can help you or your organization experiment with and ultimately adopt DLT (distributed ledger technology) in a way that compliments your legacy enterprise architecture. Provide has a <a href="https://dawn.provide.services">web UI</a> and <a href="https://github.com/provideservices/provide-cli">CLI</a> to manage platform resources.</p>
-
-<p>We are working to make our <a href="https://dawn.provide.services">web experience</a> suitable for bizdev and product owners. If you are a developer, you will likely want to work with the <a href="https://github.com/provideservices/provide-cli">CLI</a>.</p>
+<p>This overview provides an inventory of core APIs which are suitable for building all kinds of Web3 applications. The APIs enable users to orchestrate public and permissioned peer-to-peer infrastructure, connect that infrastructure with legacy systems and build sophisticated applications in a low-code environment.</p>
+<h2 id='infrastructure-apis'>Infrastructure APIs</h2>
+<ul>
+<li><a href="https://docs.provide.services/microservices/goldmine/#networks">Networks</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#orchestration">Node Orchestration</a></li>
+</ul>
+<h2 id='core-apis'>Core APIs</h2>
+<ul>
+<li><a href="https://docs.provide.services/microservices/goldmine/#smart-contracts">Smart Contracts</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#token-contracts">Token Contracts</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#hd-wallets">HD Wallets</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#accounts">Signing Identities</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#connectors">Connectors</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#oracles">Oracles</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#bridges">Bridges</a></li>
+<li><a href="https://docs.provide.services/microservices/goldmine/#transactions">Transactions</a></li>
+</ul>
+<h2 id='composite-apis'>Composite APIs</h2>
+<ul>
+<li><a href="https://docs.provide.services/microservices/ident/#kyc">KYC</a></li>
+<li><a href="https://docs.provide.services/microservices/bookie/#payment-channels">Payment Channels</a></li>
+</ul>
 <h1 id='client-libraries'>Client Libraries</h1>
-<p>Client libraries are available on <a href="https://github.com/provideservices">Github</a>. The following repositories make our client libraries available to the community:</p>
+<p>The following open-source client libraries are available on <a href="https://github.com/provideservices">Github</a>:</p>
 
 <ul>
 <li><a href="https://github.com/provideservices/provide-dotnet">C#</a></li>
-<li><a href="https://github.com/provideservices/provide-js">Javascript</a></li>
 <li><a href="https://github.com/provideservices/provide-go">Go</a></li>
 <li><a href="https://github.com/provideservices/provide-groovy">Groovy</a></li>
 <li><a href="https://github.com/provideservices/provide-java">Java</a></li>
+<li><a href="https://github.com/provideservices/provide-js">JavaScript</a></li>
 <li><a href="https://github.com/provideservices/provide-php">PHP</a></li>
 <li><a href="https://github.com/provideservices/provide-python">Python</a></li>
 <li><a href="https://github.com/provideservices/provide-ruby">Ruby</a></li>
 <li><a href="https://github.com/provideservices/provide-swift">Swift</a></li>
 </ul>
+
+<p>Provide has a <a href="https://dawn.provide.services">web UI</a> and <a href="https://github.com/provideservices/provide-cli">CLI</a> to manage and consume our APIs. Note that the web UI is meant only for developers at this time.</p>
+<h1 id='architecture'>Architecture</h1>
+<p>Provide is a cloud-native, low-code enterprise application platform for distributed systems.</p>
+
+<p><i>Architecture details forthcoming.</i></p>
 <h1 id='authorization'>Authorization</h1>
-<p>Provide requires an API token to authorize the vast majority of platform requests. An API token is an encoded JWT and contains an identifier referencing the authorized entity as the subject (<code>sub</code>) in the claims. The encoded JWT token may also include an expiration (<code>exp</code>) and arbitrary data (<code>data</code>), among other standard JWT claims, and is signed using the <code>RS256</code> algorithm. The authorized entity (i.e., the <code>User</code> or <code>Application</code>) may use the signed <code>Token</code> to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
+<p>Provide requires the presence of a <code>bearer</code> API token to authorize most API calls. A <code>bearer</code> API token is an encoded JWT which contains a subject claim (<code>sub</code>) which references the authorized entity (i.e., a <code>User</code> or <code>Application</code>). The encoded JWT token will, in most cases, include an expiration (<code>exp</code>) after which the token is no longer valid. Tokens issued without an expiration date (i.e., certain machine-to-machine API tokens) can be explicitly revoked. The standard and application-specific JWT claims are signed using the <code>RS256</code> algorithm. The authorized entity may use the signed bearer <code>Token</code> to access one or more platform resources for which the <code>Token</code> was authorized. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
 
 <p>The bearer <code>Authorization</code> header is scoped to an authorized platform <code>User</code> or an <code>Application</code> as described above.</p>
 
@@ -416,21 +435,15 @@ i2dsm0fy4NxWxknlEn5/LhMCAwEAAQ<span class="o">==</span>
 <h2 id='goldmine'>Goldmine</h2>
 <p>Goldmine provides peer-to-peer infrastructure orchestration and blockchain APIs to make it easy for developers and organizations to build and scale DLT applications.</p>
 
-<p>View the Goldnine docs <a href="/microservices/goldmine" target="_blank" data-title="Goldmnine">here</a>.</p>
+<p>View the Goldmine docs <a href="/microservices/goldmine" target="_blank" data-title="Goldmnine">here</a>.</p>
 <h2 id='bookie'>Bookie</h2>
 <p>Bookie provides payments infrastructure including turnkey <a href="https://connext.network" target="_blank">Connext</a> payment hubs and simplified layer 2 middleware to make it easier to build and interact with state channel applications. Bookie is a state-of-the-art cross-border settlement platform.</p>
 
 <p>View the Bookie docs <a href="/microservices/bookie" target="_blank" data-title="Bookie">here</a>.</p>
-<h2 id='tourguide'>Tourguide</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h1 id='use-cases'>Use-Cases</h1><h2 id='general-web3-applications'>General Web3 Applications</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='payments-applications'>Payments Applications</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='identity-applications'>Identity Applications</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='enterprise-applications'>Enterprise Applications</h2>
-<p><i>Documentation forthcoming.</i></p>
+
+<!-- ## Tourguide
+
+<i>Documentation forthcoming.</i> -->
 <h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 
       </div>
