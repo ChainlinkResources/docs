@@ -233,13 +233,7 @@
                       <a href="#microsoft-azure" class="toc-h2 toc-link" data-title="Microsoft Azure">Microsoft Azure</a>
                     </li>
                     <li>
-                      <a href="#google-cloud-platform" class="toc-h2 toc-link" data-title="Google Cloud Platform">Google Cloud Platform</a>
-                    </li>
-                    <li>
                       <a href="#docker" class="toc-h2 toc-link" data-title="Docker">Docker</a>
-                    </li>
-                    <li>
-                      <a href="#kubernetes" class="toc-h2 toc-link" data-title="Kubernetes">Kubernetes</a>
                     </li>
                     <li>
                       <a href="#on-premise-support" class="toc-h2 toc-link" data-title="On-Premise Support">On-Premise Support</a>
@@ -250,7 +244,7 @@
               <a href="#protocol-support" class="toc-h1 toc-link" data-title="Protocol Support">Protocol Support</a>
                 <ul class="toc-list-h2">
                     <li>
-                      <a href="#consensus" class="toc-h2 toc-link" data-title="Consensus">Consensus</a>
+                      <a href="#genesis-pluggable-consensus" class="toc-h2 toc-link" data-title="Genesis/Pluggable Consensus">Genesis/Pluggable Consensus</a>
                     </li>
                 </ul>
           </li>
@@ -357,20 +351,6 @@
                 </ul>
           </li>
           <li>
-              <a href="#bridges" class="toc-h1 toc-link" data-title="Bridges">Bridges</a>
-                <ul class="toc-list-h2">
-                    <li>
-                      <a href="#list-bridges" class="toc-h2 toc-link" data-title="List Bridges">List Bridges</a>
-                    </li>
-                    <li>
-                      <a href="#create-bridge" class="toc-h2 toc-link" data-title="Create Bridge">Create Bridge</a>
-                    </li>
-                    <li>
-                      <a href="#retrieve-bridge-details" class="toc-h2 toc-link" data-title="Retrieve Bridge Details">Retrieve Bridge Details</a>
-                    </li>
-                </ul>
-          </li>
-          <li>
               <a href="#oracles" class="toc-h1 toc-link" data-title="Oracles">Oracles</a>
                 <ul class="toc-list-h2">
                     <li>
@@ -381,6 +361,20 @@
                     </li>
                     <li>
                       <a href="#retrieve-oracle-details" class="toc-h2 toc-link" data-title="Retrieve Oracle Details">Retrieve Oracle Details</a>
+                    </li>
+                </ul>
+          </li>
+          <li>
+              <a href="#bridges" class="toc-h1 toc-link" data-title="Bridges">Bridges</a>
+                <ul class="toc-list-h2">
+                    <li>
+                      <a href="#list-bridges" class="toc-h2 toc-link" data-title="List Bridges">List Bridges</a>
+                    </li>
+                    <li>
+                      <a href="#create-bridge" class="toc-h2 toc-link" data-title="Create Bridge">Create Bridge</a>
+                    </li>
+                    <li>
+                      <a href="#retrieve-bridge-details" class="toc-h2 toc-link" data-title="Retrieve Bridge Details">Retrieve Bridge Details</a>
                     </li>
                 </ul>
           </li>
@@ -474,58 +468,62 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Peer-to-peer infrastructure orchestration and blockchain APIs.</p>
 <h1 id='orchestration'>Orchestration</h1>
-<p><img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
-<img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
-<img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" /></p>
-
-<p><i>Documentation forthcoming.</i></p>
+<p>Provide supports orchestration of load balanced peer-to-peer networks across multiple regions and data centers using the <a href="/microservices/goldmine#networks">network</a> and <a href="/microservices/goldmine#node">node</a> APIs.</p>
 <h2 id='amazon-web-services'>Amazon Web Services</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h3 id='your-aws-credentials-iam'>Your AWS Credentials (IAM)</h3>
-<p><i>Documentation forthcoming.</i></p>
+<p><img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" /></p>
+
+<pre><b>target</b>&nbsp;aws</pre>
+<h3 id='credentials'>Credentials</h3>
+<p>The following object illustrates how to securely pass your IAM <code>credentials</code> within a <code>Node</code> configuration.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aws_access_key_id</td>
+<td>the AWS access key id to use for the request</td>
+</tr>
+<tr>
+<td>aws_secret_access_key</td>
+<td>the AWS secret access key to</td>
+</tr>
+</tbody></table>
 <h3 id='vpc-considerations'>VPC Considerations</h3>
-<p><i>Documentation forthcoming.</i></p>
-<h3 id='security'>Security</h3>
 <p><i>Documentation forthcoming.</i></p>
 <h3 id='load-balancing'>Load Balancing</h3>
 <p>Provide leverages the second-generation Elastic Load Balancing (ELB) service on your behalf when you deploy network nodes. Currently the platform orchestrates the provisioning for you implicitly when you attempt to deploy your first node for a unique network and region. We support orchestration in all AWS availability zones.</p>
 
 <p>When a load balancer is provisioned for you by the platform, it is currently added to a list of regional load balancers under management which are, in turn, used in a pool-like fashion (i.e., a simple round-robin algorithm is used to distribute JSON-RPC and similar requests across all healthy balancers in a region). We are considering other algorithms for distributing this load.</p>
-<h3 id='elastic-container-service-ecs-amp-fargate'>Elastic Container Service (ECS &amp; Fargate)</h3>
-<p><i>Documentation forthcoming.</i></p>
 <h2 id='microsoft-azure'>Microsoft Azure</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='google-cloud-platform'>Google Cloud Platform</h2>
+<p><img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" /></p>
+
+<pre><b>target</b>&nbsp;azure</pre>
+
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='docker'>Docker</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='kubernetes'>Kubernetes</h2>
+<p><img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" /></p>
+
+<pre><b>target</b>&nbsp;docker</pre>
+
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='on-premise-support'>On-Premise Support</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h1 id='protocol-support'>Protocol Support</h1>
-<p>The Provide Platform is a scalable, protocol-agnostic PaaS for deploying public, private or permissioned blockchain networks. Our supported networks, protocols and projects are outlined below as well as in the <a href="https://github.com/providenetwork/node">provide.network node</a> repository.</p>
-<h2 id='consensus'>Consensus</h2>
-<p>Provide supports various configurable consensus protocols depending on the peer-to-peer network configuration of a given network (see Supported Peer-to-Peer Clients below).
-Additional consensus discussion &amp; considerations forthcoming.</p>
+<p>Provide is a modular integration fabric standardizing on support for a subset of the peer-to-peer platforms and protocols being maintained <a href="https://github.com/providenetwork/dockerfiles">in this repository</a> in partnership with <a href="https://whiteblock.io">whiteblock</a>.</p>
 
-<p><br/></p>
-
-<p><img class="protocol-provider" alt="EVM" src="https://s3.amazonaws.com/static.provide.services/img/evm-logo.png" />
+<p><br/>
+<img class="protocol-provider" alt="EVM" src="https://s3.amazonaws.com/static.provide.services/img/evm-logo.png" />
 <img class="protocol-provider" alt="Parity" src="https://s3.amazonaws.com/static.provide.services/img/parity-light.png" />
+<img class="protocol-provider" alt="Handshake" src="https://s3.amazonaws.com/static.provide.services/img/quorum-light.png" />
+<img class="protocol-provider" alt="Hyperledger" src="https://s3.amazonaws.com/static.provide.services/img/hyperledger-light.png" />
 <img class="protocol-provider" alt="Bitcoin" src="https://s3.amazonaws.com/static.provide.services/img/bcoin-light.png" />
 <img class="protocol-provider" alt="Handshake" src="https://s3.amazonaws.com/static.provide.services/img/handshake-light.png" />
-<img class="protocol-provider" alt="Hyperledger" src="https://s3.amazonaws.com/static.provide.services/img/hyperledger-light.png" /></p>
-<h3 id='evm'>EVM</h3>
-<p>The Ethereum virtual machine was our go-to-market platform and was chosen due to its popularity among the open source community.</p>
-
-<p>We support various clients for the EVM, including Geth and Parity, Quorum (select consensus mechanisms) and ewasm (experimental). </p>
-<h3 id='bcoin'>Bcoin</h3>
-<p>The node.js implementation of the Bitcoin protocol.</p>
-<h3 id='handshake'>Handshake</h3>
-<p>Handshake is a UTXO-based blockchain protocol which manages the registration, renewal and transfer of DNS top-level domains (TLDs).</p>
-<h3 id='hyperledger'>Hyperledger</h3>
-<p>Documentation forthcoming.</p>
+<img class="protocol-provider" alt="whiteblock" style="height: 36px; margin: 0px 0px 5px 90px;" src="https://s3.amazonaws.com/static.provide.services/img/whiteblock-black.png" /></p>
+<h3 id='genesis-pluggable-consensus'>Genesis/Pluggable Consensus</h3>
+<p>A <code>Network</code> can be configured from scratch using <a href="/microservices/goldmine#create-a-network">this API</a>. Depending on which platform is chosen, pluggable consensus may be supported. Additional documentation detailing how to leverage <a href="https://github.com/providenetwork/dockerfiles">supported platforms and protocols</a> as well as specific genesis parameterization for each will be released in the near future.</p>
 <h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='networks'>Networks</h1><h2 id='list-networks'>List Networks</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
@@ -4548,17 +4546,17 @@ HTTP/2 204
 <td>id of the <code>Connector</code></td>
 </tr>
 </tbody></table>
-<h1 id='bridges'>Bridges</h1><h2 id='list-bridges'>List Bridges</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='create-bridge'>Create Bridge</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='retrieve-bridge-details'>Retrieve Bridge Details</h2>
-<p><i>Documentation forthcoming.</i></p>
 <h1 id='oracles'>Oracles</h1><h2 id='list-oracles'>List Oracles</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='create-oracle'>Create Oracle</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='retrieve-oracle-details'>Retrieve Oracle Details</h2>
+<p><i>Documentation forthcoming.</i></p>
+<h1 id='bridges'>Bridges</h1><h2 id='list-bridges'>List Bridges</h2>
+<p><i>Documentation forthcoming.</i></p>
+<h2 id='create-bridge'>Create Bridge</h2>
+<p><i>Documentation forthcoming.</i></p>
+<h2 id='retrieve-bridge-details'>Retrieve Bridge Details</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='smart-contracts'>Smart Contracts</h1><h2 id='list-contracts'>List Contracts</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
