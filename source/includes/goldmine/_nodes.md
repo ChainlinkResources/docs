@@ -181,8 +181,7 @@ id | id of the `Network`
 
 Parameter | Description
 --------- | -----------
-id | id of the `Network`
-
+config | the `Node` configuration object
 
 ## Retrieve Network Node Details
 
@@ -276,7 +275,6 @@ Parameter | Description
 --------- | -----------
 id | id of the `Network`
 nodeId | id of the `Node`
-
 
 ## Retreive Network Node Logs
 
@@ -571,7 +569,6 @@ Parameter | Default | Description
 page | n/a | page number or token indicating the next page in the log stream
 rpp | 100 | number of logs to include in the response
 
-
 ## Update a Network Node
 
 ```shell
@@ -615,7 +612,6 @@ Parameter | Description
 id | id of the `Network`
 nodeId | the id of the `Node`
 
-
 ## Undeploy Network Node
 
 ```shell
@@ -633,3 +629,29 @@ Parameter | Description
 --------- | -----------
 id | id of the `Network`
 nodeId | the id of the `Node`
+
+## Types
+
+### Node Configuration Object
+
+Parameter | Description | Default
+--------- | ----------- | -----------
+credentials | object providing vendor-specific API credentials (see examples) | --
+entrypoint | array representing the container entrypoint command and its arguments | --
+env | object providing environment variables to be set for the new `Node` | --
+image | the Docker image from which a new container will be run; required unless the `container` parameter is provided | --
+container | the vendor-specific resource (i.e., a task definition family in the case of AWS) from which a new `Node` will be run; required unless the `image` parameter is provided | --
+p2p | flag indicating if the underlying container should resolve peers; if unset, peer resolution will be attempted based on the given `engine_id` and/or `role_id` parameters | n/a
+provider_id | string indicating the type of underlying infrastructure or virtualization technology to be used for the deployment; should be set to `docker` at this time | --
+region | any supported vendor-specific region for the deployment (i.e., `us-east-1` in the case of AWS) | --
+role | the string indicating the role for the new `Node`
+security | `Security` configuration object containing egress and ingress rules for the new `Node` | --
+target_id | the string representing the targeted vendor (i.e., `aws` or `azure`) | --
+task_role | the optional vendor-specific task role (i.e., the ECS task execution role in the case of AWS) | --
+
+### Security Configuration Object
+
+Parameter | Description | Default
+--------- | ----------- | -----------
+egress | mapping of IP CIDR strings to a protocol/port mapping for `Node` egress; alternatively, the value `*` may be passed instead of an object to indicate "all ports, all protocols" | --
+ingress | mapping of IP CIDR strings to a protocol/port mapping for `Node` ingress; alternatively, the value `*` may be passed instead of an object to indicate "all ports, all protocols" | --

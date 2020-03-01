@@ -2,9 +2,9 @@
 
 <img class="cloud-provider" alt="Amazon Web Services" src="https://s3.amazonaws.com/static.provide.services/img/aws-light.png" />
 <img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
-<img class="cloud-provider" alt="Google Cloud Platform" src="https://s3.amazonaws.com/static.provide.services/img/google-light.png" />
+<!-- <img class="cloud-provider" alt="Google Cloud Platform" src="https://s3.amazonaws.com/static.provide.services/img/google-light.png" /> -->
 <img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" />
-<img class="cloud-provider" alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" />
+<!-- <img class="cloud-provider" alt="Kubernetes" src="https://s3.amazonaws.com/static.provide.services/img/kubernetes-light.png" /> -->
 
 <i>Documentation forthcoming.</i>
 

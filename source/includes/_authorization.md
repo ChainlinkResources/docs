@@ -1,6 +1,6 @@
 # Authorization
 
-Provide requires an API token to authorize the vast majority of platform requests. An API token is an encoded JWT and contains an identifier referencing the authorized entity as the subject (`sub`) in the claims. The encoded JWT token may also include an expiration (`exp`) and arbitrary data (`data`), among other standard JWT claims, and is signed using the `RS256` algorithm. The authorized entity (i.e., the `User` or `Application`) may use the signed `Token` to access one or more platform resources. Unless otherwise noted, all API requests must include a header such as: `Authorization: bearer <JWT>`.
+Provide requires the presence of a `bearer` API token to authorize most API calls. A `bearer` API token is an encoded JWT which contains a subject claim (`sub`) which references the authorized entity (i.e., a `User` or `Application`). The encoded JWT token will, in most cases, include an expiration (`exp`) after which the token is no longer valid. Tokens issued without an expiration date (i.e., certain machine-to-machine API tokens) can be explicitly revoked. The standard and application-specific JWT claims are signed using the `RS256` algorithm. The authorized entity may use the signed bearer `Token` to access one or more platform resources for which the `Token` was authorized. Unless otherwise noted, all API requests must include a header such as: `Authorization: bearer <JWT>`.
 
 The bearer `Authorization` header is scoped to an authorized platform `User` or an `Application` as described above.
 

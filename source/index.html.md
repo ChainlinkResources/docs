@@ -14,13 +14,14 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 includes:
   - introduction
+  - architecture
   - authorization
   - pagination
   - status_codes
   - rate_limits
   - divider
   - microservices
-  - use_cases
+#  - use_cases
   - divider
 
 search: true

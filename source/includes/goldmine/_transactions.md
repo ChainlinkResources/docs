@@ -42,7 +42,7 @@ x-total-results-count: 3
         "broadcast_at":"2019-06-10T00:30:13.264201-04:00",
         "finalized_at":"2019-06-10T00:30:24.150262-04:00",
         "published_at":"2019-06-10T00:30:12.769587-04:00",
-        "publish_latency":494,
+        "queue_latency":494,
         "broadcast_latency":10886,
         "e2e_latency":11380
     },
@@ -67,7 +67,7 @@ x-total-results-count: 3
         "broadcast_at":"2019-06-10T00:14:36.356977-04:00",
         "finalized_at":null,
         "published_at":"2019-06-10T00:14:35.764088-04:00",
-        "publish_latency":null,
+        "queue_latency":null,
         "broadcast_latency":null,
         "e2e_latency":null
     },
@@ -92,7 +92,7 @@ x-total-results-count: 3
         "broadcast_at":"2019-06-09T23:50:17.034999-04:00",
         "finalized_at":"2019-06-09T23:50:24.313648-04:00",
         "published_at":"2019-06-09T23:50:16.065006-04:00",
-        "publish_latency":969,
+        "queue_latency":969,
         "broadcast_latency":7278,
         "e2e_latency":8248
     },
@@ -117,7 +117,7 @@ x-total-results-count: 3
         "broadcast_at":"2019-06-09T23:48:31.168685-04:00",
         "finalized_at":"2019-06-09T23:48:39.575262-04:00",
         "published_at":"2019-06-09T23:48:28.194784-04:00",
-        "publish_latency":2973,
+        "queue_latency":2973,
         "broadcast_latency":8406,
         "e2e_latency":11380
     }
@@ -174,7 +174,7 @@ HTTP/2 201
     "broadcast_at": "2019-06-10T03:01:17.562293-04:00",
     "finalized_at": null,
     "published_at": null,
-    "publish_latency": null,
+    "queue_latency": null,
     "broadcast_latency": null,
     "e2e_latency": null
 }
@@ -261,7 +261,7 @@ access-control-expose-headers: X-Total-Results-Count
     "broadcast_at": "2019-06-09T23:48:31.168685-04:00",
     "finalized_at": "2019-06-09T23:48:39.575262-04:00",
     "published_at": "2019-06-09T23:48:28.194784-04:00",
-    "publish_latency": 2973,
+    "queue_latency": 2973,
     "broadcast_latency": 8406,
     "e2e_latency": 11380
 }
