@@ -19,13 +19,12 @@ includes:
   - divider
   - goldmine/networks
   - goldmine/nodes
+  - goldmine/connectors
   - goldmine/load_balancers
   - divider
-  - goldmine/connectors
-  - goldmine/oracles
   - goldmine/bridges
-  - divider
   - goldmine/contracts
+  - goldmine/oracles
   - goldmine/tokens
   - goldmine/transactions
   - goldmine/wallets
