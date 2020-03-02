@@ -328,12 +328,6 @@
                 </ul>
           </li>
           <li>
-              <a href="#load-balancers" class="toc-h1 toc-link" data-title="Load Balancers">Load Balancers</a>
-          </li>
-          <li>
-              &nbsp;
-          </li>
-          <li>
               <a href="#connectors" class="toc-h1 toc-link" data-title="Connectors">Connectors</a>
                 <ul class="toc-list-h2">
                     <li>
@@ -351,18 +345,10 @@
                 </ul>
           </li>
           <li>
-              <a href="#oracles" class="toc-h1 toc-link" data-title="Oracles">Oracles</a>
-                <ul class="toc-list-h2">
-                    <li>
-                      <a href="#list-oracles" class="toc-h2 toc-link" data-title="List Oracles">List Oracles</a>
-                    </li>
-                    <li>
-                      <a href="#create-oracle" class="toc-h2 toc-link" data-title="Create Oracle">Create Oracle</a>
-                    </li>
-                    <li>
-                      <a href="#retrieve-oracle-details" class="toc-h2 toc-link" data-title="Retrieve Oracle Details">Retrieve Oracle Details</a>
-                    </li>
-                </ul>
+              <a href="#load-balancers" class="toc-h1 toc-link" data-title="Load Balancers">Load Balancers</a>
+          </li>
+          <li>
+              &nbsp;
           </li>
           <li>
               <a href="#bridges" class="toc-h1 toc-link" data-title="Bridges">Bridges</a>
@@ -379,9 +365,6 @@
                 </ul>
           </li>
           <li>
-              &nbsp;
-          </li>
-          <li>
               <a href="#smart-contracts" class="toc-h1 toc-link" data-title="Smart Contracts">Smart Contracts</a>
                 <ul class="toc-list-h2">
                     <li>
@@ -395,6 +378,20 @@
                     </li>
                     <li>
                       <a href="#execute-contract" class="toc-h2 toc-link" data-title="Execute Contract">Execute Contract</a>
+                    </li>
+                </ul>
+          </li>
+          <li>
+              <a href="#oracles" class="toc-h1 toc-link" data-title="Oracles">Oracles</a>
+                <ul class="toc-list-h2">
+                    <li>
+                      <a href="#list-oracles" class="toc-h2 toc-link" data-title="List Oracles">List Oracles</a>
+                    </li>
+                    <li>
+                      <a href="#create-oracle" class="toc-h2 toc-link" data-title="Create Oracle">Create Oracle</a>
+                    </li>
+                    <li>
+                      <a href="#retrieve-oracle-details" class="toc-h2 toc-link" data-title="Retrieve Oracle Details">Retrieve Oracle Details</a>
                     </li>
                 </ul>
           </li>
@@ -4395,9 +4392,6 @@ HTTP/2 204
 <td>--</td>
 </tr>
 </tbody></table>
-<h1 id='load-balancers'>Load Balancers</h1>
-<p><i>Documentation forthcoming.</i></p>
-<h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='connectors'>Connectors</h1><h2 id='list-connectors'>List Connectors</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.0LsVj7oTF0KjwbcUhg9a-fQRWB7cGzKJxLIANeX2cWE'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/connectors
@@ -4546,19 +4540,15 @@ HTTP/2 204
 <td>id of the <code>Connector</code></td>
 </tr>
 </tbody></table>
-<h1 id='oracles'>Oracles</h1><h2 id='list-oracles'>List Oracles</h2>
+<h1 id='load-balancers'>Load Balancers</h1>
 <p><i>Documentation forthcoming.</i></p>
-<h2 id='create-oracle'>Create Oracle</h2>
-<p><i>Documentation forthcoming.</i></p>
-<h2 id='retrieve-oracle-details'>Retrieve Oracle Details</h2>
-<p><i>Documentation forthcoming.</i></p>
+<h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='bridges'>Bridges</h1><h2 id='list-bridges'>List Bridges</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='create-bridge'>Create Bridge</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='retrieve-bridge-details'>Retrieve Bridge Details</h2>
 <p><i>Documentation forthcoming.</i></p>
-<h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 <h1 id='smart-contracts'>Smart Contracts</h1><h2 id='list-contracts'>List Contracts</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NTk4Nzg1NzQsImp0aSI6IjYzYTJkY2QzLWI5OTgtNDZjNC1hNzFkLTQ5MjU4YTBhYmEyMyIsInN1YiI6ImFwcGxpY2F0aW9uOmNiMjAzN2Y3LTc5ZmMtNDBmNC05NzIwLWFkYTYzNmRhNDE4MyJ9.NQLm__LbMWor-9GMG0LPcH4yQIbu9Uw70kJfRt1KP64'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/v1/contracts
@@ -19505,6 +19495,12 @@ access-control-expose-headers: X-Total-Results-Count
 <td>id of the <code>Contract</code></td>
 </tr>
 </tbody></table>
+<h1 id='oracles'>Oracles</h1><h2 id='list-oracles'>List Oracles</h2>
+<p><i>Documentation forthcoming.</i></p>
+<h2 id='create-oracle'>Create Oracle</h2>
+<p><i>Documentation forthcoming.</i></p>
+<h2 id='retrieve-oracle-details'>Retrieve Oracle Details</h2>
+<p><i>Documentation forthcoming.</i></p>
 <h1 id='token-contracts'>Token Contracts</h1><h2 id='list-token-contracts'>List Token Contracts</h2>
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='deploy-token-contracts'>Deploy Token Contracts</h2>

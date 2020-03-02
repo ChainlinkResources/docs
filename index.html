@@ -235,13 +235,10 @@
                     <li>
                       <a href="#composite-apis" class="toc-h2 toc-link" data-title="Composite APIs">Composite APIs</a>
                     </li>
+                    <li>
+                      <a href="#client-libraries" class="toc-h2 toc-link" data-title="Client Libraries">Client Libraries</a>
+                    </li>
                 </ul>
-          </li>
-          <li>
-              <a href="#client-libraries" class="toc-h1 toc-link" data-title="Client Libraries">Client Libraries</a>
-          </li>
-          <li>
-              <a href="#architecture" class="toc-h1 toc-link" data-title="Architecture">Architecture</a>
           </li>
           <li>
               <a href="#authorization" class="toc-h1 toc-link" data-title="Authorization">Authorization</a>
@@ -258,23 +255,6 @@
           <li>
               &nbsp;
           </li>
-          <li>
-              <a href="#microservices" class="toc-h1 toc-link" data-title="Microservices">Microservices</a>
-                <ul class="toc-list-h2">
-                    <li>
-                      <a href="#ident" class="toc-h2 toc-link" data-title="Ident">Ident</a>
-                    </li>
-                    <li>
-                      <a href="#goldmine" class="toc-h2 toc-link" data-title="Goldmine">Goldmine</a>
-                    </li>
-                    <li>
-                      <a href="#bookie" class="toc-h2 toc-link" data-title="Bookie">Bookie</a>
-                    </li>
-                </ul>
-          </li>
-          <li>
-              &nbsp;
-          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -286,27 +266,27 @@
 <p>This overview provides an inventory of core APIs which are suitable for building all kinds of Web3 applications. The APIs enable users to orchestrate public and permissioned peer-to-peer infrastructure, connect that infrastructure with legacy systems and build sophisticated applications in a low-code environment.</p>
 <h2 id='infrastructure-apis'>Infrastructure APIs</h2>
 <ul>
-<li><a href="https://docs.provide.services/microservices/goldmine/#networks">Networks</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#orchestration">Node Orchestration</a></li>
+<li><a href="/microservices/goldmine/#networks">Networks</a></li>
+<li><a href="/microservices/goldmine/#orchestration">Node Orchestration</a></li>
+<li><a href="/microservices/goldmine/#connectors">Connectors</a></li>
 </ul>
 <h2 id='core-apis'>Core APIs</h2>
 <ul>
-<li><a href="https://docs.provide.services/microservices/goldmine/#smart-contracts">Smart Contracts</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#token-contracts">Token Contracts</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#hd-wallets">HD Wallets</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#accounts">Signing Identities</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#connectors">Connectors</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#oracles">Oracles</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#bridges">Bridges</a></li>
-<li><a href="https://docs.provide.services/microservices/goldmine/#transactions">Transactions</a></li>
+<li><a href="/microservices/goldmine/#accounts">Signing Identities</a></li>
+<li><a href="/microservices/goldmine/#hd-wallets">HD Wallets</a></li>
+<li><a href="/microservices/goldmine/#smart-contracts">Smart Contracts</a></li>
+<li><a href="/microservices/goldmine/#token-contracts">Token Contracts</a></li>
+<li><a href="/microservices/goldmine/#oracles">Oracles</a></li>
+<li><a href="/microservices/goldmine/#bridges">Bridges</a></li>
+<li><a href="/microservices/goldmine/#transactions">Transactions</a></li>
 </ul>
 <h2 id='composite-apis'>Composite APIs</h2>
 <ul>
-<li><a href="https://docs.provide.services/microservices/ident/#kyc">KYC</a></li>
-<li><a href="https://docs.provide.services/microservices/bookie/#payment-channels">Payment Channels</a></li>
+<li><a href="/microservices/ident/#kyc">KYC</a></li>
+<li><a href="/microservices/bookie/#payment-channels">Payment Channels</a></li>
 </ul>
-<h1 id='client-libraries'>Client Libraries</h1>
-<p>The following open-source client libraries are available on <a href="https://github.com/provideservices">Github</a>:</p>
+<h2 id='client-libraries'>Client Libraries</h2>
+<p>The following open-source client libraries are available on <a href="https://github.com/provideservices">GitHub</a>:</p>
 
 <ul>
 <li><a href="https://github.com/provideservices/provide-dotnet">C#</a></li>
@@ -321,10 +301,6 @@
 </ul>
 
 <p>Provide has a <a href="https://dawn.provide.services">web UI</a> and <a href="https://github.com/provideservices/provide-cli">CLI</a> to manage and consume our APIs. Note that the web UI is meant only for developers at this time.</p>
-<h1 id='architecture'>Architecture</h1>
-<p>Provide is a cloud-native, low-code enterprise application platform for distributed systems.</p>
-
-<p><i>Architecture details forthcoming.</i></p>
 <h1 id='authorization'>Authorization</h1>
 <p>Provide requires the presence of a <code>bearer</code> API token to authorize most API calls. A <code>bearer</code> API token is an encoded JWT which contains a subject claim (<code>sub</code>) which references the authorized entity (i.e., a <code>User</code> or <code>Application</code>). The encoded JWT token will, in most cases, include an expiration (<code>exp</code>) after which the token is no longer valid. Tokens issued without an expiration date (i.e., certain machine-to-machine API tokens) can be explicitly revoked. The standard and application-specific JWT claims are signed using the <code>RS256</code> algorithm. The authorized entity may use the signed bearer <code>Token</code> to access one or more platform resources for which the <code>Token</code> was authorized. Unless otherwise noted, all API requests must include a header such as: <code>Authorization: bearer &lt;JWT&gt;</code>.</p>
 
@@ -427,23 +403,6 @@ i2dsm0fy4NxWxknlEn5/LhMCAwEAAQ<span class="o">==</span>
 </tbody></table>
 <h1 id='rate-limits'>Rate Limits</h1>
 <p>We reserve the right to enforce rate limits on certain API calls in the future.</p>
-<h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
-<h1 id='microservices'>Microservices</h1><h2 id='ident'>Ident</h2>
-<p>Ident provides authentication, authorization, device and identity APIs for platform users and applications.</p>
-
-<p>View the Ident docs <a href="/microservices/ident" target="_blank" data-title="Ident">here</a>.</p>
-<h2 id='goldmine'>Goldmine</h2>
-<p>Goldmine provides peer-to-peer infrastructure orchestration and blockchain APIs to make it easy for developers and organizations to build and scale DLT applications.</p>
-
-<p>View the Goldmine docs <a href="/microservices/goldmine" target="_blank" data-title="Goldmnine">here</a>.</p>
-<h2 id='bookie'>Bookie</h2>
-<p>Bookie provides payments infrastructure including turnkey <a href="https://connext.network" target="_blank">Connext</a> payment hubs and simplified layer 2 middleware to make it easier to build and interact with state channel applications. Bookie is a state-of-the-art cross-border settlement platform.</p>
-
-<p>View the Bookie docs <a href="/microservices/bookie" target="_blank" data-title="Bookie">here</a>.</p>
-
-<!-- ## Tourguide
-
-<i>Documentation forthcoming.</i> -->
 <h1 style="border: none; background-color: transparent; margin: 0px; padding: 0px; height: 0px;">&nbsp;</h1>
 
       </div>
