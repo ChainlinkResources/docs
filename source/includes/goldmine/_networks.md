@@ -3126,6 +3126,6 @@ chainspec_url | external url where the chainspec lives; overridden by `chainspec
 chainspec_abi | optional network-specific chainspec ABI object | --
 chainspec_abi_url | optional network-specific chainspec ABI url; overridden by `chainspec_abi` | --
 client | default p2p client to be used on the network (i.e., parity, geth, etc.) | --
-engine_id | the consensus engine to be used for the chain (i.e., ethhash, poa, ibft)| --
+engine_id | the consensus engine to be used for the chain (i.e., ethash, poa, ibft)| --
 native_curreny | symbol representing the native currency on the network (i.e., ETH) | --
 protocol_id | the type of consensus mechanism (i.e., pow, poa)
