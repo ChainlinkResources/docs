@@ -299,6 +299,9 @@
                     <li>
                       <a href="#retrieve-network-transaction" class="toc-h2 toc-link" data-title="Retrieve Network Transaction">Retrieve Network Transaction</a>
                     </li>
+                    <li>
+                      <a href="#types" class="toc-h2 toc-link" data-title="Types">Types</a>
+                    </li>
                 </ul>
           </li>
           <li>
@@ -3641,6 +3644,65 @@ HTTP/2 200
 <tr>
 <td>transactionId</td>
 <td>id of the transaction</td>
+</tr>
+</tbody></table>
+<h2 id='types'>Types</h2><h3 id='node-configuration-object'>Node Configuration Object</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>block_explorer_url</td>
+<td>url of the block explorer for the network, if one is configured</td>
+<td>--</td>
+</tr>
+<tr>
+<td>chain</td>
+<td>name of the chain</td>
+<td>--</td>
+</tr>
+<tr>
+<td>chainspec</td>
+<td>network-specific chainspec object; (i.e., genesis.json)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>chainspec_url</td>
+<td>external url where the chainspec lives; overridden by <code>chainspec</code></td>
+<td>--</td>
+</tr>
+<tr>
+<td>chainspec_abi</td>
+<td>optional network-specific chainspec ABI object</td>
+<td>--</td>
+</tr>
+<tr>
+<td>chainspec_abi_url</td>
+<td>optional network-specific chainspec ABI url; overridden by <code>chainspec_abi</code></td>
+<td>--</td>
+</tr>
+<tr>
+<td>client</td>
+<td>default p2p client to be used on the network (i.e., parity, geth, etc.)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>engine_id</td>
+<td>the consensus engine to be used for the chain (i.e., ethhash, poa, ibft)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>native_curreny</td>
+<td>symbol representing the native currency on the network (i.e., ETH)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>protocol_id</td>
+<td>the type of consensus mechanism (i.e., pow, poa)</td>
+<td></td>
 </tr>
 </tbody></table>
 <h1 id='nodes'>Nodes</h1><h2 id='list-nodes'>List Nodes</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
