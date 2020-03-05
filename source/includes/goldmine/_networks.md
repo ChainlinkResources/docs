@@ -2688,7 +2688,6 @@ Parameter | Description
 --------- | -----------
 id | id of the `Network`
 
-
 ## Retrieve Network Status
 
 ```shell
@@ -2789,8 +2788,6 @@ This endpoint enumerates the addresses of the given Network.
 
 <i> (Not yet implemented)</i>
 
-
-
 ### URL Parameters
 
 Parameter | Description
@@ -2817,8 +2814,6 @@ HTTP/2 501
 This endpoint enumerates the blocks of the given Network.
 
 <i> (Not yet implemented)</i>
-
-
 
 ### URL Parameters
 
@@ -3050,10 +3045,6 @@ Parameter | Description
 id | id of the network
 contractId | The ID of the specified contract
 
-
-
-
-
 ## Retrieve Network Transaction
 
 ```shell
@@ -3115,9 +3106,6 @@ HTTP/2 200
 
 This endpoint retrieves the details of the Network’s specified Transaction.
 
-
-
-
 ### URL Parameters
 
 Parameter | Description
@@ -3125,9 +3113,19 @@ Parameter | Description
 id | id of the network
 transactionId | id of the transaction
 
+## Types
 
+### Node Configuration Object
 
-
-
-
-
+Parameter | Description | Default
+--------- | ----------- | -----------
+block_explorer_url | url of the block explorer for the network, if one is configured | --
+chain | name of the chain | --
+chainspec | network-specific chainspec object; (i.e., genesis.json) | --
+chainspec_url | external url where the chainspec lives; overridden by `chainspec` | --
+chainspec_abi | optional network-specific chainspec ABI object | --
+chainspec_abi_url | optional network-specific chainspec ABI url; overridden by `chainspec_abi` | --
+client | default p2p client to be used on the network (i.e., parity, geth, etc.) | --
+engine_id | the consensus engine to be used for the chain (i.e., ethhash, poa, ibft)| --
+native_curreny | symbol representing the native currency on the network (i.e., ETH) | --
+protocol_id | the type of consensus mechanism (i.e., pow, poa)
