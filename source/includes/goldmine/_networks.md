@@ -2039,7 +2039,7 @@ access-control-expose-headers: X-Total-Results-Count
 }
 ```
 
-This endpoint creates a new `Network`. Depending on the desired protocol and genesis block contents, certain items must be present in the `config`. See [Peer-to-Peer Clients](#peer-to-peer-clients) for details on which networks are supported.
+This endpoint creates a new `Network`. Depending on the desired protocol and genesis block contents, certain items must be present in the `config`. See [Peer-to-Peer Clients](#protocol-support) for details on which networks are supported.
 
 
 
