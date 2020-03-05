@@ -3115,7 +3115,7 @@ transactionId | id of the transaction
 
 ## Types
 
-### Node Configuration Object
+### Network Configuration Object
 
 Parameter | Description | Default
 --------- | ----------- | -----------
