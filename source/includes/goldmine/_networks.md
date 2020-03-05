@@ -2041,8 +2041,6 @@ access-control-expose-headers: X-Total-Results-Count
 
 This endpoint creates a new `Network`. Depending on the desired protocol and genesis block contents, certain items must be present in the `config`. See [Peer-to-Peer Clients](#protocol-support) for details on which networks are supported.
 
-
-
 ## Retrieve Network Details
 
 ```shell
@@ -3125,7 +3123,8 @@ chainspec | network-specific chainspec object; (i.e., genesis.json) | --
 chainspec_url | external url where the chainspec lives; overridden by `chainspec` | --
 chainspec_abi | optional network-specific chainspec ABI object | --
 chainspec_abi_url | optional network-specific chainspec ABI url; overridden by `chainspec_abi` | --
-client | default p2p client to be used on the network (i.e., parity, geth, etc.) | --
-engine_id | the consensus engine to be used for the chain (i.e., ethash, poa, ibft)| --
+client | default p2p client to be used on the network (i.e., parity, geth) | --
+engine_id | consensus engine to be used for the chain (i.e., ethash, poa, ibft)| --
 native_curreny | symbol representing the native currency on the network (i.e., ETH) | --
-protocol_id | the type of consensus mechanism (i.e., pow, poa)
+platform | platform type (i.e., evm, bcoin) | --
+protocol_id | type of consensus mechanism (i.e., pow, poa)
