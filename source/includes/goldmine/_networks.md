@@ -3113,6 +3113,14 @@ transactionId | id of the transaction
 
 ## Network Types
 
+Parameter | Description | Default
+--------- | ----------- | -----------
+id | the network id | --
+chain_id | globally-unique chain identifier for the network | --
+config | network configuration object | --
+description | network description | --
+name | network name | --
+
 ### Network Configuration Object
 
 Parameter | Description | Default
@@ -3127,4 +3135,4 @@ client | default p2p client to be used on the network (i.e., parity, geth) | --
 engine_id | consensus engine to be used for the chain (i.e., ethash, poa, ibft)| --
 native_curreny | symbol representing the native currency on the network (i.e., ETH) | --
 platform | platform type (i.e., evm, bcoin) | --
-protocol_id | type of consensus mechanism (i.e., pow, poa)
+protocol_id | type of consensus mechanism (i.e., pow, poa) | --
