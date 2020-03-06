@@ -3646,7 +3646,41 @@ HTTP/2 200
 <td>id of the transaction</td>
 </tr>
 </tbody></table>
-<h2 id='network-types'>Network Types</h2><h3 id='network-configuration-object'>Network Configuration Object</h3>
+<h2 id='network-types'>Network Types</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>the network id</td>
+<td>--</td>
+</tr>
+<tr>
+<td>chain_id</td>
+<td>globally-unique chain identifier for the network</td>
+<td>--</td>
+</tr>
+<tr>
+<td>config</td>
+<td>network configuration object</td>
+<td>--</td>
+</tr>
+<tr>
+<td>description</td>
+<td>network description</td>
+<td>--</td>
+</tr>
+<tr>
+<td>name</td>
+<td>network name</td>
+<td>--</td>
+</tr>
+</tbody></table>
+<h3 id='network-configuration-object'>Network Configuration Object</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3707,7 +3741,7 @@ HTTP/2 200
 <tr>
 <td>protocol_id</td>
 <td>type of consensus mechanism (i.e., pow, poa)</td>
-<td></td>
+<td>--</td>
 </tr>
 </tbody></table>
 <h1 id='nodes'>Nodes</h1><h2 id='list-nodes'>List Nodes</h2><pre class="highlight shell tab-shell"><code>curl -i <span class="se">\</span>
@@ -4371,7 +4405,21 @@ HTTP/2 204
 <td>the id of the <code>Node</code></td>
 </tr>
 </tbody></table>
-<h2 id='network-node-types'>Network Node Types</h2><h3 id='node-configuration-object'>Node Configuration Object</h3>
+<h2 id='network-node-types'>Network Node Types</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>config</td>
+<td>network node configuration object</td>
+<td>--</td>
+</tr>
+</tbody></table>
+<h3 id='node-configuration-object'>Node Configuration Object</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4420,6 +4468,11 @@ HTTP/2 204
 <td>--</td>
 </tr>
 <tr>
+<td>resources</td>
+<td>object containing target-specific <code>cpu</code>, <code>memory</code>, and <code>volumes</code> allocations</td>
+<td>--</td>
+</tr>
+<tr>
 <td>role</td>
 <td>the string indicating the role for the new <code>Node</code></td>
 <td></td>
@@ -4437,6 +4490,11 @@ HTTP/2 204
 <tr>
 <td>task_role</td>
 <td>the optional vendor-specific task role (i.e., the ECS task execution role in the case of AWS)</td>
+<td>--</td>
+</tr>
+<tr>
+<td>vpc_id</td>
+<td>the optional, vendor-specific vpc</td>
 <td>--</td>
 </tr>
 </tbody></table>
