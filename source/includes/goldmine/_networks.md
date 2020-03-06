@@ -3111,7 +3111,7 @@ Parameter | Description
 id | id of the network
 transactionId | id of the transaction
 
-## Types
+## Network Types
 
 ### Network Configuration Object
 

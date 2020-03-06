@@ -630,7 +630,7 @@ Parameter | Description
 id | id of the `Network`
 nodeId | the id of the `Node`
 
-## Types
+## Network Node Types
 
 ### Node Configuration Object
 
