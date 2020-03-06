@@ -653,7 +653,7 @@ role | the string indicating the role for the new `Node`
 security | `Security` configuration object containing egress and ingress rules for the new `Node` | --
 target_id | the string representing the targeted vendor (i.e., `aws` or `azure`) | --
 task_role | the optional vendor-specific task role (i.e., the ECS task execution role in the case of AWS) | --
-vpc_id | the optional, vendor-specific vpc | --
+vpc_id | the optional, vendor-specific vpc identifier | --
 
 ### Security Configuration Object
 
