@@ -494,11 +494,11 @@
 </thead><tbody>
 <tr>
 <td>aws_access_key_id</td>
-<td>the AWS access key id to use for the request</td>
+<td>the AWS access key id</td>
 </tr>
 <tr>
 <td>aws_secret_access_key</td>
-<td>the AWS secret access key to</td>
+<td>the AWS secret access key</td>
 </tr>
 </tbody></table>
 <h3 id='vpc-considerations'>VPC Considerations</h3>
@@ -511,6 +511,28 @@
 <p><img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" /></p>
 
 <pre><b>target</b>&nbsp;azure</pre>
+<h3 id='credentials-2'>Credentials</h3>
+<p>The following object illustrates how to securely pass your IAM <code>credentials</code> within a <code>Node</code> configuration.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>azure_tenant_id</td>
+<td>the Azure directory (tenant) id</td>
+</tr>
+<tr>
+<td>azure_client_id</td>
+<td>the Azure application (client) id</td>
+</tr>
+<tr>
+<td>azure_client_secret</td>
+<td>the Azure client secret</td>
+</tr>
+</tbody></table>
 
 <p><i>Documentation forthcoming.</i></p>
 <h2 id='docker'>Docker</h2>
@@ -3848,7 +3870,143 @@ x-total-results-count: 1
 <td>id of the <code>Network</code></td>
 </tr>
 </tbody></table>
-<h2 id='deploy-network-node'>Deploy Network Node</h2><pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
+<h2 id='deploy-network-node'>Deploy Network Node</h2>
+<p>Two EVM-based peer node orchestration examples are provided-- one for Geth and one for Parity.</p>
+<pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
+    -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNTg0NTksImp0aSI6IjU0YWZmMGQ1LTFjY2ItNDRmNy1iYTRiLTExYTA3YWFhZGM2YiIsInN1YiI6InVzZXI6NTE4MzE5MmQtYWM4NS00YzVhLWE3OGQtODAzMWE4ZDIwODc4In0.jI7S0gW__iFjbZi0o8AKyqrH8D01vpCpgV3HOh9TrUE'</span> <span class="se">\</span>
+    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+    https://goldmine.provide.services/api/networks/66d44f30-9092-4182-a3c4-bc02736d6ae5/nodes <span class="se">\</span>
+    -d <span class="s1">'{
+    "config": {
+      "client": "geth",
+      "image": "ethereum/client-go",
+      "credentials": {
+        "aws_access_key_id": "AKIXXXXXXXXXXXXXXXXX",
+        "aws_secret_access_key": "75yXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "engine_id": "ethash",
+      "env": {
+        "COINBASE": "0x0619A8589559c88dEe730B5bD2F160D9464b5c64",
+        "PEER_SET": "enode://6332792c4a00e3e4ee0926ed89e0d27ef985424d97b6a45bf0f23e51f0dcb5e66b875777506458aea7af6f9e4ffb69f43f3778ee73c81ed9d34c51c4b16b0b0f@52.232.243.152:30303,enode://94c15d1b9e2fe7ce56e458b9a3b672ef11894ddedd0c6f247e0f1d3487f52b66208fb4aeb8179fce6e3a749ea93ed147c37976d67af557508d199d9594c35f09@192.81.208.223:30303"
+      },
+      "protocol_id": "pow",
+      "provider_id": "docker",
+      "region": "us-east-1",
+      "role": "full",
+      "security": {
+        "egress": "*",
+        "ingress": {
+          "0.0.0.0/0": {
+            "tcp": [
+              8545,
+              8546,
+              8547,
+              30303
+            ],
+            "udp": [
+              30303
+            ]
+          }
+        }
+      },
+      "target_id": "aws",
+      "task_role": "arn:aws:iam::192663109025:role/ecsTaskExecutionRole",
+      "entrypoint": [
+        "geth",
+        "--testnet",
+        "--gcmode",
+        "archive",
+        "--nousb",
+        "--rpc",
+        "--rpcaddr",
+        "0.0.0.0",
+        "--rpccorsdomain",
+        "*",
+        "--rpcapi",
+        "admin,eth,net,web3,debug,shh",
+        "--ws",
+        "--wsorigins",
+        "*",
+        "--graphql",
+        "--shh",
+        "--verbosity",
+        "5"
+      ]
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>Response JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9389652d-ed8f-4cd3-8268-cb9859024e3e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-10T02:14:28.685367-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66d44f30-9092-4182-a3c4-bc02736d6ae5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e889edea-580f-40d8-addf-d509dcf7783a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"private_ipv4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"private_ipv6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geth"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"engine_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethash"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entrypoint"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"geth"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--testnet"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--gcmode"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"archive"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--nousb"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--rpc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--rpcaddr"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--rpccorsdomain"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--rpcapi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"admin,eth,net,web3,debug,shh"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--ws"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--wsorigins"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--graphql"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--shh"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"--verbosity"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"5"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"COINBASE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0619A8589559c88dEe730B5bD2F160D9464b5c64"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PEER_SET"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enode://6332792c4a00e3e4ee0926ed89e0d27ef985424d97b6a45bf0f23e51f0dcb5e66b875777506458aea7af6f9e4ffb69f43f3778ee73c81ed9d34c51c4b16b0b0f@52.232.243.152:30303,enode://94c15d1b9e2fe7ce56e458b9a3b672ef11894ddedd0c6f247e0f1d3487f52b66208fb4aeb8179fce6e3a749ea93ed147c37976d67af557508d199d9594c35f09@192.81.208.223:30303"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethereum/client-go"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"protocol_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pow"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"provider_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"docker"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-east-1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"egress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ingress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"0.0.0.0/0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"tcp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">8545</span><span class="p">,</span><span class="w">
+            </span><span class="mi">8546</span><span class="p">,</span><span class="w">
+            </span><span class="mi">8547</span><span class="p">,</span><span class="w">
+            </span><span class="mi">30303</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"udp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">30303</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"target_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:iam::192663109025:role/ecsTaskExecutionRole"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">'</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl -i -XPOST <span class="se">\</span>
     -H <span class="s1">'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNTg0NTksImp0aSI6IjU0YWZmMGQ1LTFjY2ItNDRmNy1iYTRiLTExYTA3YWFhZGM2YiIsInN1YiI6InVzZXI6NTE4MzE5MmQtYWM4NS00YzVhLWE3OGQtODAzMWE4ZDIwODc4In0.jI7S0gW__iFjbZi0o8AKyqrH8D01vpCpgV3HOh9TrUE'</span> <span class="se">\</span>
     -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
     https://goldmine.provide.services/api/networks/ef976635-545b-46c6-9576-4e3a893a68e9/nodes <span class="se">\</span>
