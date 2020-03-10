@@ -10,7 +10,7 @@ Provide supports orchestration of load balanced peer-to-peer networks across mul
 
 ### Credentials
 
-The following object illustrates how to securely pass your IAM `credentials` within a `Node` configuration.
+The following object illustrates how to securely pass your IAM `credentials` within a `config`.
 
 Name | Description
 --------- | -------- |
@@ -35,7 +35,7 @@ When a load balancer is provisioned for you by the platform, it is currently add
 
 ### Credentials
 
-The following object illustrates how to securely pass your IAM `credentials` within a `Node` configuration.
+The following object illustrates how to securely pass your Azure API `credentials` within a `config`.
 
 Name | Description
 --------- | -------- |
