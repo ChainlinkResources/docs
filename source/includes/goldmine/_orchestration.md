@@ -14,8 +14,8 @@ The following object illustrates how to securely pass your IAM `credentials` wit
 
 Name | Description
 --------- | -------- |
-aws_access_key_id | the AWS access key id to use for the request
-aws_secret_access_key | the AWS secret access key to
+aws_access_key_id | the AWS access key id
+aws_secret_access_key | the AWS secret access key
 
 ### VPC Considerations
 
@@ -32,6 +32,16 @@ When a load balancer is provisioned for you by the platform, it is currently add
 <img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" />
 
 <pre><b>target</b>&nbsp;azure</pre>
+
+### Credentials
+
+The following object illustrates how to securely pass your IAM `credentials` within a `Node` configuration.
+
+Name | Description
+--------- | -------- |
+azure_tenant_id | the Azure directory (tenant) id
+azure_client_id | the Azure application (client) id
+azure_client_secret | the Azure client secret
 
 <i>Documentation forthcoming.</i>
 

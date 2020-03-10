@@ -97,6 +97,146 @@ id | id of the `Network`
 
 ## Deploy Network Node
 
+Two EVM-based peer node orchestration examples are provided-- one for Geth and one for Parity.
+
+```shell
+curl -i -XPOST \
+    -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNTg0NTksImp0aSI6IjU0YWZmMGQ1LTFjY2ItNDRmNy1iYTRiLTExYTA3YWFhZGM2YiIsInN1YiI6InVzZXI6NTE4MzE5MmQtYWM4NS00YzVhLWE3OGQtODAzMWE4ZDIwODc4In0.jI7S0gW__iFjbZi0o8AKyqrH8D01vpCpgV3HOh9TrUE' \
+    -H 'Content-Type: application/json' \
+    https://goldmine.provide.services/api/networks/66d44f30-9092-4182-a3c4-bc02736d6ae5/nodes \
+    -d '{
+    "config": {
+      "client": "geth",
+      "image": "ethereum/client-go",
+      "credentials": {
+        "aws_access_key_id": "AKIXXXXXXXXXXXXXXXXX",
+        "aws_secret_access_key": "75yXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "engine_id": "ethash",
+      "env": {
+        "COINBASE": "0x0619A8589559c88dEe730B5bD2F160D9464b5c64",
+        "PEER_SET": "enode://6332792c4a00e3e4ee0926ed89e0d27ef985424d97b6a45bf0f23e51f0dcb5e66b875777506458aea7af6f9e4ffb69f43f3778ee73c81ed9d34c51c4b16b0b0f@52.232.243.152:30303,enode://94c15d1b9e2fe7ce56e458b9a3b672ef11894ddedd0c6f247e0f1d3487f52b66208fb4aeb8179fce6e3a749ea93ed147c37976d67af557508d199d9594c35f09@192.81.208.223:30303"
+      },
+      "protocol_id": "pow",
+      "provider_id": "docker",
+      "region": "us-east-1",
+      "role": "full",
+      "security": {
+        "egress": "*",
+        "ingress": {
+          "0.0.0.0/0": {
+            "tcp": [
+              8545,
+              8546,
+              8547,
+              30303
+            ],
+            "udp": [
+              30303
+            ]
+          }
+        }
+      },
+      "target_id": "aws",
+      "task_role": "arn:aws:iam::192663109025:role/ecsTaskExecutionRole",
+      "entrypoint": [
+        "geth",
+        "--testnet",
+        "--gcmode",
+        "archive",
+        "--nousb",
+        "--rpc",
+        "--rpcaddr",
+        "0.0.0.0",
+        "--rpccorsdomain",
+        "*",
+        "--rpcapi",
+        "admin,eth,net,web3,debug,shh",
+        "--ws",
+        "--wsorigins",
+        "*",
+        "--graphql",
+        "--shh",
+        "--verbosity",
+        "5"
+      ]
+    }
+  }'
+```
+
+> Response JSON:
+
+```json
+{
+  "id": "9389652d-ed8f-4cd3-8268-cb9859024e3e",
+  "created_at": "2020-03-10T02:14:28.685367-04:00",
+  "network_id": "66d44f30-9092-4182-a3c4-bc02736d6ae5",
+  "user_id": "e889edea-580f-40d8-addf-d509dcf7783a",
+  "application_id": null,
+  "organization_id": null,
+  "host": null,
+  "ipv4": null,
+  "ipv6": null,
+  "private_ipv4": null,
+  "private_ipv6": null,
+  "description": null,
+  "role": "full",
+  "status": "pending",
+  "config": {
+    "client": "geth",
+    "engine_id": "ethash",
+    "entrypoint": [
+      "geth",
+      "--testnet",
+      "--gcmode",
+      "archive",
+      "--nousb",
+      "--rpc",
+      "--rpcaddr",
+      "0.0.0.0",
+      "--rpccorsdomain",
+      "*",
+      "--rpcapi",
+      "admin,eth,net,web3,debug,shh",
+      "--ws",
+      "--wsorigins",
+      "*",
+      "--graphql",
+      "--shh",
+      "--verbosity",
+      "5"
+    ],
+    "env": {
+      "COINBASE": "0x0619A8589559c88dEe730B5bD2F160D9464b5c64",
+      "PEER_SET": "enode://6332792c4a00e3e4ee0926ed89e0d27ef985424d97b6a45bf0f23e51f0dcb5e66b875777506458aea7af6f9e4ffb69f43f3778ee73c81ed9d34c51c4b16b0b0f@52.232.243.152:30303,enode://94c15d1b9e2fe7ce56e458b9a3b672ef11894ddedd0c6f247e0f1d3487f52b66208fb4aeb8179fce6e3a749ea93ed147c37976d67af557508d199d9594c35f09@192.81.208.223:30303"
+    },
+    "image": "ethereum/client-go",
+    "protocol_id": "pow",
+    "provider_id": "docker",
+    "region": "us-east-1",
+    "role": "full",
+    "security": {
+      "egress": "*",
+      "ingress": {
+        "0.0.0.0/0": {
+          "tcp": [
+            8545,
+            8546,
+            8547,
+            30303
+          ],
+          "udp": [
+            30303
+          ]
+        }
+      }
+    },
+    "target_id": "aws",
+    "task_role": "arn:aws:iam::192663109025:role/ecsTaskExecutionRole"
+  }
+}'
+```
+
 ```shell
 curl -i -XPOST \
     -H 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiZXhwIjpudWxsLCJpYXQiOjE1NjAwNTg0NTksImp0aSI6IjU0YWZmMGQ1LTFjY2ItNDRmNy1iYTRiLTExYTA3YWFhZGM2YiIsInN1YiI6InVzZXI6NTE4MzE5MmQtYWM4NS00YzVhLWE3OGQtODAzMWE4ZDIwODc4In0.jI7S0gW__iFjbZi0o8AKyqrH8D01vpCpgV3HOh9TrUE' \
