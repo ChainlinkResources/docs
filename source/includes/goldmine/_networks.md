@@ -759,7 +759,7 @@ curl -i -XPOST \
     -H 'Content-Type: application/json' \
     https://goldmine.provide.services/api/v1/networks \
     -d '{
-  "name": "test",
+  "name": "baseline testnet",
   "cloneable": false,
   "config": {
     "native_currency": "TEST",
