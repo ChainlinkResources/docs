@@ -784,9 +784,7 @@ credentials | object providing vendor-specific API credentials (see examples) | 
 entrypoint | array representing the container entrypoint command and its arguments | --
 env | object providing environment variables to be set for the new `Node` | --
 image | the Docker image from which a new container will be run; required unless the `container` parameter is provided | --
-container | the vendor-specific resource (i.e., a task definition family in the case of AWS) from which a new `Node` will be run; required unless the `image` parameter is provided | --
-p2p | flag indicating if the underlying container should resolve peers; if unset, peer resolution will be attempted based on the given `engine_id` and/or `role_id` parameters | n/a
-provider_id | string indicating the type of underlying infrastructure or virtualization technology to be used for the deployment; should be set to `docker` at this time | --
+p2p | flag indicating if the underlying container should resolve peers | n/a
 region | any supported vendor-specific region for the deployment (i.e., `us-east-1` in the case of AWS) | --
 resources | object containing target-specific `cpu`, `memory`, and `volumes` allocations | --
 role | the string indicating the role for the new `Node`
