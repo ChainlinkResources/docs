@@ -498,7 +498,71 @@
 <td>the AWS secret access key</td>
 </tr>
 </tbody></table>
-<h3 id='vpc-considerations'>VPC Considerations</h3>
+<h3 id='aws-policy-amp-role-configuration'>AWS Policy &amp; Role Configuration</h3>
+<p>A prerequisite to using AWS as an orchestration <code>target</code> with Provide is creating a policy and attaching it to a role using the <em>Identity Access Manager (IAM)</em> service. A sample policy definition has been provided; you can modify the policy JSON to be more restrictive based on the needs of your organization.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"acm:*"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ec2:*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elasticloadbalancing:*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloudwatch:*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autoscaling:*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iam:CreateServiceLinkedRole"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"StringEquals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"iam:AWSServiceName"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"autoscaling.amazonaws.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ec2scheduled.amazonaws.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"elasticloadbalancing.amazonaws.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"spot.amazonaws.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"spotfleet.amazonaws.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transitgateway.amazonaws.com"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"logs:Describe*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:Get*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:List*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:StartQuery"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:StopQuery"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:TestMetricFilter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logs:FilterLogEvents"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='vpc-considerations'>VPC Considerations</h3>
 <p><i>Documentation forthcoming.</i></p>
 <h3 id='load-balancing'>Load Balancing</h3>
 <p>Provide leverages the second-generation Elastic Load Balancing (ELB) service on your behalf when you deploy network nodes. Currently the platform orchestrates the provisioning for you implicitly when you attempt to deploy your first node for a unique network and region. We support orchestration in all AWS availability zones.</p>
@@ -508,6 +572,35 @@
 <p><img class="cloud-provider" alt="Microsoft Azure" src="https://s3.amazonaws.com/static.provide.services/img/azure-light.png" /></p>
 
 <pre><b>target</b>&nbsp;azure</pre>
+<h3 id='azure-application-amp-subscription-scoped-rbac'>Azure Application &amp; Subscription-Scoped RBAC</h3>
+<p>A prerequisite to using Azure as an orchestration <code>target</code> with Provide is registering a directory application and assigning the appropriate permissions via a custom role. This role should be created using the <em>Access control (IAM)</em> tool located within the <em>Azure Subscriptions</em> service. A sample role definition has been provided; you will need to update the <code>assignableScopes</code> section provided in the sample JSON with your subscription scope.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"roleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provide Azure Role"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"permissions granted to Azure applications for use with Provide"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"assignableScopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"/subscriptions/14e122a1-1a51-4ffa-b956-985f3e855394"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Microsoft.Authorization/*/read"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.Insights/alertRules/*"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.Network/*"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.ResourceHealth/availabilityStatuses/read"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.Resources/deployments/*"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.Resources/subscriptions/resourceGroups/*"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Microsoft.Support/*"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notActions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"dataActions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"notDataActions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Register a new single-tenant application within the <em>Azure Active Directory</em> service, create a custom role (as describe above) and assign the role to the registered application.</p>
 <h3 id='credentials-2'>Credentials</h3>
 <p>The following object illustrates how to securely pass your Azure API <code>credentials</code> within a <code>config</code>.</p>
 
@@ -518,20 +611,22 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>azure_subscription_id</td>
+<td>the Azure subscription id</td>
+</tr>
+<tr>
 <td>azure_tenant_id</td>
-<td>the Azure directory (tenant) id</td>
+<td>the Azure directory tenant id</td>
 </tr>
 <tr>
 <td>azure_client_id</td>
-<td>the Azure application (client) id</td>
+<td>the Azure application client id</td>
 </tr>
 <tr>
 <td>azure_client_secret</td>
 <td>the Azure client secret</td>
 </tr>
 </tbody></table>
-
-<p><i>Documentation forthcoming.</i></p>
 <h2 id='docker'>Docker</h2>
 <p><img class="cloud-provider" alt="Docker" src="https://s3.amazonaws.com/static.provide.services/img/docker-light.png" /></p>
 
