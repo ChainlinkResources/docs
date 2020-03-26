@@ -33,6 +33,40 @@ When a load balancer is provisioned for you by the platform, it is currently add
 
 <pre><b>target</b>&nbsp;azure</pre>
 
+### Azure Application & Subscription-Scoped RBAC
+
+A prerequisite to using Azure as an orchestration `target` with Provide is registering a directory application and assigning the appropriate permissions via a custom role. This role should be created using the *Access control (IAM)* tool located within the *Azure Subscriptions* service. Sample role definition has been provided; you will need to update the `assignableScopes` section provided in the sample JSON with your subscription scope.
+
+```json
+{
+  "properties": {
+    "roleName": "Provide Azure Role",
+    "description": "permissions granted to Azure applications for use with Provide",
+    "assignableScopes": [
+      "/subscriptions/14e122a1-1a51-4ffa-b956-985f3e855394"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Authorization/*/read",
+          "Microsoft.Insights/alertRules/*",
+          "Microsoft.Network/*",
+          "Microsoft.ResourceHealth/availabilityStatuses/read",
+          "Microsoft.Resources/deployments/*",
+          "Microsoft.Resources/subscriptions/resourceGroups/*",
+          "Microsoft.Support/*"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
+```
+
+Register a new single-tenant application within the *Azure Active Directory* service, create a custom role (as describe above) and assign the role to the registered application.
+
 ### Credentials
 
 The following object illustrates how to securely pass your Azure API `credentials` within a `config`.
@@ -43,7 +77,6 @@ azure_tenant_id | the Azure directory (tenant) id
 azure_client_id | the Azure application (client) id
 azure_client_secret | the Azure client secret
 
-<i>Documentation forthcoming.</i>
 
 ## Docker
 
