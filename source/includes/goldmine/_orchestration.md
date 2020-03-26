@@ -17,6 +17,76 @@ Name | Description
 aws_access_key_id | the AWS access key id
 aws_secret_access_key | the AWS secret access key
 
+### AWS Policy & Role Configuration
+
+A prerequisite to using AWS as an orchestration `target` with Provide is creating a policy and attaching it to a role using the *Identity Access Manager (IAM)* service. A sample policy definition has been provided; you can modify the policy JSON to be more restrictive based on the needs of your organization.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "acm:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Action": "ec2:*",
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "elasticloadbalancing:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "autoscaling:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "autoscaling.amazonaws.com",
+            "ec2scheduled.amazonaws.com",
+            "elasticloadbalancing.amazonaws.com",
+            "spot.amazonaws.com",
+            "spotfleet.amazonaws.com",
+            "transitgateway.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Action": [
+        "logs:Describe*",
+        "logs:Get*",
+        "logs:List*",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:TestMetricFilter",
+        "logs:FilterLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+
 ### VPC Considerations
 
 <i>Documentation forthcoming.</i>
@@ -35,7 +105,7 @@ When a load balancer is provisioned for you by the platform, it is currently add
 
 ### Azure Application & Subscription-Scoped RBAC
 
-A prerequisite to using Azure as an orchestration `target` with Provide is registering a directory application and assigning the appropriate permissions via a custom role. This role should be created using the *Access control (IAM)* tool located within the *Azure Subscriptions* service. Sample role definition has been provided; you will need to update the `assignableScopes` section provided in the sample JSON with your subscription scope.
+A prerequisite to using Azure as an orchestration `target` with Provide is registering a directory application and assigning the appropriate permissions via a custom role. This role should be created using the *Access control (IAM)* tool located within the *Azure Subscriptions* service. A sample role definition has been provided; you will need to update the `assignableScopes` section provided in the sample JSON with your subscription scope.
 
 ```json
 {
@@ -73,8 +143,9 @@ The following object illustrates how to securely pass your Azure API `credential
 
 Name | Description
 --------- | -------- |
-azure_tenant_id | the Azure directory (tenant) id
-azure_client_id | the Azure application (client) id
+azure_subscription_id | the Azure subscription id
+azure_tenant_id | the Azure directory tenant id
+azure_client_id | the Azure application client id
 azure_client_secret | the Azure client secret
 
 
